@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: protect-data/prepare-protect-data.html 
+keywords: afx, afx system, prepare, prepare protect, prepare protect data 
+summary: Avant de protéger vos données AFX, vous devez vous familiariser avec certains des concepts clés et l’état actuel de votre stockage. 
+---
+= Préparez-vous à protéger les données de votre système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Avant de protéger vos données AFX, vous devez vous familiariser avec certains des concepts et fonctionnalités clés.
+
+
+TIP: Étant donné que de nombreux concepts et procédures d’administration disponibles sur les systèmes AFF et FAS sont les mêmes que ceux des systèmes de stockage AFX, il peut être utile de consulter la documentation d’Unified ONTAP .
+
+
+
+== Terminologie et options
+
+Il existe plusieurs termes liés à la protection des données AFX que vous devez connaître.
+
+Instantané:: Un instantané est une image en lecture seule, à un instant T, d'un volume.  Il s'agit d'une technologie fondamentale pour les services de réplication et de protection des données d'ONTAP.
+Groupe de cohérence:: Un groupe de cohérence est un ensemble de volumes gérés comme une seule unité.  Vous pouvez créer des groupes de cohérence pour simplifier la gestion du stockage et la protection des données pour les charges de travail des applications.  Par exemple, vous pouvez prendre un instantané de plusieurs volumes en une seule opération en utilisant le groupe de cohérence au lieu des volumes individuels.
+Groupe de cohérence hiérarchique:: Les groupes de cohérence hiérarchique ont été introduits avec ONTAP 9.16.1 et sont disponibles avec AFX.  Avec une structure hiérarchique, un ou plusieurs groupes de cohérence peuvent être configurés comme enfants sous un parent.  Ces groupes hiérarchiques vous permettent d'appliquer des stratégies de snapshot individuelles aux groupes de cohérence enfants et de répliquer les snapshots de tous les enfants vers un cluster distant en tant qu'unité unique en répliquant le parent.
+SnapLock:: SnapLock est une fonctionnalité ONTAP qui vous permet de protéger vos fichiers en les déplaçant vers un état WORM (écriture unique et lecture multiple).  Cela empêche la modification ou la suppression pendant une période de conservation spécifiée.  Les volumes SnapLock créés ne peuvent pas être convertis à partir de volumes non SnapLock après la création en fonction de la rétention.
+
+
+
+
+== Informations connexes
+
+* link:../administer/additional-ontap-svm.html["Administration supplémentaire d'AFX SVM"]
+* link:../get-started/prepare-cluster-admin.html["Préparez-vous à administrer votre système AFX"]
+

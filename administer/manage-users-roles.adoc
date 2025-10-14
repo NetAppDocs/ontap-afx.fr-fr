@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-users-roles.html 
+keywords: afx, afx system, users, roles 
+summary: Vous pouvez définir des comptes d’utilisateur et des rôles en fonction des services d’authentification et d’autorisation disponibles avec AFX. 
+---
+= Gérer les utilisateurs et les rôles du cluster du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez définir des comptes d’utilisateur et des rôles en fonction des services d’authentification et d’autorisation disponibles avec AFX.
+
+
+NOTE: Chaque utilisateur ONTAP doit avoir un rôle attribué.  Un rôle inclut des privilèges et détermine les actions que l’utilisateur peut effectuer.
+
+
+
+== Créer un rôle de compte
+
+Les rôles des administrateurs de cluster et des administrateurs de machines virtuelles de stockage sont automatiquement créés lors de la configuration et de l'initialisation de votre cluster AFX.  Vous pouvez créer des rôles de compte d'utilisateur supplémentaires pour définir des fonctions spécifiques que les utilisateurs affectés aux rôles peuvent exécuter sur votre cluster.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. Dans la section *Sécurité*, à côté de *Utilisateurs et rôles*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] .
+. Sous *Rôles*, sélectionnezimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Indiquez le nom du rôle et les attributs.
+. Sélectionnez *Enregistrer*.
+
+
+
+
+== Créer un compte de cluster
+
+Vous pouvez créer un compte au niveau du cluster à utiliser lors de l'administration du cluster ou de la SVM.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. Dans la section *Sécurité*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] à côté de *Utilisateurs et rôles*.
+. Sélectionnerimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] . sous *Utilisateurs*.
+. Saisissez un nom d’utilisateur, puis sélectionnez le rôle de l’utilisateur.
++
+Le rôle doit être adapté à l’utilisateur.  Par exemple, le rôle *admin* est capable d’effectuer l’ensemble des tâches de configuration sur votre cluster.
+
+. Sélectionnez la méthode de connexion de l'utilisateur et la méthode d'authentification ; il s'agira généralement de *Mot de passe*.
+. Entrez un mot de passe pour l'utilisateur.
+. Sélectionnez *Enregistrer*.
+
+
+.Résultat
+Un nouveau compte est créé et disponible pour être utilisé avec votre cluster AFX.
+
+
+
+== Informations connexes
+
+* link:../administer/prepare-authentication.html["Préparer les services d'authentification"]
+* link:../administer/additional-ontap-svm.html["Administration supplémentaire d'AFX SVM"]
+

@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: administer/view-insights.html 
+keywords: afx, afx system, insights, view insights 
+summary: 'Vous pouvez utiliser la fonctionnalité Insights d" ONTAP System Manager pour afficher les mises à jour de configuration suggérées qui correspondent aux meilleures pratiques de NetApp .  Ces modifications peuvent optimiser la sécurité et les performances ainsi que d’autres domaines de votre cluster AFX.' 
+---
+= Consultez les informations pour optimiser votre système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la fonctionnalité _Insights_ d' ONTAP System Manager pour afficher les mises à jour de configuration suggérées qui correspondent aux meilleures pratiques de NetApp .  Ces modifications peuvent optimiser la sécurité et les performances de votre cluster AFX.
+
+Par exemple, la fonctionnalité Autonomous Ransomware Protection (ARP) est disponible avec AFX et offre une protection anti-ransomware.  Insights vous informera si ARP n'est pas configuré.
+
+.À propos de cette tâche
+Chacune des informations est présentée sous la forme d'une vignette ou d'une carte distincte sur la page que vous pouvez choisir d'implémenter ou de rejeter.  Vous pouvez également sélectionner le lien de documentation associé pour en savoir plus sur une technologie spécifique.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Analyse* puis *Insights*.
+. Consultez les recommandations disponibles.
+
+
+.Quelle est la prochaine étape
+Effectuez l’une des actions recommandées pour mettre en œuvre les meilleures pratiques de configuration AFX.

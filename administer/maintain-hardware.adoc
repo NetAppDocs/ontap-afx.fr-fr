@@ -1,0 +1,14 @@
+---
+sidebar: sidebar 
+permalink: administer/maintain-hardware.html 
+keywords: afx, afx system, maintain hardware, hardware 
+summary: Accédez à la documentation de maintenance AFX pour savoir comment effectuer les procédures de maintenance sur votre système de stockage AFX. 
+---
+= Maintenir le matériel du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Accédez au https://docs.netapp.com/us-en/ontap-systems/afx-landing-maintain/index.html["Documentation de maintenance AFX"^] pour apprendre à effectuer les procédures de maintenance sur votre système de stockage AFX.

@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: get-started/software-architecture.html 
+keywords: afx, afx system, cluster, architecture, components, physical, logical 
+summary: 'L"architecture AFX est composée de plusieurs composants matériels et logiciels.  Ces composants système sont organisés en différentes catégories.' 
+---
+= Détails de l'architecture du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'architecture AFX est composée de plusieurs composants matériels et logiciels.  Ces composants système sont organisés en différentes catégories.
+
+
+
+== Composants physiques
+
+Lorsque vous démarrez avec AFX, il est utile de commencer par une vue d'ensemble des composants physiques tels qu'ils sont installés dans votre centre de données.
+
+
+
+=== Nœuds de contrôleur
+
+Les nœuds de contrôleur AFX exécutent une personnalité spécialisée du logiciel ONTAP conçue pour prendre en charge les exigences de l'environnement AFX.  Les clients accèdent aux nœuds via plusieurs protocoles, notamment NFS, SMB et S3.  Chaque nœud dispose d'une vue complète du stockage, à laquelle il peut accéder en fonction des demandes des clients.  Les nœuds sont dotés d’un état avec une mémoire non volatile pour conserver les informations d’état critiques et inclure des améliorations supplémentaires spécifiques aux charges de travail cibles.
+
+
+
+=== Étagères et disques de stockage
+
+Les étagères de stockage AFX utilisent la technologie NVMe-oF (Non-volatile Memory Express over Fabrics) pour connecter des SSD haute densité.  Les disques communiquent via une structure à très faible latence utilisant RDMA sur Ethernet convergé (RoCE).  Les étagères de stockage, y compris les modules d'E/S, les cartes réseau, les ventilateurs et les blocs d'alimentation, sont entièrement redondants sans aucun point de défaillance unique.  La technologie autogérée est utilisée pour administrer et contrôler tous les aspects de la configuration RAID et de la disposition des disques.
+
+
+
+=== Réseau de commutation de stockage en cluster
+
+Des commutateurs redondants et hautes performances connectent les nœuds de contrôleur AFX aux étagères de stockage.  Des protocoles avancés sont utilisés pour optimiser les performances.  La conception est basée sur le balisage VLAN avec plusieurs chemins réseau, ainsi que sur des configurations de mise à jour technologique, pour garantir un fonctionnement continu et une facilité de mise à niveau.
+
+
+
+=== Environnement de formation des clients
+
+L'environnement de formation client est un environnement de laboratoire avec du matériel fourni par le client, tel que des clusters GPU et des postes de travail IA.  Il est généralement conçu pour prendre en charge la formation de modèles, l'inférence et d'autres travaux liés à l'IA/ML.  Les clients accèdent à AFX à l’aide de protocoles standard du secteur tels que NFS, SMB et S3.
+
+
+
+=== Réseau de clients
+
+Ce réseau interne connecte l’environnement de formation client au cluster de stockage AFX.  Le réseau est fourni et géré par le client, même si NetApp prévoit de proposer des recommandations sur le terrain en matière d'exigences et de conception.
+
+
+
+== Composants logiques
+
+Plusieurs composants logiques sont inclus avec AFX.  Ils sont implémentés dans le logiciel avec les composants physiques du cluster.  Les composants logiques imposent une structure qui détermine l’utilisation et la configuration des systèmes AFX.
+
+
+
+=== Piscine de stockage commune
+
+La zone de disponibilité de stockage (SAZ) est un pool de stockage commun pour l'ensemble du cluster.  Il s’agit d’un ensemble de disques dans les étagères de stockage qui fournit un espace de noms unifié unique à tous les nœuds du contrôleur.  Le SAZ propose un modèle de provisionnement sans restrictions fixes concernant les étagères de stockage utilisées par les nœuds.  Les clients peuvent visualiser l’espace libre et l’utilisation du stockage en tant que propriétés de l’ensemble du cluster AFX.
+
+
+
+=== FlexVolumes, FlexGroups et buckets
+
+Les FlexVolumes, FlexGroups et les buckets S3 sont les _conteneurs de données_ exposés aux administrateurs AFX en fonction des protocoles d'accès client.  Ces conteneurs évolutifs sont conçus pour faire abstraction de nombreux détails complexes du stockage interne.
+
+
+
+=== Disposition et accès aux données
+
+La disposition et l'accès aux données sont optimisés pour un accès transparent et une utilisation efficace des GPU.  Cela joue un rôle essentiel dans l’élimination des goulots d’étranglement et le maintien de performances constantes.
+
+
+
+=== SVM et multi-location
+
+AFX fournit un modèle de locataire qui s'appuie sur le modèle SVM disponible avec les systèmes AFF et FAS .  Le modèle de locataire AFX a été rationalisé pour une administration simplifiée.
+
+
+
+== Déploiement du cluster AFX
+
+La figure suivante illustre un déploiement de cluster AFX typique.  Les nœuds de contrôleur sont découplés des étagères de stockage et connectés via un réseau partagé.
+
+image:afx-cluster.png["Architecture du cluster AFX"]

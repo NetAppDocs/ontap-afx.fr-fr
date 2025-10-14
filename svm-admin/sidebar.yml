@@ -1,0 +1,44 @@
+---
+section: svm-admin
+title: Administrez vos machines virtuelles de stockage et vos données
+entries:
+- title: Gérer les données
+  entries:
+  - title: Préparez-vous à gérer vos données
+    url: "/manage-data/prepare-manage-data.html"
+  - title: Créer et configurer un volume
+    url: "/manage-data/create-configure-volume.html"
+  - title: Gérer les volumes
+    url: "/manage-data/manage-volumes.html"
+  - title: Créer et configurer un bucket
+    url: "/manage-data/create-configure-bucket.html"
+  - title: Gérer les buckets
+    url: "/manage-data/manage-buckets.html"
+  - title: Surveiller et dépanner le stockage
+    url: "/manage-data/monitor-debug-storage.html"
+- title: Protéger les données
+  entries:
+  - title: Préparez-vous à protéger vos données
+    url: "/protect-data/prepare-protect-data.html"
+  - title: Créer un groupe de cohérence
+    url: "/protect-data/create-consistency-group.html"
+  - title: Gérer les groupes de cohérence
+    url: "/protect-data/manage-consistency-groups.html"
+  - title: Créer un instantané
+    url: "/protect-data/create-snapshot.html"
+  - title: Gérer les instantanés
+    url: "/protect-data/manage-snapshots.html"
+  - title: Créer une relation homologue SVM
+    url: "/protect-data/create-peer-relationship.html"
+  - title: Configurer et gérer la réplication des snapshots
+    url: "/protect-data/snapshot-replication.html"
+  - title: Gérer les politiques et les horaires
+    url: "/protect-data/policies-schedules.html"
+- title: Données sécurisées
+  entries:
+  - title: Préparez-vous à sécuriser vos données
+    url: "/secure-data/prepare-secure-data.html"
+  - title: Chiffrer les données au repos
+    url: "/secure-data/encrypt-data-at-rest.html"
+- title: Administration supplémentaire
+  url: "/administer/additional-ontap-svm.html"

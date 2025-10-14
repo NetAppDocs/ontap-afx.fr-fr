@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: administer/monitor-cluster-performance.html 
+keywords: afx, afx system, cluster performance 
+summary: Vous pouvez afficher un aperçu de haut niveau des performances de votre cluster AFX. 
+---
+= Surveiller les performances du cluster du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez afficher un aperçu de haut niveau des performances de votre cluster AFX.
+
+
+
+== Capacité de stockage
+
+Le tableau de bord du gestionnaire système inclut un affichage de haut niveau de l'utilisation du stockage pour le cluster.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Tableau de bord* dans le volet de navigation.
+. Localisez la mosaïque *Capacité* et affichez le stockage physique disponible et utilisé.
+. Sélectionnez *Historique* pour accéder à Active IQ afin d'afficher les données historiques.
+
+
+
+
+== Performances du cluster
+
+Le gestionnaire de système fournit un aperçu détaillé des performances du cluster AFX.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Analyse* puis *Performances*.
+. Consultez le résumé des performances du cluster en haut, y compris la latence et le débit.
+. Sous l'onglet * Principaux acteurs *, sélectionnez le SVM souhaité, puis * Activer le suivi des activités * selon vos besoins.
+. Sous l’onglet *Performances du volume*, affichez les détails des performances d’un volume spécifique.
+
+
+
+
+== Informations connexes
+
+* link:../administer/additional-ontap-cluster.html["Administration supplémentaire du cluster AFX"]
+

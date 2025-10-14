@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: install-setup/power-on-configure-switch.html 
+keywords: afx, afx 1k, cable controllers, Cisco Nexus 9332D-GX2B, Cisco Nexus 9364D-GX2A, switches, switch, power on, configure switches, 
+summary: Découvrez comment mettre sous tension et configurer les commutateurs de votre système de stockage AFX 1K. 
+---
+= Allumez et configurez les commutateurs de votre système de stockage AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après avoir câblé votre système de stockage AFX 1K, vous devez mettre sous tension et configurer les commutateurs Cisco Nexus 9332D-GX2B ou 9364D-GX2A.
+
+.Étapes
+. Branchez les cordons d’alimentation des commutateurs sur les sources d’alimentation.
+. Allumez chaque interrupteur.
+. Configurez les commutateurs pour prendre en charge le système de stockage AFX 1K.
++
+** Pour les commutateurs Cisco Nexus 9332D-GX2B, consultez la documentation des commutateurs de cluster et de stockagelink:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9332d-gx2b/configure-software-overview-9332d-cluster.html["Configurer le commutateur Cisco Nexus 9332D-GX2B"^] .
+** Pour les commutateurs Cisco Nexus 9364D-GX2A, consultez la documentation des commutateurs de cluster et de stockagelink:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9364d-gx2a/configure-software-overview-9364d-cluster.html["Configurer le commutateur Cisco Nexus 9364D-GX2A"^] .
+
+
+
+
+.Quelle est la prochaine étape ?
+Après avoir configuré les commutateurs pour votre système de stockage AFX 1K,link:power-on-hardware.html["allumer le système de stockage AFX 1K"] .

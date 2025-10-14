@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: administer/update-firmware.html 
+keywords: afx, afx system, upgrade firmware, firmware 
+summary: 'ONTAP télécharge et met à jour automatiquement le micrologiciel et les fichiers système sur votre système de stockage AFX par défaut.  Si vous souhaitez afficher les mises à jour recommandées avant qu"elles ne soient téléchargées et installées, vous pouvez désactiver les mises à jour automatiques.  Vous pouvez également modifier les paramètres de mise à jour pour afficher les notifications des mises à jour disponibles avant toute action.' 
+---
+= Mettre à jour le firmware sur un système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP télécharge et met à jour automatiquement le micrologiciel et les fichiers système sur votre système de stockage AFX par défaut.  Si vous souhaitez afficher les mises à jour recommandées avant qu'elles ne soient téléchargées et installées, vous pouvez désactiver les mises à jour automatiques.  Vous pouvez également modifier les paramètres de mise à jour pour afficher les notifications des mises à jour disponibles avant toute action.
+
+
+
+== Activer les mises à jour automatiques
+
+Lorsque vous activez les mises à jour automatiques pour votre cluster AFX, les mises à jour recommandées pour le micrologiciel de stockage, le micrologiciel SP/ BMC et les fichiers système sont automatiquement téléchargées et installées par défaut.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. Sous *Mises à jour logicielles*, sélectionnez *Activer*.
+. Lisez le CLUF.
+. Acceptez les valeurs par défaut pour *Afficher la notification* des mises à jour recommandées.  Vous pouvez également choisir de *mettre à jour automatiquement* ou de *rejeter automatiquement* les mises à jour recommandées.
+. Sélectionnez pour reconnaître que vos modifications de mise à jour seront appliquées à toutes les mises à jour actuelles et futures.
+. Sélectionnez *Enregistrer*.
+
+
+.Résultat
+Les mises à jour recommandées sont automatiquement téléchargées et installées sur votre système OTAP AFX en fonction de vos sélections de mise à jour.
+
+
+
+== Désactiver les mises à jour automatiques
+
+Désactivez les mises à jour automatiques si vous souhaitez avoir la possibilité d'afficher les mises à jour recommandées avant leur installation.  Si vous désactivez les mises à jour automatiques, vous devez effectuer les mises à jour du micrologiciel et des fichiers système manuellement.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster > Paramètres*.
+. Sous *Mises à jour logicielles*, sélectionnez *Désactiver*.
+
+
+.Résultat
+Les mises à jour automatiques sont désactivées.  Vous devez vérifier régulièrement les mises à jour recommandées et décider si vous souhaitez effectuer une installation manuelle.
+
+
+
+== Afficher les mises à jour automatiques
+
+Affichez la liste des mises à jour du micrologiciel et des fichiers système qui ont été téléchargées sur votre cluster et qui sont programmées pour une installation automatique.  Affichez également les mises à jour qui ont été précédemment installées automatiquement.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster > Paramètres*.
+. À côté de *Mises à jour logicielles*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] , puis sélectionnez *Afficher toutes les mises à jour automatiques*.
+
+
+
+
+== Modifier les mises à jour automatiques
+
+Vous pouvez choisir de télécharger et d'installer automatiquement les mises à jour recommandées pour votre micrologiciel de stockage, votre micrologiciel SP/ BMC et vos fichiers système sur votre cluster, ou vous pouvez choisir de supprimer automatiquement les mises à jour recommandées.  Si vous souhaitez contrôler manuellement l'installation ou le rejet des mises à jour, sélectionnez cette option pour être averti lorsqu'une mise à jour recommandée est disponible ; vous pouvez ensuite choisir manuellement de l'installer ou de la rejeter.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster > Paramètres*.
+. À côté de *Mises à jour logicielles*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] puis sélectionnez *Toutes les autres mises à jour*.
+. Mettre à jour les sélections pour les mises à jour automatiques.
+. Sélectionnez *Enregistrer*.
+
+
+.Résultat
+Les mises à jour automatiques sont modifiées en fonction de vos sélections.
+
+
+
+== Mettre à jour le firmware manuellement
+
+Si vous souhaitez avoir la possibilité d'afficher les mises à jour recommandées avant qu'elles ne soient téléchargées et installées, vous pouvez désactiver les mises à jour automatiques et mettre à jour votre micrologiciel manuellement.
+
+.Étapes
+. Téléchargez votre fichier de mise à jour du micrologiciel sur un serveur ou un client local.
+. Dans le Gestionnaire système, sélectionnez *Cluster > Présentation*, puis sélectionnez *Toutes les autres mises à jour*.
+. Sous *Mises à jour manuelles*, sélectionnez *Ajouter des fichiers de micrologiciel* ; puis sélectionnez *Télécharger depuis le serveur* ou *Télécharger depuis le client local*.
+. Installez le fichier de mise à jour du firmware.
+
+
+.Résultat
+Votre firmware est mis à jour.

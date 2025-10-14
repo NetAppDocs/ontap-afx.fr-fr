@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: protect-data/create-snapshot.html 
+keywords: afx, afx system, snapshots, create snapshot 
+summary: 'Pour sauvegarder les données de votre système AFX, vous devez créer un instantané.  Vous pouvez créer un instantané manuellement ou planifier sa création automatique à l"aide d"un groupe de cohérence.' 
+---
+= Créer un instantané sur un système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour sauvegarder les données de votre système AFX, vous devez créer un instantané.  Vous pouvez créer un instantané manuellement ou planifier sa création automatique à l'aide d'un groupe de cohérence.
+
+
+
+== Avant de commencer
+
+Un instantané est une copie locale en lecture seule de vos données que vous pouvez utiliser pour restaurer des volumes à des moments précis.  Les instantanés peuvent être créés manuellement à la demande ou automatiquement à intervalles réguliers en fonction d'unlink:policies-schedules.html["politique et calendrier des instantanés"] .
+
+La politique et la planification des instantanés spécifient les détails, notamment le moment de création des instantanés, le nombre de copies à conserver, la manière de les nommer et de les étiqueter pour la réplication.  Par exemple, un système peut créer un instantané chaque jour à 00h10, conserver les deux copies les plus récentes, les nommer « quotidiennes » (avec un horodatage) et les étiqueter « quotidiennes » pour la réplication.
+
+.Types d'instantanés
+Vous pouvez créer un instantané à la demande d’un volume unique ou d’un groupe de cohérence.  Vous pouvez également créer des instantanés automatisés d’un groupe de cohérence contenant plusieurs volumes.  Cependant, vous ne pouvez pas créer de snapshots automatisés d’un seul volume.
+
+* Instantanés à la demande
++
+Vous pouvez créer un instantané à la demande d’un volume à tout moment.  Le volume n’a pas besoin d’être membre d’un groupe de cohérence pour être protégé par un snapshot à la demande.  Si vous créez un instantané d’un volume membre d’un groupe de cohérence, les autres volumes du groupe de cohérence ne sont pas inclus dans l’instantané.  Lorsque vous créez un instantané à la demande d'un groupe de cohérence, tous les volumes du groupe de cohérence sont inclus.
+
+* Instantanés automatisés
++
+Les instantanés automatisés sont créés en fonction des définitions de stratégie d'instantanés.  Pour appliquer une stratégie de snapshot à un volume pour la création automatisée de snapshots, les volumes doivent être membres du même groupe de cohérence.  Si vous appliquez une stratégie de snapshot à un groupe de cohérence, tous les volumes du groupe de cohérence sont protégés.
+
+
+
+
+
+== Créer un instantané
+
+Créez un instantané d’un volume ou d’un groupe de cohérence.
+
+[role="tabbed-block"]
+====
+.Instantané d'un groupe de cohérence
+--
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection* puis *Groupes de cohérence*.
+. Passez la souris sur le nom du groupe de cohérence que vous souhaitez protéger.
+. Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] ; puis sélectionnez *Protéger*.
+. Si vous souhaitez créer un instantané immédiat à la demande, sous *Protection locale*, sélectionnez *Ajouter un instantané maintenant*.
++
+La protection locale crée le snapshot sur le même cluster contenant le volume.
+
++
+.. Saisissez un nom pour l'instantané ou acceptez le nom par défaut ; puis, si vous le souhaitez, saisissez une étiquette SnapMirror .
++
+L'étiquette SnapMirror est utilisée par la destination distante.
+
+
+
+. Si vous souhaitez créer des instantanés automatisés à l'aide d'une politique d'instantanés, sélectionnez *Planifier des instantanés*.
++
+.. Sélectionnez une politique d’instantané.
++
+Acceptez la politique de capture instantanée par défaut, sélectionnez une politique existante ou créez une nouvelle politique.
+
++
+[cols="2,6a"]
+|===
+| Option | Étapes 
+
+
+| Sélectionnez une politique de snapshot existante  a| 
+Sélectionnerimage:icon_dropdown_arrow.gif["flèche bleue pointant vers le bas"] à côté de la politique par défaut ; puis sélectionnez la politique existante que vous souhaitez utiliser.
+
+
+
+| Créer une nouvelle politique de snapshot  a| 
+... Sélectionnerimage:icon_add.gif["signe plus bleu suivi du mot add"] ; puis entrez les paramètres de la politique de capture instantanée.
+... Sélectionnez *Ajouter une politique*.
+
+
+|===
+
+
+. Si vous souhaitez répliquer vos snapshots sur un cluster distant, sous *Protection à distance*, sélectionnez *Répliquer sur un cluster distant*.
++
+.. Sélectionnez le cluster source et la machine virtuelle de stockage, puis sélectionnez la politique de réplication.
++
+Le transfert initial de données pour la réplication démarre immédiatement par défaut.
+
+
+
+. Sélectionnez *Enregistrer*.
+
+
+--
+.Instantané d'un volume
+--
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Stockage* puis *Volumes*.
+. Passez la souris sur le nom du volume que vous souhaitez protéger.
+. Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] ; puis sélectionnez *Protéger*.  Si vous souhaitez créer un instantané immédiat à la demande, sous *Protection locale*, sélectionnez *Ajouter un instantané maintenant*.
++
+La protection locale crée le snapshot sur le même cluster contenant le volume.
+
+. Saisissez un nom pour l'instantané ou acceptez le nom par défaut ; puis, si vous le souhaitez, saisissez une étiquette SnapMirror .
++
+L'étiquette SnapMirror est utilisée par la destination distante.
+
+. Si vous souhaitez créer des instantanés automatisés à l'aide d'une politique d'instantanés, sélectionnez *Planifier des instantanés*.
++
+.. Sélectionnez une politique d’instantané.
++
+Acceptez la politique de capture instantanée par défaut, sélectionnez une politique existante ou créez une nouvelle politique.
+
++
+[cols="2,6a"]
+|===
+| Option | Étapes 
+
+
+| Sélectionnez une politique de snapshot existante  a| 
+Sélectionnerimage:icon_dropdown_arrow.gif["flèche bleue pointant vers le bas"] à côté de la politique par défaut ; puis sélectionnez la politique existante que vous souhaitez utiliser.
+
+
+
+| Créer une nouvelle politique de snapshot  a| 
+... Sélectionnerimage:icon_add.gif["signe plus bleu suivi du mot add"] ; puis entrez les paramètres de la politique de capture instantanée.
+... Sélectionnez *Ajouter une politique*.
+
+
+|===
+
+
+. Si vous souhaitez répliquer vos snapshots sur un cluster distant, sous *Protection à distance*, sélectionnez *Répliquer sur un cluster distant*.
++
+.. Sélectionnez le cluster source et la machine virtuelle de stockage, puis sélectionnez la politique de réplication.
++
+Le transfert initial de données pour la réplication démarre immédiatement par défaut.
+
+
+
+. Sélectionnez *Enregistrer*.
+
+
+--
+====
+
+
+== Informations connexes
+
+* https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Créer une politique de snapshot ONTAP"^]
+

@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: administer/submit-view-case.html 
+keywords: afx, afx system, support, support case 
+summary: Si vous rencontrez un problème nécessitant une assistance, vous pouvez utiliser ONTAP System Manager pour soumettre un cas au support technique.  Vous pouvez également utiliser ONTAP System Manager pour afficher les dossiers en cours ou fermés. 
+---
+= Soumettre et consulter les demandes d'assistance pour un système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous rencontrez un problème nécessitant une assistance, vous pouvez utiliser ONTAP System Manager pour soumettre un cas au support technique.  Vous pouvez également utiliser ONTAP System Manager pour afficher les dossiers en cours ou fermés.
+
+.Avant de commencer
+Tu dois êtrelink:https://activeiq-link.netapp.com/["inscrit auprès d' Active IQ"] pour afficher les cas d'assistance pour votre système de stockage AFX.
+
+.Étapes
+. Pour créer et soumettre un nouveau dossier d'assistance, dans le Gestionnaire système, sélectionnez :
++
+.. *Cluster* puis *Support*
+.. *Accéder au support NetApp *
+
+
+. Pour afficher un dossier précédemment soumis, dans le Gestionnaire de système, sélectionnez :
++
+.. *Cluster* puis *Support*
+.. *Voir mes cas*
+
+
+
+
+.Informations connexes
+* https://docs.netapp.com/us-en/ontap/task_admin_view_submit_support_cases.html["Afficher et soumettre des demandes d'assistance avec ONTAP System Manager"^]
+

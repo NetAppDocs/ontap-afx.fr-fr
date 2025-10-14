@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: rest/learn-rest-api.html 
+keywords: afx, afx system, rest api, rest, automation 
+summary: 'L"API REST fournie avec AFX est basée sur l"API REST Unified ONTAP .  Il existe un certain nombre de modifications qui l"adaptent aux caractéristiques et capacités uniques de la personnalité AFX.' 
+---
+= En savoir plus sur l'API REST du système de stockage AFX
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'API REST fournie avec AFX est basée sur l'API REST Unified ONTAP .  Il existe un certain nombre de modifications qui l'adaptent aux caractéristiques et capacités uniques de la personnalité AFX.
+
+
+
+== Fonctionnalités non prises en charge
+
+AFX est un système de stockage NAS et S3 hautes performances.  Il permet aux clients d'accéder aux données à l'aide de NFS, SMB/CIFS et S3.  En raison de cette spécialisation, plusieurs fonctionnalités ne sont pas prises en charge, notamment :
+
+* Métrocluster
+* Réseau de stockage (SAN)
+* Agrégats de disques
+
+
+
+
+== Points de terminaison d'API supprimés
+
+Plusieurs points de terminaison ont été supprimés de l'API REST correspondant aux fonctionnalités non prises en charge.
+
+.Liste des points de terminaison non pris en charge
+[%collapsible]
+====
+[source, text]
+----
+/cluster/counter/tables
+/cluster/metrocluster
+/cluster/metrocluster/diagnostics
+/cluster/metrocluster/dr-groups
+/cluster/metrocluster/interconnects
+/cluster/metrocluster/nodes
+/cluster/metrocluster/operations
+/cluster/metrocluster/svms
+/network/fc/fabrics
+/network/fc/interfaces
+/network/fc/logins
+/network/fc/ports
+/network/fc/wwpn-aliases
+/protocols/nvme/interfaces
+/protocols/nvme/services
+/protocols/nvme/subsystem-controllers
+/protocols/nvme/subsystem-maps
+/protocols/nvme/subsystems
+/protocols/san/fcp/services
+/protocols/san/igroups
+/protocols/san/initiators
+/protocols/san/iscsi/credentials
+/protocols/san/iscsi/services
+/protocols/san/iscsi/sessions
+/protocols/san/lun-maps
+/protocols/san/portsets
+/protocols/san/vvol-bindings
+/storage/luns
+/storage/namespaces
+----
+====
+
+
+== Informations connexes
+
+* https://docs.netapp.com/us-en/ontap-automation["Automatisation ONTAP"^]
+* https://docs.netapp.com/us-en/asa-r2/learn-more/rest-api-support.html["Prise en charge de l'API REST pour ASA r2"^]
+

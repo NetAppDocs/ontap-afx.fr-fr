@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: administer/view-events-log.html 
+keywords: afx, afx system, events, audit log 
+summary: 'Vous pouvez consulter les événements et les messages du journal d"audit générés par AFX pour suivre le traitement interne et diagnostiquer les problèmes potentiels.  Le système AFX peut être configuré pour transmettre ces informations, ainsi que d’autres données associées, pour un traitement et un archivage supplémentaires.' 
+---
+= Afficher les événements du système de stockage AFX et le journal d'audit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter les événements et les messages du journal d'audit générés par AFX pour suivre le traitement interne et diagnostiquer les problèmes potentiels.  Le système AFX peut être configuré pour transmettre ces informations, ainsi que d’autres données associées, pour un traitement et un archivage supplémentaires.
+
+
+
+== Événements
+
+Les messages d’événements fournissent un enregistrement précieux de l’activité du système.  Chaque événement comprend une description et un identifiant unique ainsi qu'une action recommandée.
+
+. Dans le Gestionnaire système, sélectionnez *Événements et tâches*, puis *Événements*.
+. Consultez et répondez aux actions recommandées en haut de la page, telles que l’activation de la mise à jour automatique.
+. Sélectionnez l'onglet *Journal des événements* pour afficher une liste des messages.
+. Sélectionnez un message d’événement pour l’examiner plus en détail, y compris le numéro de séquence, la description, l’événement et l’action recommandée.
+. Sélectionnez éventuellement l'onglet * Suggestions Active IQ * et inscrivez-vous auprès d' Active IQ pour obtenir des informations détaillées sur les risques pour le cluster.
+
+
+
+
+== Journal d'audit
+
+Le journal d’audit comprend un enregistrement de l’activité du système basé sur l’utilisation de protocoles d’accès tels que HTTP.
+
+. Dans le Gestionnaire système, sélectionnez *Événements et tâches*, puis *Journaux d'audit*.
+. Sélectionnez *Paramètres* pour activer ou désactiver les opérations suivies.
+. Sélectionnez éventuellement *Gérer les destinations d'audit* ; vérifiez<<Gérer les notifications>> pour plus d'informations.
+
+
+
+
+== Gérer les notifications
+
+AFX prend en charge plusieurs types de notifications que vous pouvez transférer.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. Accédez à *Gestion des notifications* et sélectionnezimage:icon_kabob.gif["trois points bleus verticaux"] .
+. Sélectionnez l'action appropriée pour afficher ou configurer les destinations utilisées par AFX.  Par exemple, pour configurer :
++
+.. _Destinations des événements :_ sélectionnez *Afficher les destinations des événements*
+.. _Destinations du journal d'audit :_ sélectionnez *Afficher les destinations d'audit*
+
+
+. Sélectionnerimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] le cas échéant et fournir les informations de destination.
+. Sélectionnez *Enregistrer*.
+
+
+.Informations connexes
+* https://docs.netapp.com/us-en/ontap/event-performance-monitoring/index.html["Surveillance des événements, des performances et de l'état de santé ONTAP"^]
+

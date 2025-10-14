@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-ethernet-ports.html 
+keywords: afx, afx system, ethernet, ethernet ports 
+summary: Les ports utilisés par le système AFX fournissent une base pour la connectivité et la communication réseau.  Plusieurs options de configuration sont disponibles pour personnaliser l’aspect couche deux de votre réseau. 
+---
+= Gérer les ports Ethernet du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les ports utilisés par le système AFX fournissent une base pour la connectivité et la communication réseau.  Plusieurs options sont disponibles pour personnaliser la configuration de la couche deux de votre réseau.
+
+
+
+== Créer un VLAN
+
+Un VLAN est constitué de ports de commutation regroupés dans un domaine de diffusion.  Les VLAN vous permettent d'augmenter la sécurité, d'isoler les problèmes potentiels et de limiter les chemins disponibles au sein de votre infrastructure de réseau IP.
+
+.Avant de commencer
+Les commutateurs déployés sur le réseau doivent être conformes aux normes IEEE 802.1Q ou disposer d'une implémentation de VLAN spécifique au fournisseur.
+
+.À propos de cette tâche
+Notez ce qui suit :
+
+* Vous ne pouvez pas créer un VLAN sur un port de groupe d’interfaces sans aucun port membre.
+* Lorsque vous configurez un VLAN sur un port pour la première fois, le port peut tomber en panne, ce qui entraîne une déconnexion temporaire du réseau.  Les ajouts ultérieurs de VLAN au même port n’affectent pas l’état du port.
+* Vous ne devez pas créer de VLAN sur une interface réseau avec le même identifiant que le VLAN natif du commutateur.  Par exemple, si l’interface réseau e0b se trouve sur le VLAN 10 natif, vous ne devez pas créer de VLAN e0b-10 sur cette interface.
+
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Réseau* puis *Ports Ethernet*.
+. Sélectionnerimage:icon_vlan.png["un signe plus bleu suivi du mot vlan"] .
+. Fournissez les détails de configuration, y compris l'ID, le domaine de diffusion et les ports sur les nœuds souhaités.
++
+Le VLAN ne peut pas être attaché à un port hébergeant un LIF de cluster ou à des ports attribués à l'espace IP du cluster.
+
+. Sélectionnez *Enregistrer*.
+
+
+.Résultat
+Vous avez créé un VLAN pour augmenter la sécurité, isoler les problèmes et limiter les chemins disponibles au sein de votre infrastructure de réseau IP.
+
+
+
+== Créer un LAG
+
+Un groupe d'agrégation de liens (LAG) est une technique qui combine plusieurs connexions réseau physiques en une seule connexion logique.  Vous pouvez l'utiliser pour augmenter la bande passante et fournir une redondance entre les nœuds.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Réseau* puis *Ports Ethernet*.
+. Sélectionnez *Groupe d'agrégats de liens*.
+. Fournissez les détails de configuration, y compris le nœud, le domaine de diffusion, les ports, le mode et la répartition de la charge.
+. Sélectionnez *Enregistrer*.
+
+
+
+
+== Informations connexes
+
+* link:../administer/manage-cluster-networking.html["Gérer la mise en réseau du cluster AFX"]
+* https://docs.netapp.com/us-en/ontap/networking/configure_network_ports_cluster_administrators_only_overview.html["En savoir plus sur la configuration des ports réseau ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["Combinez des ports physiques pour créer des groupes d'interfaces ONTAP"^]
+

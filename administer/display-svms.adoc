@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: administer/display-svms.html 
+keywords: afx, afx system, svm, display svm 
+summary: Vous pouvez afficher les machines virtuelles de stockage de données définies dans votre cluster AFX.  Chaque SVM fournit un environnement isolé pour organiser vos données et fournir un accès client. 
+---
+= Afficher les SVM du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez afficher les machines virtuelles de stockage de données définies dans votre cluster AFX.  Chaque SVM fournit un environnement isolé pour organiser vos données et fournir un accès client.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *VM de stockage*.
+. Passez la souris sur le SVM souhaité et sélectionnezimage:icon_kabob.gif["trois points bleus verticaux"] pour afficher les principales options administratives, y compris le démarrage et l'arrêt du SVM.
+. Sélectionnez éventuellement un SVM spécifique pour afficher plus de détails, notamment la présentation, les paramètres, la réplication et le système de fichiers.
+
+
+.Informations connexes
+* link:../administer/configure-svm.html["Configurer un SVM système AFX"]
+* link:../get-started/prepare-cluster-admin.html["Comprendre les machines virtuelles de stockage"]
+

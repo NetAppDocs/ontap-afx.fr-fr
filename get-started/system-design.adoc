@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: get-started/system-design.html 
+keywords: afx, afx system, characteristics, design 
+summary: Le système de stockage NetApp AFX possède plusieurs caractéristiques qui lui permettent de fonctionner comme une plate-forme NAS hautes performances. 
+---
+= Caractéristiques du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le système de stockage NetApp AFX possède plusieurs caractéristiques qui lui permettent de fonctionner comme une plate-forme NAS hautes performances.
+
+Découpler les capacités de stockage et de calcul:: Contrairement aux systèmes de stockage AFF et FAS , les éléments de stockage et de calcul AFX du cluster sont découplés.  Les contrôleurs AFX ne sont pas limités à l’accès à un ensemble limité de disques locaux.
+Suppression de la gestion des agrégats et du RAID:: L'administrateur de stockage n'a plus besoin de gérer les agrégats et les groupes RAID.  AFX gère ces tâches, ce qui simplifie l'administration et offre aux non-spécialistes la possibilité de gérer leurs données.
+Pool de stockage unique pour le cluster:: Le découplage du calcul et du stockage AFX, ainsi qu'une gestion simplifiée du stockage, permettent de créer un pool de stockage unique.  Cette zone de disponibilité de stockage (SAZ) est disponible pour tous les nœuds de contrôleur d'un cluster AFX. Voirlink:../faq-ontap-afx.html["FAQ sur les systèmes de stockage AFX"] pour plus de détails.
+Haute performance:: AFX est conçu pour les hautes performances requises par les applications IA/ML spécialisées.  Il peut utiliser plus efficacement le matériel moderne pour fournir une bande passante élevée et soutenue avec une latence ultra-faible.
+Simplicité opérationnelle:: Le pool de stockage unique, ainsi que d'autres fonctionnalités, notamment la gestion automatique du stockage, offrent un modèle administratif et opérationnel beaucoup plus simple.
+Évolutivité:: L'ensemble des nœuds de contrôleur et des étagères de stockage d'un cluster peut être étendu indépendamment en fonction des besoins de l'application.  L'ajout de contrôleurs ou d'étagères entraîne des exigences administratives et des perturbations limitées.
+Amélioration de la mobilité des données:: Les volumes peuvent être déplacés entre les nœuds du contrôleur de cluster sans interruption, sans copier réellement les données.  Les pointeurs de répertoire et d'index de métadonnées sont mis à jour à la place.  Cela améliore considérablement les performances lors des procédures administratives typiques ainsi que la récupération en cas de panne.
+

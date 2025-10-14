@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: protect-data/manage-consistency-groups.html 
+keywords: afx, afx system, consistency group, manage consistency group 
+summary: Vous pouvez gérer les groupes de cohérence sur un système AFX.  Cela peut rationaliser votre gestion du stockage. 
+---
+= Gérer les groupes de cohérence sur un système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez gérer les groupes de cohérence sur un système AFX.  Cela peut rationaliser votre gestion du stockage.
+
+
+
+== Ajouter une protection des données instantanées à un groupe de cohérence
+
+Lorsque vous ajoutez une protection des données par snapshot à un groupe de cohérence, des snapshots locaux du groupe de cohérence peuvent être pris à intervalles réguliers selon une planification prédéfinie.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection* puis *Groupes de cohérence*.
+. Passez la souris sur le groupe de cohérence que vous souhaitez protéger.
+. Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] ; puis sélectionnez *Modifier*.
+. Sous *Protection locale*, sélectionnez *Planifier des instantanés*.
+. Sélectionnez une politique d’instantané.
++
+Acceptez la politique de capture instantanée par défaut, sélectionnez une politique existante ou créez une nouvelle politique.
+
++
+[cols="2,6a"]
+|===
+| Option | Étapes 
+
+
+| Sélectionnez une politique de snapshot existante  a| 
+Sélectionnerimage:icon_dropdown_arrow.gif["flèche bleue pointant vers le bas"] à côté de la politique par défaut ; puis sélectionnez la politique existante que vous souhaitez utiliser.
+
+
+
+| Créer une nouvelle politique de snapshot  a| 
+.. Sélectionnerimage:icon_add.gif["signe plus bleu suivi du mot add"] ; puis entrez le nom de la nouvelle politique.
+.. Sélectionnez la portée de la politique.
+.. Sous *Horaires*, sélectionnezimage:icon_add.gif["signe plus bleu suivi du mot add"] .
+.. Sélectionnez le nom qui apparaît sous *Nom du programme* ;
++
+puis sélectionnezimage:icon_dropdown_arrow.gif["flèche bleue pointant vers le bas"] .
+
+.. Sélectionnez le barème de la politique.
+.. Sous *Nombre maximal d'instantanés*, saisissez le nombre maximal d'instantanés que vous souhaitez conserver du groupe de cohérence.
+.. En option, sous * Étiquette SnapMirror *, saisissez une étiquette SnapMirror .
+.. Sélectionnez *Enregistrer*.
+
+
+|===
+. Sélectionnez *Modifier*.
+
+
+
+
+== Informations connexes
+
+* https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["En savoir plus sur les groupes de cohérence ONTAP"^]
+

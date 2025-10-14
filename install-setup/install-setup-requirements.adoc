@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-setup-requirements.html 
+keywords: afx, afx 1k, install, setup, requirements, cautions 
+summary: Passez en revue l’équipement nécessaire et les précautions de levage pour vos contrôleurs de stockage et étagères de stockage AFX 1K. 
+---
+= Exigences d'installation pour les systèmes de stockage AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Passez en revue l’équipement nécessaire et les précautions de levage pour votre contrôleur de stockage AFX 1K et vos étagères de stockage.
+
+
+
+== Équipement nécessaire à l'installation
+
+Pour installer votre système de stockage AFX 1K, vous avez besoin de l'équipement et des outils suivants.
+
+* Accès à un navigateur Web pour configurer votre système de stockage
+* Bracelet antistatique (ESD)
+* Lampe de poche
+* Ordinateur portable ou console avec une connexion USB/série
+* Trombone ou stylo à bille à pointe étroite pour définir les identifiants des étagères de rangement
+* Tournevis cruciforme n° 2
+
+
+
+
+== Précautions de levage
+
+Le contrôleur de stockage AFX et les étagères de stockage sont lourds.  Soyez prudent lorsque vous soulevez et déplacez ces objets.
+
+
+
+=== Poids du contrôleur de stockage
+
+Prenez les précautions nécessaires lorsque vous déplacez ou soulevez votre contrôleur de stockage AFX 1K.
+
+Un contrôleur de stockage AFX 1K peut peser jusqu'à 62,83 lb (28,5 kg).  Pour soulever le contrôleur de stockage, utilisez deux personnes ou un élévateur hydraulique.
+
+image::../media/drw_a1k_weight_caution_ieops-1698.svg[Icône d'avertissement de levage ASA A1K]
+
+
+
+=== Poids des étagères de stockage
+
+Prenez les précautions nécessaires lorsque vous déplacez ou soulevez votre étagère.
+
+.Étagère NX224
+--
+Une étagère NX224 peut peser jusqu'à 60,1 lb (27,3 kg).  Pour soulever l'étagère, utilisez deux personnes ou un élévateur hydraulique.  Gardez tous les composants sur l’étagère (à l’avant et à l’arrière) pour éviter de déséquilibrer le poids de l’étagère.
+
+image::../media/drw_nx224_lifting_weight_ieops-2437.svg[Attention au levage du NX224 NSM100]
+
+.Informations connexes
+* https://library.netapp.com/ecm/ecm_download_file/ECMP12475945["Informations de sécurité et avis réglementaires"^]
+
+
+.Quelle est la prochaine étape ?
+Après avoir examiné la configuration matérielle requise, vouslink:prepare-hardware.html["préparez-vous à installer votre système de stockage AFX 1K"] .
+
+--

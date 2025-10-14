@@ -1,0 +1,56 @@
+---
+section: administer
+title: Administrer votre cluster
+entries:
+- title: Surveiller les processus du cluster
+  entries:
+  - title: Afficher le tableau de bord et l'état du cluster
+    url: "/administer/view-dashboard.html"
+  - title: Voir les informations
+    url: "/administer/view-insights.html"
+  - title: Surveiller les performances
+    url: "/administer/monitor-cluster-performance.html"
+  - title: Afficher les événements et les journaux
+    url: "/administer/view-events-log.html"
+  - title: Voir les offres d'emploi
+    url: "/administer/view-jobs.html"
+- title: Gérer le réseau et la sécurité
+  entries:
+  - title: Gérer la mise en réseau des clusters
+    url: "/administer/manage-cluster-networking.html"
+  - title: Gérer les ports Ethernet
+    url: "/administer/manage-ethernet-ports.html"
+  - title: Préparer les services d'authentification
+    url: "/administer/prepare-authentication.html"
+  - title: Gérer les utilisateurs et les rôles
+    url: "/administer/manage-users-roles.html"
+  - title: Gérer les certificats
+    url: "/administer/manage-certificates.html"
+- title: Gérer les machines virtuelles de stockage
+  entries:
+  - title: Affichez vos SVM
+    url: "/administer/display-svms.html"
+  - title: Créer un SVM de données
+    url: "/administer/create-svm.html"
+  - title: Configurer un SVM de données
+    url: "/administer/configure-svm.html"
+  - title: Migrer un SVM
+    url: "/administer/migrate-svm.html"
+- title: Soutenir le cluster
+  entries:
+  - title: Gérer AutoSupport
+    url: "/administer/manage-autosupport.html"
+  - title: Afficher et soumettre des demandes d'assistance
+    url: "/administer/submit-view-case.html"
+- title: Mettre à niveau et maintenir le cluster
+  entries:
+  - title: Développer le cluster
+    url: "/administer/expand-cluster.html"
+  - title: Mettre à niveau ONTAP
+    url: "/administer/upgrade-ontap.html"
+  - title: Mettre à jour le firmware
+    url: "/administer/update-firmware.html"
+  - title: Entretenir le matériel
+    url: "/administer/maintain-hardware.html"
+- title: Administration supplémentaire
+  url: "/administer/additional-ontap-cluster.html"

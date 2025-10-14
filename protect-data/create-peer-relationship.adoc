@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: protect-data/create-peer-relationship.html 
+keywords: afx, afx system, peering, peer relationship 
+summary: 'Une relation d"homologue définit les connexions réseau permettant aux clusters et aux machines virtuelles de stockage (VM) d"échanger des données en toute sécurité. Vous pouvez créer une relation homologue entre les machines virtuelles de stockage sur différents clusters pour activer la protection des données et la reprise après sinistre à l"aide de SnapMirror.' 
+---
+= Créer une relation homologue SVM intercluster sur un système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une relation d'homologue définit les connexions réseau permettant aux clusters et aux machines virtuelles de stockage (VM) d'échanger des données en toute sécurité. Vous pouvez créer une relation homologue entre les machines virtuelles de stockage sur différents clusters pour activer la protection des données et la reprise après sinistre à l'aide de SnapMirror.
+
+.Avant de commencer
+Vous devez avoir établi une relation d'homologue de cluster entre les clusters locaux et distants avant de pouvoir créer une relation d'homologue de machine virtuelle de stockage. link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Créer une relation entre pairs de cluster"] si vous ne l'avez pas déjà fait.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection > Présentation*.
+. Sous *Homologations de machines virtuelles de stockage*, sélectionnez *Ajouter une homologation de machines virtuelles de stockage*.
+. Sélectionnez la machine virtuelle de stockage sur le cluster local, puis sélectionnez la machine virtuelle de stockage sur le cluster distant.
+. Sélectionnez *Ajouter un homologue de machine virtuelle de stockage*.
+
+
+.Informations connexes
+* https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["En savoir plus sur les relations entre pairs"^] .
+

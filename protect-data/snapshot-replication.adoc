@@ -1,0 +1,183 @@
+---
+sidebar: sidebar 
+permalink: protect-data/snapshot-replication.html 
+keywords: afx, afx system, manage replication, manage snapshot replication 
+summary: 'La réplication d"instantanés est un processus dans lequel les groupes de cohérence de votre système AFX sont copiés vers un emplacement géographiquement distant.  Après la réplication initiale, les modifications apportées aux groupes de cohérence sont copiées vers l’emplacement distant en fonction d’une politique de réplication.  Les groupes de cohérence répliqués peuvent être utilisés pour la reprise après sinistre ou la migration de données.' 
+---
+= Gérer la réplication des snapshots sur un système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La réplication d'instantanés est un processus dans lequel les groupes de cohérence de votre système AFX sont copiés vers un emplacement géographiquement distant.  Après la réplication initiale, les modifications apportées aux groupes de cohérence sont copiées vers l’emplacement distant en fonction d’une politique de réplication.  Les groupes de cohérence répliqués peuvent être utilisés pour la reprise après sinistre ou la migration de données.
+
+Pour configurer la réplication Snapshot, vous devez établir une relation de réplication entre votre système de stockage AFX et l'emplacement distant.  La relation de réplication est régie par une politique de réplication.  Une politique par défaut pour répliquer tous les instantanés est créée lors de la configuration du cluster.  Vous pouvez utiliser la politique par défaut ou, éventuellement, créer une nouvelle politique.
+
+
+
+== Étape 1 : Créer une relation entre homologues de cluster
+
+Avant de pouvoir protéger vos données en les répliquant sur un cluster distant, vous devez créer une relation d’homologue de cluster entre le cluster local et le cluster distant.
+
+.Avant de commencer
+Les conditions préalables à l'appairage de cluster sont les mêmes pour les systèmes AFX que pour les autres systèmes ONTAP . link:https://docs.netapp.com/us-en/ontap/peering/prerequisites-cluster-peering-reference.html["Passez en revue les conditions préalables à l'appairage de clusters"^] .
+
+.Étapes
+. Sur le cluster local, dans le Gestionnaire système, sélectionnez *Cluster > Paramètres*.
+. Sous *Paramètres intercluster* à côté de *Homologations de cluster*, sélectionnezimage:icon_kabob.gif["trois points bleus verticaux"] , puis sélectionnez *Ajouter un homologue de cluster*.
+. Sélectionnez *Lancer le cluster distant* ; cela génère une phrase secrète que vous utiliserez pour vous authentifier auprès du cluster distant.
+. Une fois la phrase secrète du cluster distant générée, collez-la sous *Phrase secrète* sur le cluster local.
+. Sélectionnerimage:icon_add.gif["signe plus bleu suivi du mot add en lettres bleues"] ; puis entrez l'adresse IP de l'interface réseau intercluster.
+. Sélectionnez *Initier l'appairage de cluster*.
+
+
+.Quelle est la prochaine étape ?
+Vous avez effectué un appairage entre un cluster AFX local et un cluster distant.  Vous pouvez maintenant créer une relation de réplication.
+
+
+
+== Étape 2 : (facultatif) Créez une politique de réplication
+
+La stratégie de réplication des snapshots définit quand les mises à jour effectuées sur le cluster AFX sont répliquées sur le site distant.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection > Stratégies* ; puis sélectionnez *Stratégies de réplication*.
+. Sélectionnerimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Saisissez un nom pour la politique de réplication ou acceptez le nom par défaut, puis saisissez une description.
+. Sélectionnez la *Portée de la politique*.
++
+Si vous souhaitez appliquer la politique de réplication à l’ensemble du cluster, sélectionnez *Cluster*.  Si vous souhaitez que la politique de réplication s'applique uniquement au volume d'une machine virtuelle de stockage spécifique, sélectionnez *Machine virtuelle de stockage*.
+
+. Sélectionnez le *Type de politique*.
++
+[cols="2,6a"]
+|===
+| Option | Étapes 
+
+
+| Copiez les données sur le site distant après leur écriture sur la source.  a| 
+.. Sélectionnez *Asynchrone*.
+.. Sous *Transférer les instantanés depuis la source*, acceptez la planification de transfert par défaut ou sélectionnez-en une autre.
+.. Sélectionnez cette option pour transférer tous les instantanés ou pour créer des règles afin de déterminer les instantanés à transférer.
+.. En option, activez la compression réseau.
+
+
+
+
+| Écrire des données sur les sites source et distants simultanément.  a| 
+.. Sélectionnez *Synchrone*.
+
+
+|===
+. Sélectionnez *Enregistrer*.
+
+
+.Quelle est la prochaine étape ?
+Vous avez créé une politique de réplication et êtes maintenant prêt à créer une relation de réplication entre votre système AFX et votre emplacement distant.
+
+
+
+== Étape 3 : Créer une relation de réplication
+
+Une relation de réplication de snapshot établit une connexion entre votre système AFX et un emplacement distant afin que vous puissiez répliquer des groupes de cohérence vers un cluster distant.  Les groupes de cohérence répliqués peuvent être utilisés pour la reprise après sinistre ou pour la migration de données.
+
+Pour vous protéger contre les attaques de ransomware, lorsque vous configurez votre relation de réplication, vous pouvez choisir de verrouiller les snapshots de destination.  Les instantanés verrouillés ne peuvent pas être supprimés accidentellement ou de manière malveillante.  Vous pouvez utiliser des instantanés verrouillés pour récupérer des données si un volume est compromis par une attaque de ransomware.
+
+.Avant de commencer
+Si vous souhaitez verrouiller vos instantanés de destination, vous devezlink:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["initialiser l'horloge de conformité Snapshot"] avant de créer la relation de réplication.
+
+Créez une relation de réplication avec ou sans snapshots de destination verrouillés.
+
+[role="tabbed-block"]
+====
+.Avec des instantanés verrouillés
+--
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection > Groupes de cohérence*.
+. Sélectionnez un groupe de cohérence.
+. Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] ; puis sélectionnez *Protéger*.
+. Sous *Protection à distance*, sélectionnez *Répliquer vers un cluster distant*.
+. Sélectionnez la *Politique de réplication*.
++
+Vous devez sélectionner une politique de réplication _vault_.
+
+. Sélectionnez *Paramètres de destination*.
+. Sélectionnez *Verrouiller les instantanés de destination pour empêcher la suppression*
+. Saisissez la durée maximale et minimale de conservation des données.
+. Pour retarder le début du transfert de données, décochez *Démarrer le transfert immédiatement*.
++
+Le transfert de données initial commence immédiatement par défaut.
+
+. Si vous le souhaitez, pour remplacer le calendrier de transfert par défaut, sélectionnez *Paramètres de destination*, puis sélectionnez *Remplacer le calendrier de transfert*.
++
+Votre horaire de transfert doit durer au moins 30 minutes pour être pris en charge.
+
+. Sélectionnez *Enregistrer*.
+
+
+--
+.Sans instantanés verrouillés
+--
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection > Réplication*.
+. Sélectionnez cette option pour créer la relation de réplication avec la destination locale ou la source locale.
++
+[cols="2,2"]
+|===
+| Option | Étapes 
+
+
+| Destinations locales  a| 
+.. Sélectionnez *Destinations locales*, puis sélectionnezimage:icon_replicate_blue_bg.png["rectangle avec fond bleu et le mot replicate en lettres blanches"] .
+.. Recherchez et sélectionnez le groupe de cohérence source.
++
+Le groupe de cohérence _source_ fait référence au groupe de cohérence de votre cluster local que vous souhaitez répliquer.
+
+
+
+
+
+| Sources locales  a| 
+.. Sélectionnez *Sources locales*, puis sélectionnezimage:icon_replicate_blue_bg.png["rectangle avec fond bleu et le mot replicate en lettres blanches"] .
+.. Recherchez et sélectionnez le groupe de cohérence source.
++
+Le groupe de cohérence _source_ fait référence au groupe de cohérence de votre cluster local que vous souhaitez répliquer.
+
+.. Sous *Destination de réplication*, sélectionnez le cluster vers lequel répliquer, puis sélectionnez la machine virtuelle de stockage.
+
+
+|===
+. Sélectionnez une politique de réplication.
+. Pour retarder le début du transfert de données, sélectionnez *Paramètres de destination* ; puis désélectionnez *Démarrer le transfert immédiatement*.
++
+Le transfert de données initial commence immédiatement par défaut.
+
+. Si vous le souhaitez, pour remplacer le calendrier de transfert par défaut, sélectionnez *Paramètres de destination*, puis sélectionnez *Remplacer le calendrier de transfert*.
++
+Votre horaire de transfert doit durer au moins 30 minutes pour être pris en charge.
+
+. Sélectionnez *Enregistrer*.
+
+
+--
+====
+.Quelle est la prochaine étape ?
+Maintenant que vous avez créé une politique et une relation de réplication, votre transfert de données initial commence comme défini dans votre politique de réplication.  Vous pouvez éventuellement tester votre basculement de réplication pour vérifier qu'un basculement réussi peut se produire si votre système AFX est hors ligne.
+
+
+
+== Étape 4 : Tester le basculement de réplication
+
+Vous pouvez également valider que vous pouvez diffuser avec succès les données des volumes répliqués sur un cluster distant si le cluster source est hors ligne.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection > Réplication*.
+. Passez la souris sur la relation de réplication que vous souhaitez tester, puis sélectionnezimage:icon_kabob.gif["trois points bleus verticaux"] .
+. Sélectionnez *Tester le basculement*.
+. Saisissez les informations de basculement, puis sélectionnez *Tester le basculement*.
+
+
+.Quelle est la prochaine étape ?
+Maintenant que vos données sont protégées par la réplication instantanée pour la reprise après sinistre, vous devezlink:../secure-data/encrypt-data-at-rest.html["cryptez vos données au repos"] afin qu'il ne puisse pas être lu si un disque de votre système AFX est réutilisé, retourné, égaré ou volé.

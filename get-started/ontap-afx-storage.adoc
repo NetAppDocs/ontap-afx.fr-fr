@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: get-started/ontap-afx-storage.html 
+keywords: afx, afx system, learn, workloads, hardware, afx 1k, nx224, cisco 
+summary: 'Le système de stockage NetApp AFX est basé sur une architecture de stockage de nouvelle génération qui fait évoluer le modèle de stockage ONTAP vers une solution NAS hautes performances désagrégée.  AFX prend en charge les charges de travail de fichiers et d"objets avec des technologies avancées et des techniques de traitement qui offrent des performances extrêmement élevées.' 
+---
+= En savoir plus sur les systèmes de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le système de stockage NetApp AFX est basé sur une architecture de stockage de nouvelle génération qui fait évoluer le modèle de stockage ONTAP vers une solution NAS hautes performances désagrégée.  AFX prend en charge les charges de travail de fichiers et d'objets avec des technologies avancées et des techniques de traitement qui offrent des performances extrêmement élevées.
+
+
+
+== Charges de travail d'application typiques
+
+Le stockage AFX répond aux exigences uniques typiques des environnements IA/ML et d'autres applications associées centrées sur les données.  Le système de stockage AFX est idéal pour les organisations gérant plusieurs charges de travail différentes, notamment :
+
+* Formation et perfectionnement itératif du modèle associé à l'apprentissage en profondeur où une bande passante élevée continue et un accès à des ensembles de données massifs sont requis.
+* Traitement de divers types de données, notamment du texte, des images et des vidéos.
+* Applications d’inférence en temps réel à faible latence où des fenêtres de temps de réponse strictes sont nécessaires.
+* Pipelines de science des données et d’apprentissage automatique qui peuvent bénéficier de la gestion des données en libre-service par les ingénieurs et les scientifiques des données.
+* Charges de travail nécessitant une concurrence élevée et des E/S parallèles, telles que les systèmes multi-GPU avec transport RDMA.
+
+
+
+
+== Infrastructure matérielle
+
+Le système de stockage NetApp AFX offre une solution matérielle et logicielle unifiée qui crée une expérience simplifiée spécifique aux besoins des clients NAS hautes performances.
+
+Les composants matériels suivants sont utilisés avec les clusters AFX :
+
+* Contrôleurs AFX 1K
+* Étagères NX224
+* Commutateurs Cisco Nexus 9332D-GX2B ou Nexus 9364D-GX2A
+

@@ -1,0 +1,85 @@
+---
+sidebar: sidebar 
+permalink: administer/additional-ontap-cluster.html 
+keywords: afx, afx system, additional administration, advanced administration 
+summary: 'Outre l"administration classique du cluster AFX, vous devrez peut-être effectuer d"autres tâches en fonction de votre environnement.  La plupart des tâches supplémentaires peuvent être effectuées à l’aide du Gestionnaire système, même si dans certains cas, vous devrez peut-être utiliser l’interface de ligne de commande.' 
+---
+= Administration supplémentaire pour un cluster de systèmes de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Outre l'administration classique du cluster AFX, vous devrez peut-être effectuer d'autres tâches en fonction de votre environnement.  La plupart des tâches supplémentaires peuvent être effectuées à l’aide du Gestionnaire système, même si dans certains cas, vous devrez peut-être utiliser l’interface de ligne de commande.
+
+
+NOTE: Les fonctionnalités et l'administration ONTAP décrites sont communes aux systèmes de stockage AFX et aux systèmes AFF ou FAS exécutant Unified ONTAP.  Des liens vers la documentation Unified ONTAP pertinente sont inclus, le cas échéant.
+
+
+
+== Licences
+
+Les systèmes AFX sont concédés sous licence de la même manière que les systèmes Unified ONTAP AFF et FAS .  Un cluster AFX inclut la plupart des fonctionnalités par défaut pour les protocoles pris en charge.
+
+
+
+=== Gestion des licences ONTAP
+
+Une licence ONTAP est un enregistrement d’un ou plusieurs droits logiciels.  Toutes les licences sont définies et fournies à l'aide d'un fichier de licence NetApp (NLF). Se référer à https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Présentation des licences ONTAP"^] pour plus d'informations.
+
+
+
+=== Installer une licence sur un système AFX
+
+Vous pouvez installer des fichiers de licence pour activer des fonctionnalités supplémentaires selon les besoins de votre système de stockage AFX.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. À côté de *Licences*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] .
+. Sélectionnez l'onglet *Fonctionnalités* pour afficher les fonctionnalités ONTAP disponibles.
+. Pour installer éventuellement une licence, sélectionnez l'onglet *Licences installées*.
+. Sélectionnerimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Sélectionnez un fichier de licence local et sélectionnez *Ajouter*.
+
+
+
+
+== Sécurité
+
+Il existe plusieurs fonctionnalités de sécurité facultatives que vous pouvez configurer et utiliser avec votre déploiement AFX.
+
+
+
+=== Sécurité ONTAP et cryptage des données
+
+Il est important de protéger la sécurité et la confidentialité de votre système de stockage AFX. Consultez  https://docs.netapp.com/us-en/ontap/security-encryption/index.html["Sécurité et cryptage des données"^]
+
+
+
+=== Authentification et contrôle d'accès ONTAP
+
+Le système de stockage AFX fournit plusieurs options pour configurer les services d’authentification et de contrôle d’accès. Se référer à https://docs.netapp.com/us-en/ontap/authentication-access-control/index.html["Authentification et contrôle d'accès"^] pour plus d'informations.
+
+
+
+=== Administrer OAuth 2.0 sur un système AFX
+
+OAuth 2.0 est le cadre d’autorisation standard du secteur utilisé pour restreindre et contrôler l’accès aux ressources protégées à l’aide de jetons d’accès signés.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. Dans la section *Sécurité*, à côté de *Autorisation OAuth 2.0*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] .
+. Activer OAuth 2.0
+. Sélectionnez *Ajouter une configuration* et fournissez les détails de configuration.
+. Sélectionnez *Enregistrer*.
+
+
+
+
+== Informations connexes
+
+* link:../faq-ontap-afx.html["FAQ sur les systèmes de stockage AFX"]
+* https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Présentation de l'implémentation d' ONTAP OAuth 2.0"^]
+* link:../administer/additional-ontap-svm.html["Administration supplémentaire pour les SVM AFX"]
+

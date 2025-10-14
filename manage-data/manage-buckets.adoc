@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: manage-data/manage-buckets.html 
+keywords: afx, afx system, manage buckets 
+summary: 'Il existe plusieurs tâches administratives que vous pouvez effectuer dans le cadre de la gestion des buckets AFX S3 et de l"accès client.  La configuration et la prise en charge de S3 dans AFX sont les mêmes que celles fournies avec Unified ONTAP.  Consultez la documentation Unified ONTAP pour plus de détails.' 
+---
+= Gérer les compartiments du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il existe plusieurs tâches administratives que vous pouvez effectuer dans le cadre de la gestion des buckets AFX S3 et de l'accès client.  La configuration et la prise en charge de S3 dans AFX sont les mêmes que celles fournies avec Unified ONTAP.  Consultez la documentation Unified ONTAP pour plus de détails.
+
+.Informations connexes
+https://docs.netapp.com/us-en/ontap/s3-config/index.html["En savoir plus sur la configuration ONTAP S3"^]

@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-cluster-networking.html 
+keywords: afx, afx system, networking, cluster networking, broadcast domain, ipsace, subnet, network interface 
+summary: 'Vous devez configurer le réseau de votre système de stockage AFX.  L"environnement réseau prend en charge plusieurs scénarios de connexion, notamment l"accès des clients aux données sur les SVM et la communication intercluster.' 
+---
+= Gérer la mise en réseau du cluster du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez configurer le réseau de votre système de stockage AFX.  L'environnement réseau prend en charge plusieurs scénarios, notamment l'accès des clients aux données sur les SVM et la communication intercluster.
+
+
+NOTE: La création d’une ressource réseau est une première étape importante.  Vous devez également effectuer des actions administratives supplémentaires, telles que la modification ou la suppression des définitions de réseau, selon les besoins.
+
+
+
+== Créer un domaine de diffusion
+
+Un domaine de diffusion simplifie la gestion de votre réseau de cluster en regroupant les ports qui font partie du même réseau de couche deux.  Les machines virtuelles de stockage (SVM) peuvent ensuite se voir attribuer des ports dans le groupe pour le trafic de données ou de gestion.
+
+Plusieurs domaines de diffusion sont créés lors de la configuration du cluster, notamment :
+
+Défaut:: Ce domaine de diffusion contient des ports dans l’espace IP « Par défaut ».  Ces ports sont principalement utilisés pour diffuser des données.  Les ports de gestion des clusters et des nœuds sont également inclus.
+Cluster:: Ce domaine de diffusion contient des ports dans l’espace IP « Cluster ».  Ces ports sont utilisés pour la communication du cluster et incluent tous les ports du cluster de tous les nœuds du cluster.
+
+
+Vous pouvez créer des domaines de diffusion supplémentaires une fois votre cluster initialisé.  Lorsque vous créez un domaine de diffusion, un groupe de basculement contenant les mêmes ports est automatiquement créé.
+
+.À propos de cette tâche
+La valeur de l'unité de transmission maximale (MTU) des ports définis pour un domaine de diffusion est mise à jour avec la valeur MTU définie dans le domaine de diffusion.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Réseau* puis *Vue d'ensemble*.
+. Sous *Domaines de diffusion*, sélectionnezimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Indiquez le nom du domaine de diffusion ou acceptez la valeur par défaut.
++
+Tous les noms de domaine de diffusion doivent être uniques dans un espace IP.
+
+. Fournir l'unité de transmission maximale (MTU).
++
+Le MTU est le plus grand paquet de données pouvant être accepté dans le domaine de diffusion.
+
+. Choisissez les ports souhaités et sélectionnez *Enregistrer*.
+
+
+
+
+== Créer un espace IP
+
+Un espace IP est un domaine administratif pour les adresses IP et la configuration réseau associée.  Ces espaces peuvent être utilisés pour prendre en charge vos SVM via une administration et un routage isolés.  Par exemple, ils sont utiles lorsque les clients ont des adresses IP qui se chevauchent à partir de la même adresse IP et de la même plage de sous-réseaux.
+
+
+TIP: Vous devez disposer d'un espace IP avant de pouvoir créer un sous-réseau.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Réseau* puis *Vue d'ensemble*.
+. Sous *Espaces IP*, sélectionnezimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Indiquez le nom de l'espace IP ou acceptez la valeur par défaut.
++
+Tous les noms d’espace IP doivent être uniques au sein d’un cluster.
+
+. Sélectionnez *Enregistrer*.
+
+
+.Quelle est la prochaine étape
+Vous pouvez utiliser l'espace IP pour créer un sous-réseau.
+
+
+
+== Créer un sous-réseau
+
+Un sous-réseau ou sous-réseau impose une division logique de l'espace d'adressage IP dans votre réseau.  Il vous permet d'allouer des blocs dédiés d'adresses IP pour la création d'une interface réseau (LIF).  Les sous-réseaux simplifient la création de LIF en vous permettant d'utiliser le nom du sous-réseau au lieu d'une combinaison spécifique d'adresse IP et de masque de réseau.
+
+.Avant de commencer
+Vous devez disposer d'un domaine de diffusion et d'un espace IP où le sous-réseau sera défini.  A noter également :
+
+* Tous les noms de sous-réseau doivent être uniques dans un espace IP spécifique.
+* La plage d’adresses IP utilisée pour un sous-réseau ne peut pas chevaucher les adresses IP d’autres sous-réseaux.
+
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Réseau* puis *Vue d'ensemble*.
+. Sous l'onglet *Sous-réseaux*, sélectionnezimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Fournissez les détails de configuration, y compris le nom du sous-réseau, les détails de l'adresse IP et le domaine de diffusion.
+. Sélectionnez *Enregistrer*.
+
+
+.Quelle est la prochaine étape
+Le nouveau sous-réseau simplifiera la création de vos interfaces réseau.
+
+
+
+== Créer une interface réseau
+
+Une interface réseau logique (LIF) se compose d'une adresse IP et de paramètres de configuration réseau associés.  Il peut être associé à un port physique ou logique et est généralement utilisé par les clients pour accéder aux données fournies par un SVM.  Les LIF offrent une résilience en cas de panne et peuvent migrer entre les ports des nœuds afin que la communication ne soit pas interrompue.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Réseau* puis *Vue d'ensemble*.
+. Sous l'onglet *Interfaces réseau*, sélectionnezimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Fournissez les détails de configuration, y compris le nom de l'interface, le type d'interface, les protocoles autorisés et les détails de l'adresse IP.
+. Sélectionnez *Enregistrer*.
+
+
+
+
+== Informations connexes
+
+* link:../administer/manage-ethernet-ports.html["Gérer les ports Ethernet AFX"]
+* https://docs.netapp.com/us-en/ontap/networking/configure_broadcast_domains_cluster_administrators_only_overview.html["En savoir plus sur les domaines de diffusion ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/networking/configure_ipspaces_cluster_administrators_only_overview.html["En savoir plus sur la configuration d' ONTAP IPspace"^]
+* https://docs.netapp.com/us-en/ontap/networking/configure_subnets_cluster_administrators_only_overview.html["En savoir plus sur les sous-réseaux du réseau ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/concepts/network-connectivity-concept.html["Présentation de l'architecture réseau"^]
+

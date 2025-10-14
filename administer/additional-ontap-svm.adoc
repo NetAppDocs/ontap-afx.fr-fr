@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: administer/additional-ontap-svm.html 
+keywords: afx, afx system, additional administration, advanced administration 
+summary: 'Outre l"administration AFX SVM classique, il peut y avoir d"autres tâches que vous devez effectuer en fonction de votre environnement.  La plupart des tâches supplémentaires peuvent être effectuées à l’aide du Gestionnaire système, même si dans certains cas, vous devrez peut-être utiliser l’interface de ligne de commande.' 
+---
+= Administration supplémentaire pour un système de stockage AFX SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Outre l'administration AFX SVM classique, il peut y avoir d'autres tâches que vous devez effectuer en fonction de votre environnement.  La plupart des tâches supplémentaires peuvent être effectuées à l’aide du Gestionnaire système, même si dans certains cas, vous devrez peut-être utiliser l’interface de ligne de commande.
+
+
+NOTE: Les fonctionnalités et l'administration ONTAP décrites sont communes aux systèmes de stockage AFX et aux systèmes AFF ou FAS exécutant Unified ONTAP.  Des liens vers la documentation Unified ONTAP pertinente sont inclus, le cas échéant.
+
+
+
+== Gestion du stockage et performances
+
+Il existe plusieurs fonctionnalités facultatives de gestion du stockage et de performances que vous pouvez configurer et utiliser avec votre déploiement AFX.
+
+
+
+=== Gestion du stockage NAS ONTAP
+
+Le stockage en réseau (NAS) fournit un stockage de fichiers dédié auquel plusieurs clients du réseau peuvent accéder.  ONTAP prend en charge plusieurs protocoles NAS. Se référer à https://docs.netapp.com/us-en/ontap/nas-management/index.html["Gestion du stockage NAS"^] pour plus d'informations.
+
+
+
+=== Volumes ONTAP FlexCache
+
+FlexCache est une fonctionnalité de mise en cache à distance ONTAP .  Il rapproche les données des clients, ce qui améliore les performances d’accès et réduit les coûts.  La création d'un volume FlexCache , qui copie initialement uniquement les métadonnées du système de fichiers d'origine, simplifie la distribution des fichiers et réduit le trafic WAN. Se référer à https://docs.netapp.com/us-en/ontap/flexcache/index.html["En savoir plus sur les volumes ONTAP FlexCache"^] pour plus d'informations.
+
+
+
+=== Volumes ONTAP FlexGroup
+
+Un volume FlexGroup se compose de plusieurs volumes membres qui partagent le trafic automatiquement et de manière transparente.  Les volumes FlexGroup offrent plusieurs avantages, notamment des performances élevées et une gestion simplifiée. Se référer à https://docs.netapp.com/us-en/ontap/flexgroup/creation-workflow-task.html["Configuration du volume FlexGroup"^] pour plus d'informations.
+
+
+
+== Protection des données
+
+Il existe plusieurs fonctionnalités de protection des données facultatives que vous pouvez configurer et utiliser avec votre déploiement AFX.
+
+
+
+=== Groupes de cohérence
+
+Un groupe de cohérence est un ensemble de volumes gérés comme une seule unité. Se référer à https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["En savoir plus sur les groupes de cohérence ONTAP"^] pour plus d'informations.
+
+
+
+=== SnapLock
+
+Vous pouvez protéger vos fichiers en les convertissant en un état WORM (Write Once Read Many) au niveau du volume.  SnapLock prend en charge deux modes.  Le mode de conformité garantit que les fichiers ne peuvent pas être supprimés avant l'expiration de leur période de conservation, ce qui répond aux mandats gouvernementaux ou spécifiques à l'industrie.  Le mode Entreprise permet aux utilisateurs privilégiés de supprimer des fichiers avant l’expiration de leur période de conservation. Se référer à https://docs.netapp.com/us-en/ontap/snaplock/index.html["En savoir plus sur ONTAP SnapLock"^] pour plus d'informations.
+
+
+
+== Surveillance des événements et des performances ONTAP
+
+Vous pouvez surveiller la santé et les performances d’un cluster.  Cela inclut la configuration d’alertes pour les événements et la gestion des notifications pour les alertes de santé du système.  Se référer à https://docs.netapp.com/us-en/ontap/event-performance-monitoring/index.html["Surveillance des événements, des performances et de la santé"^] pour plus d'informations
+
+
+
+== Informations connexes
+
+* link:../faq-ontap-afx.html["FAQ sur les systèmes de stockage AFX"]
+* link:../administer/additional-ontap-cluster.html["Administration supplémentaire pour les clusters AFX"]
+

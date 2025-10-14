@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: administer/view-jobs.html 
+keywords: afx, afx system, view jobs 
+summary: 'AFX inclut une plate-forme interne pour exécuter des tâches en arrière-plan en fonction de votre configuration et de vos actions administratives.  Ces tâches peuvent être des composants AFX de longue durée ou des processus de courte durée exécutés en réponse à une tâche administrative ou à une demande d"API REST.  Vous pouvez afficher et surveiller les tâches selon vos besoins.' 
+---
+= Voir les offres d'emploi du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AFX inclut une plate-forme interne pour exécuter des tâches en arrière-plan en fonction de votre configuration et de vos actions administratives.  Ces tâches peuvent être des composants AFX de longue durée ou des processus de courte durée exécutés en réponse à des tâches administratives ou à des requêtes d'API REST.  Vous pouvez afficher et surveiller les tâches selon vos besoins.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Événements et tâches*, puis *Tâches*.
+. Personnalisez l'affichage ainsi que recherchez et téléchargez les informations sur les tâches selon vos besoins.
+

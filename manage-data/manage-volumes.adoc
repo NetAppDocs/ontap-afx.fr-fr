@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: manage-data/manage-volumes.html 
+keywords: afx, afx system, manage volumes 
+summary: Il existe plusieurs tâches administratives que vous pouvez effectuer dans le cadre de l’administration des volumes définis sur votre cluster AFX. 
+---
+= Gérer les volumes du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il existe plusieurs tâches administratives que vous pouvez effectuer dans le cadre de l’administration des volumes définis sur votre cluster AFX.
+
+
+
+== Créer un qtree
+
+Un qtree est une subdivision logique au sein d'un volume que vous pouvez créer pour organiser et administrer les données.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Stockage* puis *Qtrees*.
+. Sélectionnerimage:icon_add_blue_bg.png["Ajouter avec un fond bleu"] et fournir la configuration de base, y compris le nom, le volume et le style de sécurité ; configurer éventuellement un quota.
+. Sélectionnez *Enregistrer* pour ajouter le qtree.
+
+
+
+
+== Créer un quota
+
+Un quota est une limite définie sur la quantité d'espace de stockage ou le nombre de fichiers pouvant être utilisés par un utilisateur, un groupe ou un qtree.  Les quotas sont utilisés pour gérer et contrôler l'utilisation des ressources au sein d'un système AFX.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Stockage* puis *Quotas*.
+. Sélectionnez l'onglet *Utilisation* pour afficher une liste des quotas actifs sur tous les volumes.
+. Sélectionnez l'onglet *Volumes* pour afficher une liste des volumes définis dans le cluster AFX ; sélectionnez un volume spécifique pour afficher des informations supplémentaires.
+. Pour définir un quota, sélectionnez l'onglet *Règles*.
+. Fournissez les détails de configuration, y compris la cible de quota, le type et les limites.
+. Sélectionnez *Enregistrer* pour ajouter le quota.
+

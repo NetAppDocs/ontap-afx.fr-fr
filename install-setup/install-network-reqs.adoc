@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-network-reqs.html 
+keywords: shared storage cluster switch 
+summary: 'À partir d" ONTAP 9.9.1, vous pouvez utiliser les commutateurs Cisco Nexus 9364d-gx2a pour combiner les fonctionnalités de stockage et de cluster dans un scénario de commutateur partagé.' 
+---
+= Configuration réseau requise pour votre système de stockage AFX 1K
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Enregistrez les informations requises pour chaque réseau auquel vous connectez votre système de stockage AFX 1K.
+
+
+
+== Recueillir des informations sur le réseau
+
+Avant de commencer l'installation de votre système de stockage AFX 1K, rassemblez les informations réseau requises
+
+* Noms d’hôte et adresses IP pour chacun des contrôleurs du système de stockage et tous les commutateurs applicables.
++
+La plupart des contrôleurs de système de stockage sont gérés via l'interface e0M en se connectant au port de service Ethernet (icône de clé).
+
++
+Reportez-vous à la https://hwu.netapp.com["Hardware Universe"^] pour les dernières informations.
+
+* Adresse IP de gestion de cluster
++
+L'adresse IP de gestion de cluster est une adresse IP unique pour l'interface de gestion de cluster utilisée par l'administrateur de cluster pour accéder à la machine virtuelle de stockage d'administration et gérer le cluster.  Vous pouvez obtenir cette adresse IP auprès de l’administrateur responsable de l’attribution des adresses IP dans votre organisation.
+
+* Masque de sous-réseau du réseau
++
+Lors de la configuration du cluster, ONTAP recommande un ensemble d'interfaces réseau adaptées à votre configuration.  Vous pouvez ajuster la recommandation si nécessaire.
+
+* Adresse IP de la passerelle réseau
+* Adresses IP de gestion des nœuds (une par nœud)
+* noms de domaine DNS
+* Adresses IP des serveurs de noms DNS
+* Adresses IP du serveur NTP
+* Masque de sous-réseau de données
+* Sous-réseau IP pour le trafic du réseau de gestion.
+
+
+
+
+== Exigences réseau pour les commutateurs Cisco
+
+Pour l'installation et la maintenance des commutateurs Cisco Nexus 9332D-GX2B et 9364D-GX2A, assurez-vous de vérifier les exigences de câblage et de réseau.
+
+
+
+=== Exigences réseau
+
+Vous avez besoin des informations réseau suivantes pour toutes les configurations de commutateur.
+
+* Sous-réseau IP pour le trafic du réseau de gestion
+* Noms d'hôte et adresses IP pour chacun des contrôleurs de système de stockage et tous les commutateurs applicables
+* Reportez-vous à la https://hwu.netapp.com["Hardware Universe"^] pour les dernières informations.
+
+
+
+
+=== Exigences de câblage
+
+* Vous disposez du nombre et du type de câbles et de connecteurs de câbles appropriés pour vos commutateurs. Voir le https://hwu.netapp.com["Hardware Universe"^] .
+* Selon le type de commutateur que vous configurez initialement, vous devez vous connecter au port de console du commutateur avec le câble de console inclus.
+
+
+.Quelle est la prochaine étape ?
+Après avoir examiné les exigences du réseau, vouslink:cable-hardware.html["câblez les contrôleurs et les étagères de stockage pour votre système de stockage AFX 1K"] .

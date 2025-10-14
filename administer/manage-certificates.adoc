@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-certificates.html 
+keywords: afx, afx system, certificates, pki 
+summary: 'Selon votre environnement, vous devrez créer et gérer des certificats numériques dans le cadre de l"administration d"AFX.  Il existe plusieurs tâches connexes que vous pouvez effectuer.' 
+---
+= Gérer les certificats sur un système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Selon votre environnement, vous devrez créer et gérer des certificats numériques dans le cadre de l'administration d'AFX.  Il existe plusieurs tâches connexes que vous pouvez effectuer.
+
+
+
+== Générer une demande de signature de certificat
+
+Pour commencer à utiliser un certificat numérique, vous devez générer une demande de signature de certificat (CSR).  Un CSR est utilisé pour demander un certificat signé auprès d'une autorité de certification (CA). Dans ce cadre, ONTAP crée une paire de clés publique/privée et inclut la clé publique dans le CSR.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. Sous *Sécurité* et à côté de *Certificats*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"]
+. Sélectionnerimage:icon_generate_csr.png["rectangle bleu contenant un signe plus suivi des mots générer RSE"] .
+. Indiquez le nom commun du sujet et le pays ; indiquez éventuellement l'organisation et l'unité organisationnelle.
+. Pour modifier les valeurs par défaut qui définiront le certificat, sélectionnezimage:icon_more_options.png["deux flèches orientées dans des directions diagonales opposées suivies des mots plus d'options"] et effectuez les mises à jour souhaitées.
+. Sélectionnez *Générer*.
+
+
+.Résultat
+Vous avez généré un CSR qui peut être utilisé pour demander un certificat de clé publique.
+
+
+
+== Ajouter une autorité de certification de confiance
+
+ONTAP fournit un ensemble par défaut de certificats racine de confiance à utiliser avec Transport Layer Security (TLS) et d'autres protocoles.  Vous pouvez ajouter des autorités de certification de confiance supplémentaires selon vos besoins.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. Sous *Sécurité* et à côté de *Certificats*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] .
+. Sélectionnez l'onglet *Autorités de certification de confiance* puis sélectionnezimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Fournissez les informations de configuration, y compris le nom, la portée, le nom commun, le type et les détails du certificat ; vous pouvez importer le certificat à la place en sélectionnant *Importer*.
+. Sélectionnez *Ajouter*.
+
+
+.Résultat
+Vous avez ajouté une autorité de certification de confiance à votre système AFX.
+
+
+
+== Renouveler ou supprimer une autorité de certification de confiance
+
+Les autorités de certification de confiance doivent être renouvelées chaque année.  Si vous ne souhaitez pas renouveler un certificat expiré, vous devez le supprimer.
+
+.Étapes
+. Sélectionnez *Cluster* puis *Paramètres*.
+. Sous *Sécurité* et à côté de *Certificats*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] .
+. Sélectionnez l'onglet *Autorités de certification de confiance*.
+. Sélectionnez l’autorité de certification de confiance que vous souhaitez renouveler ou supprimer.
+. Renouveler ou supprimer l'autorité de certification.
++
+[cols="2"]
+|===
+| Pour renouveler l'autorité de certification, procédez comme suit : | Pour supprimer l’autorité de certification, procédez comme suit : 
+
+
+ a| 
+.. Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] puis sélectionnez *Renouveler*.
+.. Saisissez ou importez les informations du certificat et sélectionnez *Renouveler*.
+
+ a| 
+.. Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] puis sélectionnez *Supprimer*.
+.. Confirmez que vous souhaitez supprimer et sélectionnez *Supprimer*.
+
+
+|===
+
+
+.Résultat
+Vous avez renouvelé ou supprimé une autorité de certification de confiance existante sur votre système AFX.
+
+
+
+== Ajouter un certificat client/serveur ou une autorité de certification locale
+
+Vous pouvez ajouter un certificat client/serveur ou une autorité de certification locale dans le cadre de l'activation de services Web sécurisés.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. Sous *Sécurité* et à côté de *Certificats*, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] .
+. Sélectionnez soit *Certificats client/serveur* soit *Autorités de certification locales* selon vos besoins.
+. Ajoutez les informations du certificat et sélectionnez *Enregistrer*.
+
+
+.Résultat
+Vous avez ajouté un nouveau certificat client/serveur ou des autorités locales à votre système AFX.
+
+
+
+== Renouveler ou supprimer un certificat client/serveur ou des autorités de certification locales
+
+Les certificats client/serveur et les autorités de certification locales doivent être renouvelés chaque année.  Si vous ne souhaitez pas renouveler un certificat expiré ou des autorités de certification locales, vous devez les supprimer.
+
+.Étapes
+. Sélectionnez *Cluster* puis *Paramètres*.
+. Sous *Sécurité* et à côté de Certificats, sélectionnezimage:icon_arrow.gif["flèche bleue pointant vers la droite"] .
+. Sélectionnez soit *Certificats client/serveur* soit *Autorités de certification locales* selon vos besoins.
+. Sélectionnez le certificat que vous souhaitez renouveler ou supprimer.
+. Renouveler ou supprimer l'autorité de certification.
++
+[cols="2"]
+|===
+| Pour renouveler l'autorité de certification, procédez comme suit : | Pour supprimer l’autorité de certification, procédez comme suit : 
+
+
+ a| 
+.. Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] puis sélectionnez *Renouveler*.
+.. Saisissez ou importez les informations du certificat et sélectionnez *Renouveler*.
+
+ a| 
+Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] puis sélectionnez *Supprimer*.
+
+|===
+
+
+.Résultat
+Vous avez renouvelé ou supprimé un certificat client/serveur ou une autorité de certification locale existante sur votre système AFX.
+
+
+
+== Informations connexes
+
+* https://docs.netapp.com/us-en/ontap/authentication/manage-certificates-sm-task.html["Gérer les certificats ONTAP avec System Manager"^]
+

@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: protect-data/policies-schedules.html 
+keywords: afx, afx system, data protection, protection policies, protection schedules 
+summary: 'Vous pouvez utiliser des stratégies de capture instantanée pour protéger les données de vos groupes de cohérence en fonction d"une planification automatisée.  Les planifications de stratégie dans les stratégies d"instantanés déterminent la fréquence à laquelle les instantanés sont pris.' 
+---
+= Gérer les politiques et les calendriers de protection des données du système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser des stratégies de capture instantanée pour protéger les données de vos groupes de cohérence en fonction d'une planification automatisée.  Les planifications de stratégie dans les stratégies d'instantanés déterminent la fréquence à laquelle les instantanés sont pris.
+
+
+
+== Créer un nouveau calendrier de politique de protection
+
+Une planification de politique de protection définit la fréquence à laquelle une politique de snapshots est exécutée.  Vous pouvez créer des planifications à exécuter à intervalles réguliers en fonction d'un certain nombre de jours, d'heures ou de minutes.  Par exemple, vous pouvez créer un programme pour qu'il s'exécute toutes les heures ou une seule fois par jour.  Vous pouvez également créer des programmes à exécuter à des heures spécifiques, certains jours de la semaine ou du mois.  Par exemple, vous pouvez créer un programme qui s'exécutera à 00h15 le 20 de chaque mois.
+
+La définition de différentes planifications de politiques de protection vous offre la flexibilité d'augmenter ou de diminuer la fréquence des snapshots pour différentes applications.  Cela vous permet de fournir un niveau de protection plus élevé et un risque de perte de données plus faible pour vos charges de travail critiques que ce qui pourrait être nécessaire pour des charges de travail moins critiques.
+
+.Étapes
+. Sélectionnez *Protection* puis *Politiques* ; puis sélectionnez *Planification*.
+. Sélectionnerimage:icon_add_blue_bg.png["un rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Saisissez un nom pour la planification, puis sélectionnez les paramètres de planification.
+. Sélectionnez *Enregistrer*.
+
+
+.Quelle est la prochaine étape ?
+Maintenant que vous avez créé une nouvelle planification de stratégie, vous pouvez utiliser la planification nouvellement créée dans vos stratégies pour définir quand les instantanés sont pris.
+
+
+
+== Créer une politique de capture instantanée
+
+Une politique de snapshot définit la fréquence à laquelle les snapshots sont pris, le nombre maximal de snapshots autorisés et la durée de conservation des snapshots.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection* puis *Stratégies* ; sélectionnez ensuite *Stratégies de capture instantanée*.
+. Sélectionnerimage:icon_add_blue_bg.png["rectangle bleu contenant un signe plus suivi du mot add en lettres blanches"] .
+. Saisissez un nom pour la politique de capture instantanée.
+. Sélectionnez *Cluster* pour appliquer la politique à l’ensemble du cluster.  Sélectionnez *VM de stockage* pour appliquer la politique à une machine virtuelle de stockage individuelle.
+. Sélectionnez *Ajouter une planification* ; puis entrez la planification de la politique d’instantané.
+. Sélectionnez *Ajouter une politique*.
+
+
+.Quelle est la prochaine étape ?
+Maintenant que vous avez créé une politique de snapshot, vous pouvez l’appliquer à un groupe de cohérence.  Des instantanés seront pris du groupe de cohérence en fonction des paramètres que vous définissez dans votre politique d'instantanés.
+
+
+
+== Appliquer une politique de snapshot à un groupe de cohérence
+
+Appliquez une stratégie de snapshot à un groupe de cohérence pour créer, conserver et étiqueter automatiquement les snapshots du groupe de cohérence.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection* puis *Stratégies* ; sélectionnez ensuite *Stratégies de capture instantanée*.
+. Passez la souris sur le nom de la stratégie d’instantané que vous souhaitez appliquer.
+. Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] ; puis sélectionnez *Appliquer*.
+. Sélectionnez les groupes de cohérence auxquels vous souhaitez appliquer la politique de snapshot, puis sélectionnez *Appliquer*.
+
+
+.Quelle est la prochaine étape ?
+Maintenant que vos données sont protégées par des instantanés, vous devezlink:snapshot-replication.html#step-3-create-a-replication-relationship["établir une relation de réplication"] pour copier vos groupes de cohérence vers un emplacement géographiquement distant à des fins de sauvegarde et de reprise après sinistre.
+
+
+
+== Modifier, supprimer ou désactiver une politique de capture instantanée
+
+Modifiez une stratégie de snapshot pour modifier le nom de la stratégie, le nombre maximal de snapshots ou l'étiquette SnapMirror .  Supprimez une politique pour la supprimer ainsi que ses données de sauvegarde associées de votre cluster.  Désactivez une stratégie pour arrêter temporairement la création ou le transfert des instantanés spécifiés par la stratégie.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection* puis *Stratégies* ; sélectionnez ensuite *Stratégies de capture instantanée*.
+. Passez la souris sur le nom de la stratégie de capture instantanée que vous souhaitez modifier.
+. Sélectionnerimage:icon_kabob.gif["trois points bleus verticaux"] ; puis sélectionnez *Modifier*, *Supprimer* ou *Désactiver*.
+
+
+.Résultat
+Vous avez modifié, supprimé ou désactivé la politique de capture instantanée.
+
+
+
+== Modifier une politique de réplication
+
+Modifiez une politique de réplication pour modifier la description de la politique, la planification du transfert et les règles.  Vous pouvez également modifier la politique pour activer ou désactiver la compression réseau.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Protection* puis *Politiques*.
+. Sélectionnez *Politiques de réplication*.
+. Passez la souris sur la politique de réplication que vous souhaitez modifier, puis sélectionnezimage:icon_kabob.gif["trois points bleus verticaux"] .
+. Sélectionnez *Modifier*.
+. Mettez à jour la politique, puis sélectionnez *Enregistrer*.
+

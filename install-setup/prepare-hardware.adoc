@@ -1,0 +1,126 @@
+---
+sidebar: sidebar 
+permalink: install-setup/prepare-hardware.html 
+keywords: prepare, hardware installation, afx, afx 1k 
+summary: Préparez-vous à installer le système de stockage AFX 1K dans votre environnement ONTAP et enregistrez le matériel pour accéder aux avantages du support. 
+---
+= Préparez-vous à installer votre système de stockage AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Préparez-vous à installer votre système de stockage AFX 1K en préparant le site, en déballant les cartons et en comparant le contenu des cartons au bordereau d'expédition, puis en enregistrant le système pour accéder aux avantages de l'assistance.
+
+
+
+== Étape 1 : Préparer le site
+
+Pour installer votre système de stockage AFX 1K, assurez-vous que le site et l'armoire ou le rack que vous prévoyez d'utiliser répondent aux spécifications de votre configuration.
+
+.Étapes
+. Utiliser https://hwu.netapp.com["Hardware Universe NetApp"^] pour confirmer que votre site répond aux exigences environnementales et électriques de votre système de stockage.
+. Assurez-vous de disposer d'un espace suffisant dans une armoire ou un rack pour votre système de stockage, vos étagères et vos commutateurs :
++
+** 2U pour chaque nœud de contrôleur AFX et étagère NX224
+** 1U ou 2U par commutateur, selon le modèle de commutateur.
+
+
+
+
+
+
+== Étape 2 : Déballer les cartons
+
+Après avoir vérifié que le site et l’armoire répondent aux spécifications, déballez les cartons et comparez le contenu au bordereau d’expédition.
+
+.Étapes
+. Ouvrez soigneusement toutes les boîtes et disposez le contenu de manière organisée.
+. Comparez le contenu que vous avez déballé avec la liste figurant sur le bordereau d’expédition.  Si vous trouvez des divergences, enregistrez-les pour une action ultérieure.
++
+Vous pouvez obtenir votre liste de colisage en scannant le code QR sur le côté du carton d'expédition.
+
++
+Les éléments suivants sont quelques-uns du contenu que vous pourriez voir dans les boîtes.
+
++
+[cols="12,9,4"]
+|===
+
+
+| *Matériel* | *Câbles* |  
+
+
+ a| 
+** Lunette
+** Système de stockage
+** Kits de rails avec instructions
+** Étagère de rangement
+** Commutateur Cisco Nexus 9332D-GX2B ou 9364D-GX2A
+
+ a| 
+** Câbles Ethernet de gestion (câbles RJ-45)
+** Câbles réseau
+** cordons d'alimentation
+** Câbles de stockage
+** Câble de port série USB-C
+
+|  
+|===
+
+
+
+
+== Étape 3 : Enregistrez votre système de stockage
+
+Après avoir vérifié que votre site répond aux exigences des spécifications de votre système de stockage AFX 1K et que vous disposez de toutes les pièces que vous avez commandées, enregistrez votre système de stockage.
+
+.Étapes
+. Localisez les numéros de série de votre système de stockage.
++
+Vous pouvez trouver les numéros de série aux emplacements suivants :
+
++
+** Sur le bordereau d'expédition
+** Dans votre e-mail de confirmation
+** Sur chaque contrôleur ou pour certains systèmes, sur le module de gestion système de chaque contrôleur
++
+image::../media/drw_ssn_label.svg[Exemple de numéro de série du système]
+
+
+
+. Aller à la http://mysupport.netapp.com/["Site de support NetApp"^] .
+. Décidez si vous devez enregistrer votre système de stockage :
++
+[cols="1a,2a"]
+|===
+| Si vous êtes un... | Suivez ces étapes... 
+
+
+ a| 
+Client NetApp existant
+ a| 
+.. Sign in avec votre nom d'utilisateur et votre mot de passe.
+.. Sélectionnez *Systèmes* > *Mes systèmes*.
+.. Confirmez que le nouveau numéro de série est répertorié.
+.. Si le numéro de série n’est pas répertorié, suivez les instructions pour les nouveaux clients NetApp .
+
+
+
+
+ a| 
+Nouveau client NetApp
+ a| 
+.. Cliquez sur *S'inscrire maintenant* et créez un compte.
+.. Sélectionnez *Systèmes* > *Enregistrer les systèmes*.
+.. Saisissez le numéro de série du système de stockage et les détails demandés.
+
+
+Une fois que NetApp a approuvé votre inscription, vous pouvez télécharger le logiciel requis.  L'approbation prend jusqu'à 24 heures.
+
+|===
+
+
+.Quelle est la prochaine étape ?
+Après avoir préparé l'installation de votre matériel AFX 1K, vouslink:install-switches.html["installer les commutateurs pour votre système de stockage AFX 1K"] .

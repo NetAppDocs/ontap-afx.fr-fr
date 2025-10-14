@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-setup-workflow.html 
+keywords: afx, afx 1k, install, setup, workflow 
+summary: Commencez l’installation et la configuration du système de stockage AFX 1K et déployez-le dans votre environnement ONTAP . 
+---
+= Flux de travail d'installation et de configuration pour les systèmes de stockage AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour installer et configurer votre système de stockage AFX 1K, vous devez examiner la configuration matérielle requise, préparer votre site, installer les commutateurs, installer et câbler les composants matériels, mettre le système sous tension et configurer votre cluster ONTAP AFX.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"]link:install-setup-requirements.html["Passez en revue les exigences d'installation du matériel"]
+[role="quick-margin-para"]
+Passez en revue la configuration matérielle requise pour installer votre système de stockage AFX 1K.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"]link:prepare-hardware.html["Préparez-vous à installer votre système de stockage AFX 1K"]
+[role="quick-margin-para"]
+Préparez l'installation de votre système de stockage AFX 1K en préparant le site, en vérifiant les exigences environnementales et électriques, en garantissant un espace de rack suffisant, en déballant l'équipement, en vérifiant le contenu du bordereau d'expédition et en enregistrant le matériel pour l'assistance.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"]link:install-switches.html["Installez les commutateurs pour votre système de stockage AFX 1K"]
+[role="quick-margin-para"]
+Installez les commutateurs Cisco Nexus 9332D-GX2B ou 9364D-GX2A dans l'armoire ou le rack.  Installez un kit de panneau traversant si vous utilisez le commutateur Cisco Nexus 9364D-GX2A.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"]link:deploy-hardware.html["Installez le matériel de votre système de stockage AFX 1K"]
+[role="quick-margin-para"]
+Installez les kits de rails pour votre système de rangement et vos étagères.  Sécurisez votre système de stockage dans l'armoire ou le rack de télécommunications.  Ensuite, faites glisser les étagères sur les rails installés.  Enfin, fixez les dispositifs de gestion des câbles à l’arrière du système de stockage pour un acheminement organisé des câbles.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"]link:cable-hardware.html["Câblez les contrôleurs et les étagères de votre système de stockage AFX 1K"]
+[role="quick-margin-para"]
+Pour câbler le matériel, connectez d’abord les nœuds du contrôleur de stockage à votre réseau, puis connectez les nœuds du contrôleur et les étagères de stockage aux commutateurs du cluster.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Six"]link:power-on-configure-switch.html["Allumez et configurez les commutateurs de votre système de stockage AFX 1K"]
+[role="quick-margin-para"]
+Connectez le matériel, puis mettez sous tension et configurez les commutateurs de votre système de stockage AFX 1K.  Consultez les instructions de configuration des commutateurs Cisco Nexus 9332D-GX2B et 9364D-GX2A.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sept"]link:power-on-hardware.html["Allumez votre système de stockage AFX 1K"]
+[role="quick-margin-para"]
+Mettez sous tension chaque étagère de stockage et attribuez un ID d’étagère unique avant de mettre sous tension les nœuds du contrôleur pour identifier clairement chaque étagère dans la configuration.

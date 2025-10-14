@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: secure-data/encrypt-data-at-rest.html 
+keywords: afx, afx system, encryption, encrypt data 
+summary: Vous pouvez crypter vos données au niveau matériel et logiciel pour une protection à double couche.  Lorsque vous cryptez des données au repos, elles ne peuvent pas être lues si le support de stockage est réutilisé, retourné, égaré ou volé. 
+---
+= Crypter les données au repos sur un système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez crypter vos données au niveau matériel et logiciel pour une protection à double couche.  Lorsque vous cryptez des données au repos, elles ne peuvent pas être lues si le support de stockage est réutilisé, retourné, égaré ou volé.
+
+NetApp Storage Encryption (NSE) prend en charge le chiffrement matériel à l'aide de disques à chiffrement automatique (SED).  Les SED cryptent les données au fur et à mesure qu'elles sont écrites.  Chaque SED contient une clé de cryptage unique.  Les données cryptées stockées sur le SED ne peuvent pas être lues sans la clé de cryptage du SED.  Les nœuds tentant de lire à partir d'un SED doivent être authentifiés pour accéder à la clé de chiffrement du SED.  Les nœuds sont authentifiés en obtenant une clé d’authentification auprès d’un gestionnaire de clés, puis en présentant la clé d’authentification au SED.  Si la clé d’authentification est valide, le SED donnera au nœud sa clé de cryptage pour accéder aux données qu’il contient.
+
+.Avant de commencer
+Utilisez le gestionnaire de clés intégré AFX ou un gestionnaire de clés externe pour fournir des clés d’authentification à vos nœuds.  En plus de NSE, vous pouvez également activer le cryptage logiciel pour ajouter une autre couche de sécurité à vos données.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster* puis *Paramètres*.
+. Dans la section *Sécurité*, sous *Cryptage*, sélectionnez *Configurer*.
+. Configurer le gestionnaire de clés.
++
+[cols="2"]
+|===
+| Option | Étapes 
+
+
+| Configurer le gestionnaire de clés embarqué  a| 
+.. Sélectionnez *Onboard Key Manager* pour ajouter les serveurs de clés.
+.. Entrez une phrase secrète.
+
+
+
+
+| Configurer un gestionnaire de clés externe  a| 
+.. Sélectionnez *Gestionnaire de clés externe* pour ajouter les serveurs de clés.
+.. Sélectionnerimage:icon_add.gif["un signe plus bleu suivi du mot add"] pour ajouter les serveurs clés.
+.. Ajoutez les certificats CA du serveur KMIP.
+.. Ajoutez les certificats clients KMIP.
+
+
+|===
+. Sélectionnez *Cryptage double couche* pour activer le cryptage logiciel.
+. Sélectionnez *Enregistrer*.
+
