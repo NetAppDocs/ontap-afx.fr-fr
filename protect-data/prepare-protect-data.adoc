@@ -14,7 +14,7 @@ summary: Avant de protéger vos données AFX, vous devez vous familiariser avec 
 Avant de protéger vos données AFX, vous devez vous familiariser avec certains des concepts et fonctionnalités clés.
 
 
-TIP: Étant donné que de nombreux concepts et procédures d’administration disponibles sur les systèmes AFF et FAS sont les mêmes que ceux des systèmes de stockage AFX, il peut être utile de consulter la documentation d’Unified ONTAP .
+TIP: Étant donné que de nombreux concepts et procédures d'administration disponibles sur les systèmes AFF et FAS sont les mêmes que ceux des systèmes de stockage AFX, il est conseillé de consulter la documentation Unified ONTAP pour https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["Protection des données et reprise après sinistre"^] peut être utile.
 
 
 
@@ -27,6 +27,15 @@ Groupe de cohérence:: Un groupe de cohérence est un ensemble de volumes géré
 Groupe de cohérence hiérarchique:: Les groupes de cohérence hiérarchique ont été introduits avec ONTAP 9.16.1 et sont disponibles avec AFX.  Avec une structure hiérarchique, un ou plusieurs groupes de cohérence peuvent être configurés comme enfants sous un parent.  Ces groupes hiérarchiques vous permettent d'appliquer des stratégies de snapshot individuelles aux groupes de cohérence enfants et de répliquer les snapshots de tous les enfants vers un cluster distant en tant qu'unité unique en répliquant le parent.
 SnapLock:: SnapLock est une fonctionnalité ONTAP qui vous permet de protéger vos fichiers en les déplaçant vers un état WORM (écriture unique et lecture multiple).  Cela empêche la modification ou la suppression pendant une période de conservation spécifiée.  Les volumes SnapLock créés ne peuvent pas être convertis à partir de volumes non SnapLock après la création en fonction de la rétention.
 
+
+
+
+== Limitations de la protection des données AFX
+
+Vous devez connaître les limites et restrictions de protection des données ONTAP appliquées par le système de stockage AFX.
+
+.SnapMirror synchrone (SM-S)
+L'utilisation de SM-S est soumise à une limitation d'échelle. Vous pouvez avoir jusqu'à 400 relations sur un même cluster système AFX.
 
 
 

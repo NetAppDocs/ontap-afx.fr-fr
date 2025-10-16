@@ -20,7 +20,6 @@ Vous pouvez accéder à des ressources supplémentaires pour vous aider à admin
 * https://docs.netapp.com/us-en/ontap/["ONTAP unifié"^]
 * https://docs.netapp.com/us-en/asa-r2/["ASA r2"^]
 * https://docs.netapp.com/us-en/ontap-automation/["Automatisation ONTAP"^]
-* https://docs.netapp.com/us-en/ontap-family["Famille ONTAP"^]
 
 
 
@@ -28,5 +27,5 @@ Vous pouvez accéder à des ressources supplémentaires pour vous aider à admin
 == Assistance NetApp
 
 * https://mysupport.netapp.com/["Site de support NetApp"^]
-* https://kb.netapp.com/["Base de connaissances NetApp"]
+* https://kb.netapp.com/["Base de connaissances NetApp"^]
 

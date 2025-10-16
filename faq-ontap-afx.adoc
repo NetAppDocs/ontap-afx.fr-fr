@@ -50,7 +50,7 @@ Le deuxième concept lié au stockage désagrégé est que les agrégats et la g
 == Interopérabilité
 
 .Puis-je mélanger des nœuds système AFX avec des nœuds système AFF, ASA ou FAS dans le même cluster ONTAP ?
-Non. Chaque personnalité ONTAP est différente.  Par exemple, vous ne pouvez pas mélanger des nœuds AFX et Unified ONTAP dans le même cluster.
+Non. Vous ne pouvez pas mélanger des nœuds système qui exécutent différentes personnalités ONTAP dans le même cluster. Par exemple, vous ne pouvez pas mélanger des nœuds AFX (qui exécutent la personnalité AFX ONTAP ) avec des nœuds AFF ou FAS (qui exécutent la personnalité Unified ONTAP ) dans le même cluster.
 
 .Si je souhaite utiliser des systèmes exécutant Unified ONTAP (FAS, AFF, ASA) avec des systèmes AFX pour SnapMirror ou FlexCache, de quelle version ONTAP aurai-je besoin ?
 Les règles de version de SnapMirror pour AFX sont identiques à celles d'Unified ONTAP.  Cela signifie que pour répliquer à partir d'Unified ONTAP, le système source doit se trouver dans la plage de versions prise en charge.  Pour répliquer à partir d'AFX, le système Unified ONTAP doit être à la ONTAP 9.16.1 ou ultérieure (la version la plus ancienne pour laquelle la fonctionnalité Advanced Capacity Balancing est prise en charge).  Pour FlexCache, les mêmes règles s'appliquent aux systèmes source et de destination comme décrit dans https://www.netapp.com/pdf.html?item=/media/7336-tr4743.pdf["TR-4743"^] .
@@ -79,20 +79,23 @@ Non. Les protocoles de données dans AFX fonctionnent de la même manière qu'av
 .Le partitionnement de disque avancé (ADP) est-il utilisé dans AFX ?
 Non. ADP n'est pas utilisé avec AFX.  Étant donné qu’il n’existe aucun agrégat racine avec AFX, la fonctionnalité ADP n’est pas nécessaire pour maximiser l’efficacité de l’espace disque.
 
-.Puis-je utiliser différents types de commutateurs pour le réseau backend de mon système de stockage AFX ?
-Non. Seuls les commutateurs spécifiquement approuvés et fournis avec la plate-forme de stockage AFX sont pris en charge pour le réseau backend.
+.Puis-je utiliser n’importe quel type de commutateurs dans le réseau de cluster backend pour mon système AFX ?
+Non. Seuls les commutateurs spécifiquement approuvés et fournis avec la plate-forme de stockage AFX sont pris en charge pour le réseau de cluster. De plus, ces commutateurs backend sont dédiés aux opérations de cluster AFX. Les opérations d’accès client (à l’aide de NFS, SMB et S3) doivent uniquement être effectuées sur le réseau de données client frontal.
+
+.Comment les commutateurs du cluster sont-ils configurés ?
+Les commutateurs réseau du cluster sont configurés à l’aide d’un fichier de configuration fourni par NetApp. Les modifications apportées au fichier de configuration ne sont pas prises en charge.
 
 .Comment le stockage dans un cluster AFX est-il organisé ?
 Tous les disques et étagères de stockage attachés à un cluster AFX font partie d'une zone de disponibilité de stockage (SAZ).  Chaque cluster AFX ne prend en charge qu'un seul SAZ qui ne peut pas être partagé entre les clusters AFX (à l'exception des opérations de réplication SnapMirror et FlexCache ).
 
 Chaque nœud a une visibilité sur l’ensemble du stockage dans la SAZ.  Lorsque des étagères de stockage sont ajoutées à un cluster, ONTAP ajoute automatiquement les disques.
 
-.Comment fonctionne une opération de déplacement de volume dans Unified ONTAP par rapport à AFX ?
-Avec Unified ONTAP, il est possible de déplacer un volume sans interruption d’un nœud ou d’un agrégat vers un autre du cluster.  Cette opération est réalisée à l'aide d'une opération de copie en arrière-plan avec la technologie SnapMirror , où un nouveau volume de destination est créé au nouvel emplacement.  En fonction de la taille du volume et de l’utilisation des ressources du cluster, le temps nécessaire au déplacement d’un volume peut varier.
+.En quoi les opérations de déplacement de volume fonctionnent-elles différemment avec AFX par rapport aux systèmes AFF ou FAS ?
+Avec les systèmes AFF et FAS , qui exécutent la personnalité Unified ONTAP , il est possible de déplacer un volume sans interruption d'un nœud ou d'un agrégat vers un autre du cluster. Cette opération est réalisée à l'aide d'une opération de copie en arrière-plan avec la technologie SnapMirror , où un nouveau volume de destination est créé au nouvel emplacement. En fonction de la taille du volume et de l’utilisation des ressources du cluster, le temps nécessaire au déplacement d’un volume peut varier.
 
 Avec AFX, il n’y a pas d’agrégats.  Tout le stockage est contenu dans une seule zone de disponibilité de stockage accessible par chaque nœud du cluster.  Par conséquent, les déplacements de volume n’ont jamais besoin de copier réellement les données.  Au lieu de cela, tous les déplacements de volume sont effectués avec des mises à jour de pointeur entre les nœuds.  Ceci est appelé déplacement de volume à copie zéro (ZCVM) et se produit instantanément car aucune donnée n'est réellement copiée ou déplacée.  Il s’agit essentiellement du même processus de déplacement de volume utilisé avec Unified ONTAP sans la copie SnapMirror .
 
-Notez que dans la version initiale, les volumes ne seront déplacés que dans les scénarios de basculement de stockage et lorsque des nœuds sont ajoutés ou supprimés du cluster.  Ces mouvements sont contrôlés uniquement via ONTAP.
+Dans la version initiale d'AFX, les volumes ne se déplacent que dans les scénarios de basculement de stockage et lorsque des nœuds sont ajoutés ou supprimés du cluster. Ces mouvements sont contrôlés uniquement via ONTAP.
 
 .Comment AFX détermine-t-il où placer les données dans la SAZ ?
 AFX inclut une fonctionnalité appelée Gestion automatisée de la topologie (ATM) qui répond aux déséquilibres entre le système et les objets utilisateur.  L’objectif principal de l’ATM est d’équilibrer les volumes sur le cluster AFX.  Lorsqu'un déséquilibre est détecté, une tâche interne est déclenchée pour répartir uniformément les données sur les nœuds actifs.  Les données sont réaffectées à l'aide de ZCVM qui n'a besoin que de copier et de mettre à jour les métadonnées de l'objet.
