@@ -111,13 +111,15 @@ Avec AFX, un nouveau VLAN HA est ajouté aux commutateurs du cluster principal p
 
 
 
-== Limitations de déploiement du système AFX
+== Limitations du déploiement du cluster AFX
 
-Il existe plusieurs limitations, notamment des minimums et des maximums, appliquées par AFX lors de la configuration et de l'utilisation de votre cluster.  Ces limites se répartissent en plusieurs catégories différentes, notamment :
+Il existe plusieurs limitations, notamment des minimums et des maximums, appliquées par AFX lors de la configuration et de l'utilisation de votre cluster. Ces limites se répartissent en plusieurs catégories, notamment :
 
 Nœuds de contrôleur par cluster:: Chaque cluster AFX doit avoir au moins quatre nœuds.  Le nombre maximal de nœuds varie en fonction de la version ONTAP .
-Capacité de stockage:: Il s’agit de la capacité totale de tous les disques SSD de la zone de disponibilité de stockage (SAZ) du cluster.  La capacité de stockage maximale varie en fonction de la version ONTAP .  Vous devez consulter les informations disponibles dans l’outil de matrice d’interopérabilité (IMT) pour déterminer les capacités de votre cluster.
+Capacité de stockage:: Il s’agit de la capacité totale de tous les disques SSD de la zone de disponibilité de stockage (SAZ) du cluster. La capacité de stockage maximale varie en fonction de la version ONTAP .
 
+
+Vous devez consulter les informations disponibles dans l'outil NetApp Hardware Universe and Interoperability Matrix pour déterminer les capacités de votre cluster.
 
 
 
@@ -190,5 +192,8 @@ link:../manage-data/prepare-manage-data.html["Préparer"]pour allouer et gérer 
 * https://docs.netapp.com/us-en/ontap/concepts/introducing-ontap-interfaces-concept.html["Interfaces utilisateur ONTAP"^]
 * https://docs.netapp.com/us-en/ontap/system-admin/set-privilege-level-task.html["Définir le niveau de privilège dans l'interface de ligne de commande ONTAP"^]
 * https://docs.netapp.com/us-en/ontap/system-admin/index.html["En savoir plus sur l'administration des clusters avec l'interface de ligne de commande ONTAP"^]
+* https://hwu.netapp.com/["Hardware Universe NetApp"^]
+* https://imt.netapp.com/["Outil de matrice d'interopérabilité NetApp"^]
+* https://docs.netapp.com/us-en/interoperability-matrix-tool/["Présentation de l'outil de matrice d'interopérabilité"^]
 * link:../faq-ontap-afx.html["FAQ sur les systèmes de stockage AFX"]
 
