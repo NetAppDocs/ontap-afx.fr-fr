@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: administer/migrate-svm.html 
 keywords: afx, afx system, svm, migrate svm 
-summary: 'Vous pouvez migrer un SVM de données d’un cluster ONTAP vers un autre.  La migration SVM avec AFX fonctionne de la même manière qu"avec Unified ONTAP, bien qu"il existe plusieurs considérations d"interopérabilité.  Consultez la documentation d"Unified ONTAP pour plus de détails sur l"exécution d"une migration SVM.' 
+summary: 'Vous pouvez migrer un SVM d’un cluster ONTAP vers un autre. La migration SVM avec AFX fonctionne de la même manière qu"avec Unified ONTAP, bien qu"il existe plusieurs considérations d"interopérabilité. Consultez la documentation d"Unified ONTAP pour plus de détails sur l"exécution d"une migration SVM.' 
 ---
 = Migrer un SVM de système de stockage AFX
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Vous pouvez migrer un SVM de données d’un cluster ONTAP vers un aut
 
 
 [role="lead"]
-Vous pouvez migrer un SVM de données d’un cluster ONTAP vers un autre.  La migration SVM avec AFX fonctionne de la même manière qu'avec Unified ONTAP, bien qu'il existe plusieurs considérations d'interopérabilité.  Reportez-vous à la documentation Unified ONTAP fournie pour plus de détails sur l'exécution d'une migration SVM.
+Vous pouvez migrer un SVM d’un cluster ONTAP vers un autre. La migration SVM avec AFX fonctionne de la même manière qu'avec Unified ONTAP, bien qu'il existe plusieurs considérations d'interopérabilité. Reportez-vous à la documentation Unified ONTAP fournie pour plus de détails sur l'exécution d'une migration SVM.
 
 
 

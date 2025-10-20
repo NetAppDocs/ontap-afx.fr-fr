@@ -41,7 +41,7 @@ Vous aurez également besoin des éléments suivants :
 * noms de domaine DNS
 * Adresses IP des serveurs de noms DNS
 * Adresses IP du serveur NTP
-* Masque de sous-réseau de données
+* Masque de sous-réseau
 
 
 .Étapes
@@ -104,6 +104,6 @@ Vous devez disposer des informations suivantes :
 Tu devraislink:../get-started/prepare-cluster-admin.html["Préparez-vous à administrer AFX"] avant d'utiliser votre cluster AFX dans un environnement de production.
 
 .Informations connexes
-* link:../administer/configure-svm.html["Configurer un SVM de données AFX"]
+* link:../administer/configure-svm.html["Configurer un SVM AFX"]
 * link:../get-started/prepare-cluster-admin.html["Préparez-vous à administrer AFX"]
 

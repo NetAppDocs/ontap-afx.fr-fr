@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/create-configure-bucket.html 
 keywords: afx, afx system, create bucket 
-summary: Vous pouvez créer un bucket et le joindre à une SVM de données.  Chaque bucket peut être exposé aux clients à l’aide du protocole d’accès S3 pris en charge par AFX. 
+summary: 'Vous pouvez créer un bucket et l"attacher à un SVM. Chaque bucket peut être exposé aux clients à l’aide du protocole d’accès S3 pris en charge par AFX.' 
 ---
 = Créer et configurer un bucket S3 sur un système de stockage AFX
 :allow-uri-read: 
@@ -11,10 +11,10 @@ summary: Vous pouvez créer un bucket et le joindre à une SVM de données.  Cha
 
 
 [role="lead"]
-Vous pouvez créer un bucket et le joindre à une SVM de données.  Chaque bucket peut être exposé aux clients à l’aide du protocole d’accès S3 pris en charge par AFX.
+Vous pouvez créer un bucket et l'attacher à un SVM. Chaque bucket peut être exposé aux clients à l’aide du protocole d’accès S3 pris en charge par AFX.
 
 .À propos de cette tâche
-Lors de la création d'un bucket, vous devez fournir un minimum de détails de configuration.  Des détails supplémentaires peuvent être fournis lors de la création ou ultérieurement en modifiant le bucket.  Vous devez sélectionner le SVM pour le bucket si vous avez créé des SVM de données supplémentaires.
+Lors de la création d'un bucket, vous devez fournir un minimum de détails de configuration. Des détails supplémentaires peuvent être fournis lors de la création ou ultérieurement en modifiant le bucket. Vous devez sélectionner le SVM pour le bucket si vous avez créé des SVM supplémentaires.
 
 .Avant de commencer
 Vous devez configurer le service S3 pour le SVM afin que les clients puissent accéder au bucket.

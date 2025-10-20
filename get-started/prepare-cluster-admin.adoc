@@ -19,13 +19,11 @@ Avant de déployer AFX dans un environnement de production, il est essentiel de 
 
 Une machine virtuelle de stockage (SVM) est un environnement de serveur ou de locataire isolé au sein d'un cluster ONTAP .  Vous pouvez configurer un SVM pour fournir des données aux clients connectés.  Vous devez être familiarisé avec les capacités et les caractéristiques des SVM AFX.
 
-
-NOTE: Une SVM de données est créée lorsque vous configurez et déployez initialement un cluster AFX.  Vous pouvez créer des SVM de données supplémentaires si nécessaire.
-
-Contrôle administratif:: Les SVM de données peuvent être utilisés pour établir et appliquer l’isolation de vos données et applications.  Cela peut être utile lorsqu’il existe de nombreux groupes différents au sein d’une organisation plus vaste.  Le contrôle administratif peut être délégué aux SVM pour établir des politiques liées à l'accès, à la sécurité et à la protection des données.
+Types de SVM:: Un cluster système AFX héberge plusieurs types différents de SVM.  Un *SVM de données* est utilisé pour fournir des données aux clients et est le seul type auquel un administrateur AFX peut accéder directement et qu'il peut configurer.  Il existe une SVM de données créée par défaut lorsque vous configurez et déployez initialement un cluster AFX, mais vous pouvez créer des SVM de données supplémentaires si nécessaire.  Lorsqu'on fait référence à un SVM dans cette documentation, il s'agit d'un SVM de données, sauf indication contraire.
+Contrôle administratif:: Les SVM peuvent être utilisés pour établir et appliquer l’isolation de vos données et applications. Cela peut être utile lorsqu’il existe de nombreux groupes différents au sein d’une organisation plus vaste. Le contrôle administratif peut être délégué aux SVM pour établir des politiques liées à l'accès, à la sécurité et à la protection des données.
 Comptes et rôles RBAC:: Il existe deux niveaux d'authentification et d'autorisation avec AFX : le niveau du cluster et le niveau SVM.  En plus des comptes de cluster, chaque SVM possède son propre ensemble distinct d'utilisateurs et de rôles.  Dans la plupart des situations, l’utilisation des comptes au niveau du cluster est adéquate.  Mais en fonction de votre environnement, vous devrez peut-être également configurer et utiliser les comptes et rôles SVM les plus restrictifs. Voir link:../administer/additional-ontap-svm.html["Administration supplémentaire d'AFX SVM"] pour plus d'informations.
 Ressources de portée SVM:: Les ressources AFX et les entités configurables sont associées soit au cluster, soit à un SVM spécifique.  Il existe de nombreuses ressources avec une portée SVM, notamment des volumes et des buckets, ainsi que les comptes d'utilisateur SVM et les rôles RBAC.
-Interfaces réseau dédiées:: Chaque SVM dispose de son propre ensemble dédié d'interfaces réseau.  Par exemple, des LIF distincts sont attribués à un SVM pour la gestion et l'accès aux données client.
+Interfaces réseau dédiées:: Chaque SVM dispose de son propre ensemble dédié d'interfaces réseau. Par exemple, des LIF distincts sont attribués à un SVM pour la gestion et l’accès client.
 
 
 
@@ -36,8 +34,8 @@ Les tâches administratives ONTAP que vous effectuez avec AFX appartiennent gén
 
 Il est important de noter que ces niveaux décrivent comment les tâches administratives sont organisées et attribuées, et pas nécessairement comment la sécurité associée est configurée.  Par exemple, alors qu’un compte d’administrateur de cluster est nécessaire pour effectuer l’administration au niveau du cluster, il peut également être utilisé pour l’administration SVM.
 
-Administrateur de cluster:: L'administrateur du cluster a le contrôle complet du cluster AFX, y compris tous les SVM de données.  Le niveau administratif du cluster AFX inclut uniquement les tâches qu'un administrateur de cluster peut effectuer et aucune des tâches d'administration spécifiques à SVM. Voir link:../administer/view-dashboard.html["Administrer votre cluster"] pour plus d'informations.
-Administrateur SVM:: Un rôle d’administrateur SVM a le contrôle d’un SVM de données spécifique et est donc plus restreint que l’administrateur de cluster.  L’administration SVM implique l’exécution de tâches avec des objets et des ressources qui ont une portée SVM, comme la création d’un volume. Voir link:../manage-data/prepare-manage-data.html["Administrez vos machines virtuelles de stockage et vos données"] pour plus d'informations.
+Administrateur de cluster:: L'administrateur du cluster a le contrôle complet du cluster AFX, y compris toutes les SVM. Le niveau administratif du cluster AFX inclut uniquement les tâches qu'un administrateur de cluster peut effectuer et aucune des tâches d'administration spécifiques à SVM. Voirlink:../administer/view-dashboard.html["Administrer votre cluster"] pour plus d'informations.
+Administrateur SVM:: Un rôle d’administrateur SVM a le contrôle d’un SVM spécifique et est donc plus restreint que l’administrateur de cluster. L’administration SVM implique l’exécution de tâches avec des objets et des ressources qui ont une portée SVM, comme la création d’un volume. Voirlink:../manage-data/prepare-manage-data.html["Administrez vos machines virtuelles de stockage et vos données"] pour plus d'informations.
 
 
 
@@ -119,7 +117,7 @@ Nœuds de contrôleur par cluster:: Chaque cluster AFX doit avoir au moins quatr
 Capacité de stockage:: Il s’agit de la capacité totale de tous les disques SSD de la zone de disponibilité de stockage (SAZ) du cluster. La capacité de stockage maximale varie en fonction de la version ONTAP .
 
 
-Vous devez consulter les informations disponibles dans l'outil NetApp Hardware Universe and Interoperability Matrix pour déterminer les capacités de votre cluster.
+Vous devez consulter les informations disponibles dans l'outil NetApp Hardware Universe and Interoperability Matrix pour déterminer les capacités de votre cluster AFX.
 
 
 
@@ -165,15 +163,15 @@ link:../administer/view-insights.html["Utilisez Insights pour optimiser les perf
 
 
 
-== Démarrage rapide pour la création et l'utilisation d'un SVM de données
+== Démarrage rapide pour la création et l'utilisation d'un SVM
 
 Après avoir installé et configuré le cluster AFX, vous pouvez commencer à effectuer les tâches d’administration typiques de la plupart des déploiements AFX.  Voici les étapes de haut niveau nécessaires pour commencer à partager des données avec les clients.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"]Afficher les SVM de données disponibles
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"]Afficher les SVM disponibles
 [role="quick-margin-para"]
-link:../administer/display-svms.html["Afficher"]la liste des SVM de données et déterminez s'il y en a un que vous pouvez utiliser.
+link:../administer/display-svms.html["Afficher"]la liste des SVM et déterminez s'il y en a un que vous pouvez utiliser.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"]Créer éventuellement un SVM de données
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"]Créer éventuellement un SVM
 [role="quick-margin-para"]
 link:../administer/create-svm.html["Créer"]un SVM pour isoler et protéger vos charges de travail et données d'application si un SVM existant n'est pas disponible.
 
@@ -192,6 +190,7 @@ link:../manage-data/prepare-manage-data.html["Préparer"]pour allouer et gérer 
 * https://docs.netapp.com/us-en/ontap/concepts/introducing-ontap-interfaces-concept.html["Interfaces utilisateur ONTAP"^]
 * https://docs.netapp.com/us-en/ontap/system-admin/set-privilege-level-task.html["Définir le niveau de privilège dans l'interface de ligne de commande ONTAP"^]
 * https://docs.netapp.com/us-en/ontap/system-admin/index.html["En savoir plus sur l'administration des clusters avec l'interface de ligne de commande ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/system-admin/types-svms-concept.html["Types de SVM dans un cluster ONTAP"^]
 * https://hwu.netapp.com/["Hardware Universe NetApp"^]
 * https://imt.netapp.com/["Outil de matrice d'interopérabilité NetApp"^]
 * https://docs.netapp.com/us-en/interoperability-matrix-tool/["Présentation de l'outil de matrice d'interopérabilité"^]

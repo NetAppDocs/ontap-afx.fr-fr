@@ -85,7 +85,7 @@ Non. Les protocoles de données dans AFX fonctionnent de la même manière qu'av
 .Le partitionnement de disque avancé (ADP) est-il utilisé dans AFX ?
 Non. ADP n'est pas utilisé avec AFX.  Étant donné qu’il n’existe aucun agrégat racine avec AFX, la fonctionnalité ADP n’est pas nécessaire pour maximiser l’efficacité de l’espace disque.
 
-.Puis-je utiliser n’importe quel type de commutateurs dans le réseau de cluster backend pour mon système AFX ?
+.Puis-je utiliser n’importe quel type de commutateurs dans le réseau de cluster backend pour mon système de stockage AFX ?
 Non. Seuls les commutateurs spécifiquement approuvés et fournis avec la plate-forme de stockage AFX sont pris en charge pour le réseau de cluster. De plus, ces commutateurs backend sont dédiés aux opérations de cluster AFX. Les opérations d’accès client (à l’aide de NFS, SMB et S3) doivent uniquement être effectuées sur le réseau de données client frontal.
 
 .Comment les commutateurs du cluster sont-ils configurés ?

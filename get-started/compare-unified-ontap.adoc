@@ -14,7 +14,7 @@ summary: 'Les systèmes NetApp AFX exécutent une personnalité personnalisée d
 Les systèmes NetApp AFX exécutent une personnalité personnalisée d' ONTAP qui diffère de la personnalité ONTAP (appelée Unified ONTAP) qui s'exécute sur le stockage AFF et FAS .  Vous devez savoir en quoi les systèmes AFX sont similaires et différents des systèmes FAS et AFF .  Cela offre une perspective précieuse et peut être utile lors du déploiement d'AFX dans votre environnement.
 
 
-TIP: Cette documentation AFX inclut des liens vers diverses rubriques sur le site de documentation Unified ONTAP .  Le contenu supplémentaire offre plus de profondeur et une perspective différente qui peut être utile lorsque vous administrez votre système de stockage AFX.
+TIP: La documentation AFX inclut des liens vers diverses rubriques du site de documentation Unified ONTAP pour plus de détails sur les fonctionnalités qui se comportent de la même manière quelle que soit la personnalité ONTAP .  Le contenu supplémentaire offre plus de profondeur qui peut être utile lors de l'administration de votre système de stockage AFX.
 
 
 
@@ -69,7 +69,7 @@ Les fonctionnalités suivantes liées aux agrégats ne sont pas disponibles avec
 === Réplication des données
 
 * Aucune réplication d'un volume à partir d'un système AFF ou FAS contenant un LUN
-* Les volumes AFX FlexGroup ne peuvent être répliqués que vers Unified ONTAP 9.16.1 ou version ultérieure
+* Les volumes FlexGroup ne peuvent être répliqués que vers Unified ONTAP 9.16.1 ou version ultérieure
 
 
 
