@@ -1601,7 +1601,6 @@
   <block id="cc00ecc8807926c957b868c222de58f6" category="sidebar">Développer le cluster</block>
   <block id="d04e5f519989e5f2ca95f9541ffe17a0" category="sidebar">Mettre à niveau ONTAP</block>
   <block id="00a69742e414f1b267e0cae78e185336" category="sidebar">Mettre à jour le firmware</block>
-  <block id="88fff44862def4168ac79c5db562ef39" category="sidebar">Entretenir le matériel</block>
   <block id="3e3ccd70e170fe5490433b8d5cf56bf3" category="sidebar">En savoir plus sur votre système AFX</block>
   <block id="dbe4d9ee9509101eab810b6d20824b87" category="sidebar">En savoir plus sur NetApp AFX</block>
   <block id="ee3eaeb6a7cd31167c2dd23547b16511" category="sidebar">Détails d'architecture</block>
@@ -1720,4 +1719,5 @@
   <block id="110352dfc6688e1ab1d9271ac5a2552b" category="paragraph">Il existe des restrictions supplémentaires à prendre en compte avant de migrer une SVM.</block>
   <block id="937992c5285f166aa01c3633fc6cb85b" category="list-text">Le système de stockage AFX ne prend pas en charge NetApp MetroCluster.  Cela crée une limitation lors de la migration d'une SVM.  Vous ne pouvez pas migrer un SVM AFX vers ou depuis un système AFF ou FAS (ou tout système NetApp exécutant la personnalité Unified ONTAP ) configuré pour utiliser MetroCluster.  Bien que ces scénarios de migration ne soient pas pris en charge, ils ne sont pas non plus explicitement bloqués par les pré-vérifications AFX ; il convient donc de ne pas les tenter.</block>
   <block id="372a3016fd08d93f2bfe7c10abae9936" category="list-text"><block ref="372a3016fd08d93f2bfe7c10abae9936" category="inline-link-macro-rx"></block></block>
+  <block id="f090951c6f34b76fa7499153d4fd51be" category="sidebar">Maintenance du matériel</block>
 </blocks>
