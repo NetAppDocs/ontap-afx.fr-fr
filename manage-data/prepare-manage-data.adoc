@@ -29,7 +29,7 @@ Godet S3:: Un bucket S3 est un conteneur de stockage qui contient des objets ou 
 Conteneur de données:: Dans le contexte d’un système AFX, un conteneur de données est un terme générique et peut être soit un volume, soit un bucket S3.
 Qtree:: Un qtree est une subdivision logique au sein d'un volume que vous pouvez créer pour gérer et organiser les données.  Il vous permet de spécifier ses propriétés et son style de sécurité (NTFS ou UNIX) et peut hériter des politiques d'exportation de son volume parent ou avoir les siennes.  Les Qtrees peuvent contenir des fichiers et des répertoires et sont souvent utilisés pour gérer les autorisations et les quotas de manière plus granulaire au sein d'un volume.
 Quota:: Un quota dans ONTAP est une limite définie sur la quantité d'espace de stockage ou le nombre de fichiers pouvant être utilisés par un utilisateur, un groupe ou un qtree.  Les quotas sont utilisés pour gérer et contrôler l'utilisation des ressources au sein d'un système de stockage, garantissant qu'aucun utilisateur ou application ne puisse consommer une quantité excessive de ressources.
-jonction NFS:: Le trunking NFS est une technologie qui permet aux clients NFS v4.1 d'ouvrir plusieurs connexions à différents LIF sur le serveur NFS. Cela augmente la vitesse de transfert de données et offre une résilience via plusieurs chemins lors de l'exportation de volumes FlexVol vers des clients compatibles avec la jonction.
+Agrégation de sessions NFS:: Le trunking NFS est une technologie qui permet aux clients NFS v4.1 d'ouvrir plusieurs connexions à différents LIF sur le serveur NFS. Cela augmente la vitesse de transfert des données et assure une résilience grâce à de multiples chemins lors de l'exportation de volumes vers des clients compatibles avec le trunking.  Les LIF doivent se trouver sur le même nœud pour participer au tronc.
 +
 --
 Pour activer la jonction, vous devez disposer d'un SVM configuré pour NFS et NFSv4.1 doit être activé. Cela nécessite également de remonter tous les clients NFSv4.x après un changement de configuration, ce qui peut être perturbateur. Les procédures de support et de configuration pour la jonction NFS sont les mêmes pour tous les systèmes ONTAP . En savoir plus sur https://docs.netapp.com/us-en/ontap/nfs-trunking/index.html["jonction NFS"^]
@@ -61,7 +61,7 @@ De plus, les volumes FlexCache peuvent être connectés entre les systèmes AFX 
 
 === Migration de données à partir d'une source non ONTAP
 
-La migration de données à partir de systèmes non ONTAP peut être effectuée à l'aide d'opérations de copie au niveau des fichiers. Utilitaires de copie rapide tels que https://docs.netapp.com/us-en/xcp/["XCP"^] peut être utilisé aussi bien avec des utilitaires standards tels que RoboCopy (pour SMB) et rsync (pour NFS) qu'avec des outils tiers tels que DataDobi.
+La migration de données à partir de systèmes non ONTAP peut être effectuée à l'aide d'opérations de copie au niveau des fichiers. utilitaires de copie rapide tels que https://docs.netapp.com/us-en/xcp/["XCP"^] ou https://docs.netapp.com/us-en/data-services-copy-sync/["Copier et synchroniser"^] peut être utilisé ainsi que des utilitaires standard tels que RoboCopy (pour SMB) et rsync (pour NFS) ainsi que des outils tiers tels que DataDobi.
 
 
 

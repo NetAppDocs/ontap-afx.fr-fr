@@ -59,13 +59,13 @@ Plusieurs composants logiques sont inclus avec AFX.  Ils sont implémentés dans
 
 === Piscine de stockage commune
 
-La zone de disponibilité de stockage (SAZ) est un pool de stockage commun pour l'ensemble du cluster.  Il s’agit d’un ensemble de disques dans les étagères de stockage qui fournit un espace de noms unifié unique à tous les nœuds du contrôleur.  Le SAZ propose un modèle de provisionnement sans restrictions fixes concernant les étagères de stockage utilisées par les nœuds.  Les clients peuvent visualiser l’espace libre et l’utilisation du stockage en tant que propriétés de l’ensemble du cluster AFX.
+La zone de disponibilité de stockage (SAZ) est un pool de stockage commun pour l'ensemble du cluster. Il s'agit d'un ensemble de disques stockés dans des baies auxquelles tous les nœuds de contrôleur ont un accès en lecture et en écriture.  La SAZ propose un modèle de provisionnement sans restrictions fixes concernant les baies de stockage pouvant être utilisées par les nœuds ; le placement des volumes sur les nœuds est géré automatiquement par ONTAP. Les clients peuvent visualiser l’espace libre et l’utilisation du stockage en tant que propriétés de l’ensemble du cluster AFX.
 
 
 
 === FlexVolumes, FlexGroups et buckets
 
-Les FlexVolumes, FlexGroups et les buckets S3 sont les _conteneurs de données_ exposés aux administrateurs AFX en fonction des protocoles d'accès client.  Ces conteneurs évolutifs sont conçus pour faire abstraction de nombreux détails complexes du stockage interne.
+Les FlexVolumes, FlexGroups et les buckets S3 sont les _conteneurs de données_ exposés aux administrateurs AFX en fonction des protocoles d'accès client. Ils fonctionnent de manière identique à Unified ONTAP.  Ces conteneurs évolutifs sont conçus pour faire abstraction de nombreux détails complexes liés au stockage interne, tels que le placement des données et l'équilibrage des capacités.
 
 
 
@@ -77,12 +77,12 @@ La disposition et l'accès aux données sont optimisés pour un accès transpare
 
 === SVM et multi-location
 
-AFX fournit un modèle de locataire qui s'appuie sur le modèle SVM disponible avec les systèmes AFF et FAS .  Le modèle de locataire AFX a été rationalisé pour une administration simplifiée.
+AFX fournit un modèle de locataire qui s'appuie sur le modèle SVM disponible avec les systèmes AFF et FAS . Le modèle de locataire AFX est identique à celui d'Unified ONTAP , mais il a été rationalisé pour une administration simplifiée dans un environnement d'objets NAS et S3.  Par exemple, les options de configuration pour le SAN, ainsi que pour les agrégats et les groupes RAID, ont été supprimées.
 
 
 
 == Déploiement du cluster AFX
 
-La figure suivante illustre un déploiement de cluster AFX typique.  Les nœuds de contrôleur sont découplés des étagères de stockage et connectés via un réseau partagé.
+La figure suivante illustre un déploiement de cluster AFX typique. Le cluster AFX comprend des nœuds de contrôleur qui sont découplés des baies de stockage et connectés via un réseau interne partagé.  En dehors du périmètre du cluster AFX, les clients accèdent au cluster via un réseau client distinct.
 
 image:afx-cluster.png["Architecture du cluster AFX"]

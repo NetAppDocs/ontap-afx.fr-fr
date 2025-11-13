@@ -17,13 +17,12 @@ Le système de stockage NetApp AFX est basé sur une architecture de stockage de
 
 == Charges de travail d'application typiques
 
-Le système de stockage NetApp AFX répond aux exigences uniques typiques des environnements IA/ML et d'autres applications centrées sur les données associées. Le système de stockage AFX est idéal pour les organisations gérant plusieurs charges de travail différentes, notamment :
+Le système de stockage NetApp AFX répond aux exigences uniques des charges de travail d'objets NAS et S3 qui nécessitent des performances élevées et une évolutivité indépendante.  Ces applications bénéficient d'une conception avancée reposant sur une forte concurrence et des E/S parallèles.  AFX est idéal pour les organisations déployant et gérant plusieurs types de charges de travail applicatives, notamment :
 
 * Formation et perfectionnement itératif du modèle associé à l'apprentissage en profondeur où une bande passante élevée continue et un accès à des ensembles de données massifs sont requis.
 * Traitement de divers types de données, notamment du texte, des images et des vidéos.
 * Applications d’inférence en temps réel à faible latence où des fenêtres de temps de réponse strictes sont nécessaires.
 * Pipelines de science des données et d’apprentissage automatique qui peuvent bénéficier de la gestion des données en libre-service par les ingénieurs et les scientifiques des données.
-* Charges de travail nécessitant une concurrence élevée et des E/S parallèles, telles que les systèmes multi-GPU avec transport RDMA.
 
 
 
@@ -32,13 +31,13 @@ Le système de stockage NetApp AFX répond aux exigences uniques typiques des en
 
 Le système AFX possède plusieurs caractéristiques de conception qui lui permettent de fonctionner comme une plate-forme NAS hautes performances.
 
-Découpler les capacités de stockage et de calcul:: Contrairement aux systèmes de stockage AFF et FAS , les éléments de stockage et de calcul AFX du cluster sont découplés.  Les contrôleurs AFX ne sont pas limités à l’accès à un ensemble limité de disques locaux.
-Suppression de la gestion des agrégats et du RAID:: L'administrateur de stockage n'a plus besoin de gérer les agrégats et les groupes RAID.  AFX gère ces tâches, ce qui simplifie l'administration et offre aux non-spécialistes la possibilité de gérer leurs données.
-Pool de stockage unique pour le cluster:: Le découplage du calcul et du stockage AFX, ainsi qu'une gestion simplifiée du stockage, permettent de créer un pool de stockage unique.  Cette zone de disponibilité de stockage (SAZ) est disponible pour tous les nœuds de contrôleur d'un cluster AFX. Voirlink:../faq-ontap-afx.html["FAQ sur les systèmes de stockage AFX"] pour plus de détails.
-Haute performance:: AFX est conçu pour les hautes performances requises par les applications IA/ML spécialisées.  Il peut utiliser plus efficacement le matériel moderne pour fournir une bande passante élevée et soutenue avec une latence ultra-faible.
-Simplicité opérationnelle:: Le pool de stockage unique, ainsi que d'autres fonctionnalités, notamment la gestion automatique du stockage, offrent un modèle administratif et opérationnel beaucoup plus simple.
-Évolutivité:: L'ensemble des nœuds de contrôleur et des étagères de stockage d'un cluster peut être étendu indépendamment en fonction des besoins de l'application.  L'ajout de contrôleurs ou d'étagères entraîne des exigences administratives et des perturbations limitées.
-Amélioration de la mobilité des données:: Les volumes peuvent être déplacés entre les nœuds du contrôleur de cluster sans interruption, sans copier réellement les données.  Les pointeurs de répertoire et d'index de métadonnées sont mis à jour à la place.  Cela améliore considérablement les performances lors des procédures administratives typiques ainsi que la récupération en cas de panne.
+Découpler les capacités de stockage et de calcul:: Contrairement aux autres systèmes de stockage NetApp ONTAP , les éléments de calcul et de stockage d'un cluster AFX sont découplés et reliés par un réseau commuté.  La propriété des disques n'est plus liée à des nœuds spécifiques, ce qui offre plusieurs avantages.  Par exemple, les composants de calcul et de stockage d'un cluster AFX peuvent être étendus indépendamment.
+Gestion automatisée du stockage:: Les agrégats physiques ne sont plus accessibles à l'administrateur du stockage AFX.  En revanche, AFX gère automatiquement les allocations de capacité virtuelle pour les nœuds, ainsi que la configuration du groupe RAID, lorsque de nouvelles baies de stockage sont ajoutées au cluster.  Cette conception simplifie l'administration et offre aux non-spécialistes la possibilité de gérer leurs données.
+Pool de stockage unique pour le cluster:: Étant donné que les nœuds et les étagères de stockage sont découplés avec NetApp AFX, toute la capacité de stockage du cluster est collectée dans un seul pool appelé zone de disponibilité de stockage (SAZ).  Les disques et les étagères d'une SAZ sont disponibles pour tous les nœuds de stockage d'un cluster AFX pour les opérations de lecture et d'écriture.  De plus, tous les nœuds du cluster peuvent participer à la reconstruction des disques en cas de panne. Se référer àlink:../faq-ontap-afx.html["FAQ sur les systèmes de stockage AFX"] pour plus de détails.
+Haute performance:: NetApp AFX offre une bande passante élevée et soutenue avec une latence ultra-faible et est donc conçu pour les charges de travail NAS et objets hautes performances.  AFX utilise du matériel moderne de pointe ainsi que des baies de stockage capables de gérer un ratio élevé de nœuds par rapport aux disques grâce à son architecture unique.  L'extension des nœuds de stockage au-delà du ratio typique de 1:1 (nœud:étagère) maximise le profil de performance possible des disques jusqu'à leurs limites.  Cette conception offre efficacité et densité de stockage pour vos applications les plus critiques.
+Indépendant et à grande échelle:: Grâce à ses nœuds et étagères de stockage découplés, un cluster AFX peut être étendu indépendamment et sans interruption en fonction des besoins de votre application.  Vous pouvez ajouter des nœuds de stockage pour obtenir plus de puissance de calcul et de débit, ou ajouter des étagères pour obtenir plus de capacité de stockage et de performances disque.  L'architecture NetApp AFX offre de nouvelles possibilités pour la taille maximale de votre cluster.  Pour connaître les dernières limites du cluster AFX en fonction de votre version ONTAP , reportez-vous à l' Hardware Universe NetApp .
+mobilité des données sans copie:: Les clients NAS et objets accèdent aux volumes du cluster ONTAP .  Vous pouvez déplacer les volumes entre les nœuds sans interruption de service afin d'atteindre vos objectifs d'équilibrage de capacité et de performance.  Avec Unified ONTAP, un déplacement de volume est effectué à l'aide de la technologie SnapMirror , ce qui peut prendre du temps et nécessiter une capacité temporaire supplémentaire.  Mais avec AFX, une opération de copie de données n'est plus nécessaire au sein de la zone de disponibilité de stockage partagée (SAZ).  En revanche, seules les métadonnées du volume sont déplacées, ce qui améliore considérablement les performances. Se référer àlink:../faq-ontap-afx.html["FAQ sur les systèmes de stockage AFX"] pour plus de détails.
+Fonctionnalités HA améliorées:: NetApp AFX offre un certain nombre d'améliorations pour la configuration et le traitement à haute disponibilité (HA).  AFX supprime la nécessité de connecter directement les nœuds partenaires HA et permet plutôt aux paires HA de communiquer via le réseau interne du cluster.  Cette conception offre aux administrateurs la possibilité de déployer des paires HA dans des racks ou des rangées séparées d'un centre de données pour une tolérance aux pannes accrue.  De plus, la mobilité sans copie AFX s'étend aux scénarios de basculement HA.  En cas de défaillance d'un nœud, ses volumes basculeront vers le partenaire HA pour enregistrer les écritures restantes sur le disque.  Ensuite, ONTAP répartit les volumes de manière égale sur tous les nœuds survivants du cluster.  Cela signifie que vous n'avez plus besoin de prendre en compte les performances de basculement du stockage lors de la conception initiale de l'emplacement de vos données.
 
 
 
@@ -46,6 +45,9 @@ Amélioration de la mobilité des données:: Les volumes peuvent être déplacé
 == Infrastructure matérielle
 
 Le système de stockage NetApp AFX offre une solution matérielle et logicielle unifiée qui crée une expérience simplifiée spécifique aux besoins des clients NAS hautes performances.
+
+
+TIP: Vous devriez revoir lelink:../faq-ontap-afx.html["FAQ sur les systèmes de stockage AFX"] pour plus d'informations sur l'interopérabilité matérielle et les options de mise à niveau.
 
 Les composants matériels suivants sont utilisés avec les clusters AFX :
 
@@ -58,5 +60,6 @@ Les composants matériels suivants sont utilisés avec les clusters AFX :
 
 == Informations connexes
 
+* https://hwu.netapp.com/["Hardware Universe NetApp"^]
 * https://www.netapp.com/afx/["NetApp AFX"^]
 
