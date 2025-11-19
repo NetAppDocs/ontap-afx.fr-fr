@@ -38,14 +38,14 @@ Les composants du connecteur sont délicats et il faut faire attention lors de l
 * Lors du câblage vers une connexion à fibre optique, insérez l'émetteur-récepteur optique dans le port du contrôleur avant le câblage vers le port du commutateur.
 * Le système de stockage AFX 1K utilise 4 câbles de dérivation 100 GbE sur le cluster et le réseau de stockage.  Les connexions 400 GbE sont établies sur les ports du commutateur, et les connexions 100 GbE sont établies sur les ports du contrôleur et de l'étagère de disques.  Les connexions de stockage et HA/Cluster peuvent être établies sur n'importe quel port non ISL du commutateur.
 +
-Pour une connexion de câble de dérivation 4x100GbE donnée au port de commutateur spécifique, vous connectez les 4 ports allant au commutateur via ce câble de dérivation unique.
+Pour une connexion donnée d'un câble de dérivation 4x100GbE à un port de commutateur spécifique, vous connectez les quatre ports d'un contrôleur donné au commutateur via ce seul câble de dérivation.
 
 +
 ** 1 port HA (emplacement 1)
 ** 1 x port de cluster (emplacement 7)
-** 2 ports de stockage (emplacements 10, 11)
+** 2 ports de stockage (emplacements 10 et 11)
 +
-Tous les ports « a » se connectent au commutateur A et tous les ports « b » se connectent au commutateur B.
+Tous les ports « a » sont connectés au commutateur A, et tous les ports « b » sont connectés au commutateur B.
 
 
 
@@ -148,14 +148,14 @@ Utilisez le câble d'interconnexion Cluster et HA pour connecter les ports e1a e
 +
 ** Contrôleur A
 +
-*** e1a
-*** e7a
+*** e1a (HA)
+*** e7a (Cluster)
 
 
 ** Contrôleur B
 +
-*** e1a
-*** e7a
+*** e1a (HA)
+*** e7a (Cluster)
 +
 *Câbles 100GbE*
 
@@ -173,14 +173,14 @@ image::../media/drw_afx_switched_cluster_cabling_a_ieops-2352.svg[Connexions de 
 +
 ** Contrôleur A
 +
-*** e1b
-*** e7b
+*** e1b (HA)
+*** e7b (Cluster)
 
 
 ** Contrôleur B
 +
-*** e1b
-*** e7b
+*** e1b (HA)
+*** e7b (Cluster)
 +
 *Câbles 100GbE*
 

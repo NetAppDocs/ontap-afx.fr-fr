@@ -768,11 +768,8 @@
   <block id="9374c5e802bf6b1ff92af59f8a647e03" category="paragraph">Les composants du connecteur sont délicats et il faut faire attention lors de leur mise en place.</block>
   <block id="db2d996135c18f3292b7becd924f6ce2" category="list-text">Lors du câblage vers une connexion à fibre optique, insérez l'émetteur-récepteur optique dans le port du contrôleur avant le câblage vers le port du commutateur.</block>
   <block id="5f229a9a6914f36d0c7f990c5dd979ca" category="list-text">Le système de stockage AFX 1K utilise 4 câbles de dérivation 100 GbE sur le cluster et le réseau de stockage.  Les connexions 400 GbE sont établies sur les ports du commutateur, et les connexions 100 GbE sont établies sur les ports du contrôleur et de l'étagère de disques.  Les connexions de stockage et HA/Cluster peuvent être établies sur n'importe quel port non ISL du commutateur.</block>
-  <block id="a39cbdf3556d2247e7f4fa382a8e5e35" category="paragraph">Pour une connexion de câble de dérivation 4x100GbE donnée au port de commutateur spécifique, vous connectez les 4 ports allant au commutateur via ce câble de dérivation unique.</block>
   <block id="6d89bbfd2411c00390171fa4620a2783" category="list-text">1 port HA (emplacement 1)</block>
   <block id="b6d8c74111c188910bdefcd2adcda931" category="list-text">1 x port de cluster (emplacement 7)</block>
-  <block id="c4d3d45d793eb993ca03dfa39259404c" category="list-text">2 ports de stockage (emplacements 10, 11)</block>
-  <block id="df4996cbb1f5814efce564f5014e7310" category="paragraph">Tous les ports « a » se connectent au commutateur A et tous les ports « b » se connectent au commutateur B.</block>
   <block id="298a50f0b4f9da25188462848d528731" category="admonition">Les configurations de commutateur Cisco Nexus 9332D-GX2B et 9364D-GX2A pour le système de stockage AFX 1K nécessitent des connexions de câble de dérivation 4x100GbE.</block>
   <block id="0b47086f2d53dbb9632d279e9918b4da" category="section-title">Étape 1 : connecter les contrôleurs au réseau de gestion</block>
   <block id="682701dba15c7c4c75458bb51c17becf" category="paragraph">Connectez le port de gestion de chaque commutateur à l'un des commutateurs de gestion (si commandés) ou connectez-les directement à votre réseau de gestion.</block>
@@ -802,13 +799,11 @@
   <block id="7d1e8fb2f50320f7b5004ba0fd39055b" category="list-text">Connectez les ports de contrôleur suivants à n’importe quel port non ISL sur le commutateur réseau du cluster A.</block>
   <block id="595df28a8a4a9361a6231a9d84e8cd08" category="list-text">Contrôleur A</block>
   <block id="9cb7b36b3f2bccc776862e6f2f494077" category="list-text">e1a</block>
-  <block id="9a031538991c9e151341376dfd687bec" category="list-text">e7a</block>
   <block id="a9e70fa35de61f4ac25cc4bcd706a55d" category="list-text">Contrôleur B</block>
   <block id="29b62d617481485649ea2d5b54fca512" category="image-alt">Câble HA en cluster</block>
   <block id="f1d133e33e29362e931a34312a961d0b" category="image-alt">Connexions de cluster de câbles au réseau de cluster</block>
   <block id="ac32cb5bd4dc17916ab1ece800d39226" category="list-text">Connectez les ports de contrôleur suivants à n’importe quel port non ISL sur le commutateur réseau du cluster B.</block>
   <block id="e737b5ac24a63afc00e81377a906728d" category="list-text">e1b</block>
-  <block id="ef552e9c89303b51a8bdce9d5298edba" category="list-text">e7b</block>
   <block id="c61349783073807f1993874d0e3a4a8c" category="section-title">Étape 4 : Câblez les connexions de stockage du contrôleur au commutateur</block>
   <block id="da160308e3b4b4a80bf1b72b5bdbedb8" category="inline-link">Hardware Universe</block>
   <block id="7bebd570400c9d8d9796caad43fdcebd" category="paragraph">Connectez les ports de stockage du contrôleur aux commutateurs.  Assurez-vous d’avoir les câbles et connecteurs appropriés pour vos commutateurs. Voir<block ref="16a6d09025d51cb8dd3516798b3fee8a" category="inline-link-rx"></block> pour plus d'informations.</block>
@@ -1740,4 +1735,11 @@
   <block id="5c9caa41b457294382a8eb7e1cef25e5" category="cell">Placement de volume amélioré</block>
   <block id="bd6a1d603e00e7749c4356b336d60ddb" category="paragraph">NetApp AFX répartit automatiquement les volumes entre tous les nœuds d'un cluster.  Dans les versions précédentes ONTAP , l'algorithme de placement était basé sur le nombre de volumes dans le cluster.  Chaque nœud se voit attribuer le même nombre de volumes, quelle que soit son activité.  À partir d' ONTAP 9.18.1, l'algorithme a été amélioré pour prendre en compte les performances des nœuds lors du placement ou du déplacement de volumes.  Il en résulte un meilleur équilibrage des performances entre les nœuds du cluster AFX, ce qui réduit considérablement la probabilité qu'un nœud unique soit surchargé.</block>
   <block id="d529398546b94e10169c1e6f6f8aed12" category="sidebar">Nouveautés d' ONTAP 9.18.1</block>
+  <block id="11b5c9d9c84e61219bb777d18c81b347" category="paragraph">Pour une connexion donnée d'un câble de dérivation 4x100GbE à un port de commutateur spécifique, vous connectez les quatre ports d'un contrôleur donné au commutateur via ce seul câble de dérivation.</block>
+  <block id="7d581081b7f3fe9206d29f97bf033a53" category="list-text">2 ports de stockage (emplacements 10 et 11)</block>
+  <block id="a4bf70134b59a2fe9b8e4eeee66ff6c2" category="paragraph">Tous les ports « a » sont connectés au commutateur A, et tous les ports « b » sont connectés au commutateur B.</block>
+  <block id="0fb874e7bc6012726d40fd59a1fb3c4f" category="list-text">e1a (HA)</block>
+  <block id="5fc4cd787cd9359f05ffec407ae5a910" category="list-text">e7a (Cluster)</block>
+  <block id="86b2625bfd2ba28e4a629382f2ebe2cf" category="list-text">e1b (HA)</block>
+  <block id="245f02c7386817b111d049fbb0a850bf" category="list-text">e7b (Cluster)</block>
 </blocks>
