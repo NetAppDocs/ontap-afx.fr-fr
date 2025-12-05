@@ -132,5 +132,6 @@ Vous avez renouvelé ou supprimé un certificat client/serveur ou une autorité 
 
 == Informations connexes
 
+* https://docs.netapp.com/us-en/ontap/authentication/install-server-certificate-cluster-svm-ssl-server-task.html["Générer et installer un certificat serveur signé par une autorité de certification dans ONTAP"^]
 * https://docs.netapp.com/us-en/ontap/authentication/manage-certificates-sm-task.html["Gérer les certificats ONTAP avec System Manager"^]
 

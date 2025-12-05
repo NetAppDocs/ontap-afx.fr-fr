@@ -14,17 +14,15 @@ summary: Avant de gérer vos données AFX, vous devez vous familiariser avec les
 Avant de gérer vos données AFX, vous devez vous familiariser avec les principaux concepts et fonctionnalités.
 
 
-TIP: Étant donné que de nombreux concepts et procédures d’administration disponibles sur les systèmes AFF et FAS sont les mêmes que ceux des systèmes de stockage AFX, il peut être utile de consulter la documentation d’Unified ONTAP .
-
-
 
 == Terminologie et options
 
 Il existe plusieurs termes liés à la sécurité des données AFX que vous devez connaître.
 
-Ransomware:: Un ransomware est un logiciel malveillant qui crypte les fichiers, les rendant inaccessibles à l'utilisateur.  Un certain type de paiement est généralement exigé pour décrypter les données.  NetApp ONTAP fournit des solutions de protection contre les ransomwares grâce à des fonctionnalités telles que la protection autonome contre les ransomwares (ARP).
-Cryptage:: Le cryptage est le processus de conversion des données dans un format sécurisé qui ne peut pas être facilement lu sans autorisation appropriée.  ONTAP propose des technologies de cryptage logicielles et matérielles pour protéger les données au repos.  Cela garantit qu'il ne peut pas être lu si le support de stockage est réutilisé, retourné, égaré ou volé.  Ces solutions de chiffrement peuvent être gérées à l'aide d'un serveur de gestion de clés externe ou du gestionnaire de clés embarqué fourni par ONTAP.
-Certificats numériques et PKI:: Un certificat numérique est un document électronique utilisé pour prouver la propriété d'une clé publique.  La clé publique et la clé privée associée peuvent être utilisées de diverses manières, notamment pour établir l'identité, généralement dans le cadre d'un cadre de sécurité plus large tel que TLS et IPsec.  Ces clés, ainsi que les protocoles de support et les normes de formatage, constituent la base de l’infrastructure à clés publiques (PKI).
+Ransomware:: Un ransomware est un logiciel malveillant qui crypte les fichiers, les rendant inaccessibles à l'utilisateur. Un paiement, sous une forme ou une autre, est généralement exigé pour décrypter les données.  ONTAP propose des solutions pour se protéger contre les ransomwares grâce à des fonctionnalités telles que la protection autonome contre les ransomwares (ARP).
+Cryptage:: Le cryptage est le processus de conversion des données dans un format sécurisé qui ne peut pas être facilement lu sans autorisation appropriée. ONTAP propose des technologies de cryptage logicielles et matérielles pour protéger les données au repos. Cela garantit qu'il ne peut pas être lu si le support de stockage est réutilisé, retourné, égaré ou volé. Ces solutions de chiffrement peuvent être gérées à l'aide d'un serveur de gestion de clés externe ou du gestionnaire de clés embarqué fourni par ONTAP. Se référer àlink:../secure-data/encrypt-data-at-rest.html["Crypter les données au repos sur un système de stockage AFX"] pour plus d'informations.
+Certificats numériques et PKI:: Un certificat numérique est un document électronique utilisé pour prouver la propriété d'une clé publique. La clé publique et la clé privée associée peuvent être utilisées de diverses manières, notamment pour établir l'identité, généralement dans le cadre d'un cadre de sécurité plus large tel que TLS et IPsec. Ces clés, ainsi que les protocoles de support et les normes de formatage, constituent la base de l’infrastructure à clés publiques (PKI). Se référer àlink:../administer/manage-certificates.html#generate-a-certificate-signing-request["Gérer les certificats sur un système de stockage AFX"] pour plus d'informations.
+Sécurité du protocole Internet:: IPsec est une norme Internet qui assure le chiffrement, l'intégrité et l'authentification des données en transit pour le trafic circulant entre les points d'extrémité du réseau au niveau IP.  Il sécurise tout le trafic IP entre ONTAP et les clients, y compris les protocoles de niveau supérieur tels que NFS et SMB.  Le protocole IPsec assure une protection contre les attaques par rejeu malveillantes et les attaques de type « homme du milieu » visant vos données. Se référer àlink:../secure-data/secure-ip-connections.html["Connexions IP sécurisées sur vos systèmes de stockage AFX"] pour plus d'informations.
 
 
 

@@ -46,3 +46,7 @@ Utilisez le gestionnaire de clés intégré AFX ou un gestionnaire de clés exte
 . Sélectionnez *Cryptage double couche* pour activer le cryptage logiciel.
 . Sélectionnez *Enregistrer*.
 
+
+.Informations connexes
+* https://docs.netapp.com/us-en/ontap/concepts/encryption-concept.html["Cryptage"^]
+
