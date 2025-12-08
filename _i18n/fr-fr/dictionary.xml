@@ -1766,4 +1766,10 @@
   <block id="9b3ab302175091da61fb00078bbdf676" category="paragraph">Se référer à<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> pour plus d'informations sur les cartes prises en charge pour la version ONTAP exécutée sur votre système AFX.</block>
   <block id="d41e75fa1b06d9a7c925a3f985c520e5" category="list-text"><block ref="d41e75fa1b06d9a7c925a3f985c520e5" category="inline-link-rx"></block></block>
   <block id="0a0e33e3bee1123a43e4178aad30ed45" category="sidebar">Connexions IP sécurisées</block>
+  <block id="70aaaf8a9f143b7a315bba12766865d7" category="summary">La restauration d'un cluster ONTAP consiste à transférer tous les nœuds vers la version majeure précédente ONTAP .</block>
+  <block id="ae002bc4aaa91da5f0456bd41f4ec74f" category="doc">La restauration ONTAP n'est pas prise en charge avec les systèmes de stockage AFX.</block>
+  <block id="25a89c0d2271ffea21d078f4e6d93fd2" category="paragraph">Les systèmes de stockage NetApp AFX ne prennent pas en charge la restauration ONTAP . Toute tentative de restauration avec AFX peut entraîner une instabilité du cluster et une perte de données. Vous ne devez pas tenter d'effectuer une opération de restauration sur un système AFX.</block>
+  <block id="b34a4582eb04bf97b29749b7a8e1ee38" category="inline-link-macro">restauration ONTAP</block>
+  <block id="dbca7577f0796430f28fd2f1f5805bc9" category="admonition">Les systèmes de stockage AFX ne sont pas pris en charge <block ref="af98218b92f959dac30e2de6f742409f" category="inline-link-macro-rx"></block> opérations.</block>
+  <block id="0f3715b1b8b72110fa162f2666d15f10" category="sidebar">Rétablir la limitation</block>
 </blocks>

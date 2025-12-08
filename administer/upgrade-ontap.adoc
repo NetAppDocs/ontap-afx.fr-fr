@@ -13,6 +13,9 @@ summary: Lorsque vous mettez à niveau votre logiciel ONTAP sur votre système A
 [role="lead"]
 Lorsque vous mettez à niveau votre logiciel ONTAP sur votre système AFX, vous pouvez profiter de fonctionnalités ONTAP nouvelles et améliorées qui peuvent vous aider à réduire les coûts, à accélérer les charges de travail critiques, à améliorer la sécurité et à étendre la portée de la protection des données disponible pour votre organisation.
 
+
+CAUTION: Les systèmes de stockage AFX ne sont pas pris en charge link:../administer/revert-ontap.html["restauration ONTAP"] opérations.
+
 Les mises à niveau du logiciel ONTAP pour les systèmes de stockage AFX suivent le même processus que les mises à niveau pour les autres systèmes ONTAP .  Si vous avez un contrat SupportEdge actif pour Active IQ Digital Advisor (également connu sous le nom de Digital Advisor), vous devezlink:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["préparez-vous à la mise à niveau avec Upgrade Advisor"^] .  Upgrade Advisor fournit des informations qui vous aident à minimiser l’incertitude et les risques en évaluant votre cluster et en créant un plan de mise à niveau spécifique à votre configuration.  Si vous n'avez pas de contrat SupportEdge actif pour Active IQ Digital Advisor, vous devezlink:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["préparez-vous à effectuer une mise à niveau sans Upgrade Advisor"^] .
 
 Après avoir préparé votre mise à niveau, il est recommandé d’effectuer les mises à niveau à l’aidelink:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["mise à niveau automatisée non perturbatrice (ANDU) à partir du gestionnaire de système"] .  ANDU tire parti de la technologie de basculement haute disponibilité (HA) d'ONTAP pour garantir que les clusters continuent de fournir des données sans interruption pendant la mise à niveau.
