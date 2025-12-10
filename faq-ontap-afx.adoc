@@ -10,7 +10,7 @@ summary: 'Cette liste FAQ fournit des réponses aux questions que les clients se
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

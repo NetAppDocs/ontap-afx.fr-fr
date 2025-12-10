@@ -86,8 +86,6 @@ Une relation de réplication de snapshot établit une connexion entre votre syst
 Pour vous protéger contre les attaques de ransomware, lorsque vous configurez votre relation de réplication, vous pouvez choisir de verrouiller les snapshots de destination.  Les instantanés verrouillés ne peuvent pas être supprimés accidentellement ou de manière malveillante.  Vous pouvez utiliser des instantanés verrouillés pour récupérer des données si un volume est compromis par une attaque de ransomware.
 
 .Avant de commencer
-Si vous souhaitez verrouiller vos instantanés de destination, vous devezlink:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["initialiser l'horloge de conformité Snapshot"] avant de créer la relation de réplication.
-
 Créez une relation de réplication avec ou sans snapshots de destination verrouillés.
 
 [role="tabbed-block"]

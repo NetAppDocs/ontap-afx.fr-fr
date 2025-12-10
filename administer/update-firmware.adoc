@@ -29,7 +29,7 @@ Lorsque vous activez les mises à jour automatiques pour votre cluster AFX, les 
 
 
 .Résultat
-Les mises à jour recommandées sont automatiquement téléchargées et installées sur votre système OTAP AFX en fonction de vos sélections de mise à jour.
+Les mises à jour recommandées sont automatiquement téléchargées et installées sur votre système ONTAP AFX en fonction de vos sélections de mise à jour.
 
 
 

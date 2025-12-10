@@ -7,7 +7,7 @@ summary: Accédez à la documentation de maintenance AFX pour savoir comment eff
 = Maintenir le matériel du système de stockage AFX
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

@@ -444,7 +444,6 @@
   <block id="c06b2149bbe3e94f6eac8a64039cc025" category="list-text">Lisez le CLUF.</block>
   <block id="d6aeb9cf91111f522e0f1901518a3836" category="list-text">Acceptez les valeurs par défaut pour *Afficher la notification* des mises à jour recommandées.  Vous pouvez également choisir de *mettre à jour automatiquement* ou de *rejeter automatiquement* les mises à jour recommandées.</block>
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">Sélectionnez pour reconnaître que vos modifications de mise à jour seront appliquées à toutes les mises à jour actuelles et futures.</block>
-  <block id="09190524572cf4f2b42ddf32f3f54ce7" category="paragraph">Les mises à jour recommandées sont automatiquement téléchargées et installées sur votre système OTAP AFX en fonction de vos sélections de mise à jour.</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">Désactiver les mises à jour automatiques</block>
   <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">Désactivez les mises à jour automatiques si vous souhaitez avoir la possibilité d'afficher les mises à jour recommandées avant leur installation.  Si vous désactivez les mises à jour automatiques, vous devez effectuer les mises à jour du micrologiciel et des fichiers système manuellement.</block>
   <block id="9c2cdad0235d8d361f21c8343ef95363" category="list-text">Dans le Gestionnaire système, sélectionnez *Cluster &gt; Paramètres*.</block>
@@ -1409,8 +1408,6 @@
   <block id="ce587252d09bb3dfb2d53f154ba81d93" category="section-title">Étape 3 : Créer une relation de réplication</block>
   <block id="c8733c85583475859780bc7c89c97d92" category="paragraph">Une relation de réplication de snapshot établit une connexion entre votre système AFX et un emplacement distant afin que vous puissiez répliquer des groupes de cohérence vers un cluster distant.  Les groupes de cohérence répliqués peuvent être utilisés pour la reprise après sinistre ou pour la migration de données.</block>
   <block id="c5d439ea8d2444de271a6842180ae515" category="paragraph">Pour vous protéger contre les attaques de ransomware, lorsque vous configurez votre relation de réplication, vous pouvez choisir de verrouiller les snapshots de destination.  Les instantanés verrouillés ne peuvent pas être supprimés accidentellement ou de manière malveillante.  Vous pouvez utiliser des instantanés verrouillés pour récupérer des données si un volume est compromis par une attaque de ransomware.</block>
-  <block id="bf5d4ab274f571d57107a348e35cb081" category="inline-link-macro">initialiser l'horloge de conformité Snapshot</block>
-  <block id="a2070fe1416691eeb91c53762fd2a74c" category="paragraph">Si vous souhaitez verrouiller vos instantanés de destination, vous devez<block ref="27d9d0ff36409c51abdcd0a6f30da304" category="inline-link-macro-rx"></block> avant de créer la relation de réplication.</block>
   <block id="f07148b3f2fd0f0a23b807626916df29" category="paragraph">Créez une relation de réplication avec ou sans snapshots de destination verrouillés.</block>
   <block id="b581751404702669bf568b5f9581e76c" category="open-title">Avec des instantanés verrouillés</block>
   <block id="82fd6aa34bfb21de39dd81c963a0a2e8" category="list-text">Dans le Gestionnaire système, sélectionnez *Protection &gt; Groupes de cohérence*.</block>
@@ -1772,4 +1769,5 @@
   <block id="b34a4582eb04bf97b29749b7a8e1ee38" category="inline-link-macro">restauration ONTAP</block>
   <block id="dbca7577f0796430f28fd2f1f5805bc9" category="admonition">Les systèmes de stockage AFX ne sont pas pris en charge <block ref="af98218b92f959dac30e2de6f742409f" category="inline-link-macro-rx"></block> opérations.</block>
   <block id="0f3715b1b8b72110fa162f2666d15f10" category="sidebar">Rétablir la limitation</block>
+  <block id="c29e3429d133a5255487ffdb4b3cd5b3" category="paragraph">Les mises à jour recommandées sont automatiquement téléchargées et installées sur votre système ONTAP AFX en fonction de vos sélections de mise à jour.</block>
 </blocks>
