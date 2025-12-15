@@ -72,6 +72,10 @@ Définissez les détails de vos serveurs DNS et NTP.
 +
 Vous pouvez définir les détails du chiffrement du cluster. Sélectionnez *Continuer*.
 
++
+
+NOTE: Pour plus d'informations sur la création d'un cluster pour un environnement non-Windows, consultez link:https://docs.netapp.com/us-en/ontap/software_setup/setup-cluster.html["Créer un cluster ONTAP et joindre des nœuds"^].
+
 
 
 .Quelle est la prochaine étape

@@ -136,7 +136,7 @@ Consultez l’aide en ligne de votre ordinateur portable pour obtenir des instru
 .. Connectez le câble de la console à l’ordinateur portable et connectez le port de console série sur le contrôleur à l’aide du câble de console fourni avec votre système de stockage.
 .. Connectez l’ordinateur portable au commutateur sur le sous-réseau de gestion.
 +
-image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Connexions de la console]
+image::../media/drw_afx_1k_console_connection_ieops-2708.svg[Connexions de la console]
 
 
 
