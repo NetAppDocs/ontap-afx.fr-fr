@@ -139,12 +139,14 @@ image::../media/drw_afx_network_cabling_b_ieops-2351.svg[Câble vers réseau Eth
 
 
 
-== Étape 3 : Câbler les connexions du cluster et de la haute disponibilité
+== Étape 3 : Câblez les connexions du cluster, de l’interconnexion haute disponibilité et du stockage au commutateur A
 
-Utilisez le câble d'interconnexion Cluster et HA pour connecter les ports e1a et e7a au commutateur A et e1b et e7b au commutateur B. Les ports e1a/e1b sont utilisés pour les connexions HA et les ports e7a/e7b sont utilisés pour les connexions cluster.
+Utilisez le câble de dérivation 4x100GbE pour connecter les ports de cluster, d'interconnexion haute disponibilité et de stockage des contrôleurs au commutateur réseau A. Utilisez le câble d'interconnexion cluster et HA pour connecter les ports e1a et e7a au commutateur A. Les ports e1a sont utilisés pour les connexions HA et les ports e7a sont utilisés pour les connexions de cluster. Pour les connexions de stockage, connectez les ports e10a et e11a au commutateur A.
+
+Assurez-vous d'avoir les bons câbles et connecteurs pour vos commutateurs. Voir  https://hwu.netapp.com["Hardware Universe"^] pour plus d'informations.
 
 .Étapes
-. Connectez les ports de contrôleur suivants à n’importe quel port non ISL sur le commutateur réseau du cluster A.
+. Connectez les ports de contrôleur suivants à n'importe quel port non-ISL du commutateur réseau A.
 +
 ** Contrôleur A
 +
@@ -160,47 +162,11 @@ Utilisez le câble d'interconnexion Cluster et HA pour connecter les ports e1a e
 *Câbles 100GbE*
 
 +
-image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Câble HA en cluster]
-
-+
-image::../media/drw_afx_switched_cluster_cabling_a_ieops-2352.svg[Connexions de cluster de câbles au réseau de cluster]
+image::../media/oie_cable100_gbe_qsfp28.png[Câble 100 Gb]
 
 
 
 
-
-. Connectez les ports de contrôleur suivants à n’importe quel port non ISL sur le commutateur réseau du cluster B.
-+
-** Contrôleur A
-+
-*** e1b (HA)
-*** e7b (Cluster)
-
-
-** Contrôleur B
-+
-*** e1b (HA)
-*** e7b (Cluster)
-+
-*Câbles 100GbE*
-
-+
-image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Câble HA en cluster]
-
-+
-image::../media/drw_afx_switched_cluster_cabling_b_ieops-2353.svg[Connexions de cluster de câbles au réseau de cluster]
-
-
-
-
-
-
-
-
-
-== Étape 4 : Câblez les connexions de stockage du contrôleur au commutateur
-
-Connectez les ports de stockage du contrôleur aux commutateurs.  Assurez-vous d’avoir les câbles et connecteurs appropriés pour vos commutateurs. Voir https://hwu.netapp.com["Hardware Universe"^] pour plus d'informations.
 
 . Connectez les ports de stockage suivants à n’importe quel port non ISL du commutateur A.
 +
@@ -221,7 +187,39 @@ Connectez les ports de stockage du contrôleur aux commutateurs.  Assurez-vous d
 image::../media/oie_cable100_gbe_qsfp28.png[Câble 100 Gb]
 
 +
-image::../media/drw_afx_controller_storage_cable_a_ieops-2354.svg[Stockage du contrôleur de câble vers le commutateur A]
+image::../media/drw_afx_ha_cluster_storage_a_ieops-2779.svg[Cluster de contrôleurs câblés,HA,and storage to switch A]
+
+
+
+
+
+
+
+
+
+== Étape 4 : Câblez les connexions du cluster, de l’interconnexion haute disponibilité et du stockage au commutateur B
+
+Utilisez le câble de dérivation 4x100GbE pour connecter les ports de cluster, d'interconnexion haute disponibilité et de stockage des contrôleurs au commutateur réseau B. Utilisez le câble d'interconnexion cluster et interconnexion haute disponibilité pour connecter les ports e1b et e7b au commutateur B. Les ports e1b sont utilisés pour les connexions interconnexion haute disponibilité, et les ports e7b sont utilisés pour les connexions de cluster. Pour les connexions de stockage, connectez les ports e10b et e11b au commutateur B.
+
+Assurez-vous d'avoir les bons câbles et connecteurs pour vos commutateurs. Voir  https://hwu.netapp.com["Hardware Universe"^] pour plus d'informations.
+
+. Connectez les ports de contrôleur suivants à n'importe quel port non-ISL du commutateur réseau B.
++
+** Contrôleur A
++
+*** e1b (HA)
+*** e7b (Cluster)
+
+
+** Contrôleur B
++
+*** e1b (HA)
+*** e7b (Cluster)
++
+*Câbles 100GbE*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Câble 100 Gb]
 
 
 
@@ -246,7 +244,7 @@ image::../media/drw_afx_controller_storage_cable_a_ieops-2354.svg[Stockage du co
 image::../media/oie_cable100_gbe_qsfp28.png[Câble 100 Gb]
 
 +
-image::../media/drw_afx_controller_storage_cable_b_ieops-2355.svg[Stockage du contrôleur de câble vers le commutateur B]
+image::../media/drw_afx_ha_cluster_storage_b_ieops-2780.svg[Cluster de contrôleurs câblés,HA,and storage to switch B]
 
 
 
