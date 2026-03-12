@@ -40,3 +40,6 @@ Connectez le matériel, puis mettez sous tension et configurez les commutateurs 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sept"]link:power-on-hardware.html["Allumez votre système de stockage AFX 1K"]
 [role="quick-margin-para"]
 Mettez sous tension chaque étagère de stockage et attribuez un ID d’étagère unique avant de mettre sous tension les nœuds du contrôleur pour identifier clairement chaque étagère dans la configuration.
+
+
+NOTE: Si vous déployez AFX 1K avec l’AI Data Engine (AIDE), installez les nœuds de calcul de données AIDE après la mise sous tension du système AFX. Reportez-vous à link:https://docs.netapp.com/us-en/ai-data-engine/install-setup/aide-hardware-requirements.html["Installer les nœuds de calcul de données AIDE"] pour plus d’informations.

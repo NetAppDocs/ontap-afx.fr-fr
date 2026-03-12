@@ -19,6 +19,9 @@ Après avoir installé les commutateurs, vous devez installer le matériel de vo
 * Comprenez que le flux d’air à travers le système de stockage entre par l’avant où le cadre ou les embouts sont installés et s’échappe par l’arrière où se trouvent les ports.
 
 
+
+CAUTION: Portez systématiquement un bracelet antistatique relié à une prise de terre vérifiée lors des opérations d'installation et de maintenance. Le non-respect des précautions ESD appropriées peut causer des dommages permanents aux nœuds de contrôleur, aux baies de stockage et aux commutateurs réseau.
+
 .Étapes
 . Installez les kits de rails pour votre système de stockage et vos étagères de stockage, selon vos besoins, en suivant les instructions fournies avec les kits.
 . Installez et fixez votre contrôleur dans l'armoire ou le rack telco :
