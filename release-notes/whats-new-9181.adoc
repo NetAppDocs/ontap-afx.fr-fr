@@ -16,6 +16,9 @@ summary: Découvrez les nouvelles fonctionnalités incluses dans ONTAP 9.18.1 et
 [role="lead"]
 Découvrez les nouvelles fonctionnalités incluses dans ONTAP 9.18.1 et disponibles avec votre système de stockage AFX.
 
+* Apprenez-en plus sur https://docs.netapp.com/us-en/ai-data-engine/release-notes/whats-new.html["Prise en charge nouvelle et améliorée de AI Data Engine"^].
+
+
 
 
 == Améliorations de la gestion des ressources de stockage

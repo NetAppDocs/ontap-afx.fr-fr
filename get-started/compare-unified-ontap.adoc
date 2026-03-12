@@ -73,8 +73,7 @@ NOTE: La réplication de toutes les données est prise en charge dans les deux s
 * API REST pour les fonctionnalités non prises en charge (telles que MetroCluster)
 * Quelques limitations initiales des API REST pour les statistiques de performance
 * Support d'AIQ Unified Manager
-* Grafana Harvest version 25.08.1 et ultérieures
-* NetApp Trident version 25.10 et ultérieures
+* Versions de Grafana Harvest antérieures à 25.08.1
 
 
 
