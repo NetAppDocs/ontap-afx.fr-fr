@@ -58,9 +58,7 @@ NOTE: Les configurations de commutateur Cisco Nexus 9332D-GX2B et 9364D-GX2A pou
 
 == Étape 1 : connecter les contrôleurs au réseau de gestion
 
-Connectez le port de gestion de chaque commutateur à l'un des commutateurs de gestion (si commandés) ou connectez-les directement à votre réseau de gestion.
-
-Le port de gestion est le port supérieur droit situé sur le côté PSU du commutateur.  Le câble CAT6 de chaque commutateur doit être acheminé via le panneau de passage une fois les commutateurs installés pour se connecter aux commutateurs de gestion ou au réseau de gestion.
+Connectez le port de gestion (clé) de chaque contrôleur à l'un des commutateurs de gestion ou connectez-les directement à votre réseau de gestion.
 
 Utilisez les câbles RJ-45 1000BASE-T pour connecter les ports de gestion (clé) de chaque contrôleur aux commutateurs du réseau de gestion.
 
@@ -68,7 +66,7 @@ image::../media/oie_cable_rj45.png[câbles RJ-45]
 
 *Câbles RJ-45 1000BASE-T*
 
-image::../media/drw_afx_management_connection_ieops-2349.svg[Connectez-vous à votre réseau de gestion]
+image::../media/drw_afx_management_connection_ieops-2815.svg[Connectez-vous à votre réseau de gestion]
 
 
 IMPORTANT: Ne branchez pas encore les cordons d’alimentation.
@@ -87,13 +85,7 @@ Cette procédure peut différer en fonction de la configuration de votre module 
 .Étapes
 . Connectez les ports suivants à votre commutateur de réseau de données Ethernet A.
 +
-** Contrôleur A (exemple)
-+
-*** e2a
-*** e3a
-
-
-** Contrôleur B (exemple)
+** Contrôleur (Exemple)
 +
 *** e2a
 *** e3a
@@ -104,7 +96,7 @@ Cette procédure peut différer en fonction de la configuration de votre module 
 image::../media/oie_cable100_gbe_qsfp28.png[Câble Ethernet 100 Gb]
 
 +
-image::../media/drw_afx_network_cabling_a_ieops-2350.svg[Câble vers réseau Ethernet]
+image::../media/drw_afx_network_cabling_a_ieops-2813.svg[Câble vers réseau Ethernet]
 
 
 
@@ -112,13 +104,7 @@ image::../media/drw_afx_network_cabling_a_ieops-2350.svg[Câble vers réseau Eth
 
 . Connectez les ports suivants à votre commutateur de réseau de données Ethernet B.
 +
-** Contrôleur A (exemple)
-+
-*** e2b
-*** e3b
-
-
-** Contrôleur B (exemple)
+** Contrôleur (Exemple)
 +
 *** e2b
 *** e3b
@@ -129,7 +115,7 @@ image::../media/drw_afx_network_cabling_a_ieops-2350.svg[Câble vers réseau Eth
 image::../media/oie_cable100_gbe_qsfp28.png[Câble Ethernet 100 Gb]
 
 +
-image::../media/drw_afx_network_cabling_b_ieops-2351.svg[Câble vers réseau Ethernet]
+image::../media/drw_afx_network_cabling_b_ieops-2814.svg[Câble vers réseau Ethernet]
 
 
 
@@ -148,38 +134,12 @@ Assurez-vous d'avoir les bons câbles et connecteurs pour vos commutateurs. Voir
 .Étapes
 . Connectez les ports de contrôleur suivants à n'importe quel port non-ISL du commutateur réseau A.
 +
-** Contrôleur A
+** Contrôleur
 +
 *** e1a (HA)
 *** e7a (Cluster)
-
-
-** Contrôleur B
-+
-*** e1a (HA)
-*** e7a (Cluster)
-+
-*Câbles 100GbE*
-
-+
-image::../media/oie_cable100_gbe_qsfp28.png[Câble 100 Gb]
-
-
-
-
-
-. Connectez les ports de stockage suivants à n’importe quel port non ISL du commutateur A.
-+
-** Contrôleur A
-+
-*** e10a
-*** e11a
-
-
-** Contrôleur B
-+
-*** e10a
-*** e11a
+*** e10a (Stockage)
+*** e11a (Stockage)
 +
 *Câbles 100GbE*
 
@@ -205,38 +165,12 @@ Assurez-vous d'avoir les bons câbles et connecteurs pour vos commutateurs. Voir
 
 . Connectez les ports de contrôleur suivants à n'importe quel port non-ISL du commutateur réseau B.
 +
-** Contrôleur A
+** Contrôleur
 +
 *** e1b (HA)
 *** e7b (Cluster)
-
-
-** Contrôleur B
-+
-*** e1b (HA)
-*** e7b (Cluster)
-+
-*Câbles 100GbE*
-
-+
-image::../media/oie_cable100_gbe_qsfp28.png[Câble 100 Gb]
-
-
-
-
-
-. Connectez les ports de stockage suivants à n’importe quel port non ISL sur le commutateur B.
-+
-** Contrôleur A
-+
-*** e10b
-*** e11b
-
-
-** Contrôleur B
-+
-*** e10b
-*** e11b
+*** e10b (Stockage)
+*** e11b (Stockage)
 +
 *Câbles 100GbE*
 
