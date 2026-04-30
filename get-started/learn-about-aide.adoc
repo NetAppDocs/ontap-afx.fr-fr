@@ -11,7 +11,7 @@ summary: 'NetApp AI Data Engine (AIDE) est un service de données d’IA intégr
 
 
 [role="lead"]
-NetApp AI Data Engine (AIDE) est un service de données d’IA intégré au stockage qui s’exécute sur des nœuds de calcul de données connectés à un cluster AFX. Vous pouvez installer et intégrer AIDE à votre cluster AFX, étendant ainsi AFX en fournissant un traitement des données dédié et accéléré par GPU pour les charges de travail d’IA et de ML, tout en conservant tous les avantages d’ONTAP.
+NetApp AI Data Engine (AIDE) est un service de données IA intégré au stockage qui s'exécute sur des nœuds de calcul connectés à un cluster AFX. Vous pouvez éventuellement installer et intégrer AIDE avec votre cluster AFX en utilisant l'un des deux modèles de déploiement : les nœuds de calcul de données (DCN) fournis par NetApp ou le logiciel AIDE sur des serveurs tiers. Les déploiements NetApp DCN fournissent toutes les capacités AIDE, tandis que les déploiements de serveurs tiers sont axés sur les métadonnées.
 
 
 
