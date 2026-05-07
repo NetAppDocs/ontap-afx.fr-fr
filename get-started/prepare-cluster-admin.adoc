@@ -34,6 +34,9 @@ Les tâches administratives ONTAP que vous effectuez avec AFX appartiennent gén
 
 Il est important de noter que ces niveaux décrivent comment les tâches administratives sont organisées et attribuées, et pas nécessairement comment la sécurité associée est configurée.  Par exemple, alors qu’un compte d’administrateur de cluster est nécessaire pour effectuer l’administration au niveau du cluster, il peut également être utilisé pour l’administration SVM.
 
+
+NOTE: À partir d'ONTAP 9.19.1, les administrateurs SVM peuvent surveiller et gérer leurs propres SVM à l'aide d'un tableau de bord System Manager dédié. En savoir plus sur https://docs.netapp.com/us-en/ontap/concept-svm-admin-dashboard-sm.html["Tableau de bord administrateur SVM du gestionnaire de système ONTAP"^]
+
 Administrateur de cluster:: L'administrateur du cluster a le contrôle complet du cluster AFX, y compris toutes les SVM. Le niveau administratif du cluster AFX inclut uniquement les tâches qu'un administrateur de cluster peut effectuer et aucune des tâches d'administration spécifiques à SVM. Voirlink:../administer/view-dashboard.html["Administrer votre cluster"] pour plus d'informations.
 Administrateur SVM:: Un rôle d’administrateur SVM a le contrôle d’un SVM spécifique et est donc plus restreint que l’administrateur de cluster. L’administration SVM implique l’exécution de tâches avec des objets et des ressources qui ont une portée SVM, comme la création d’un volume. Voirlink:../manage-data/prepare-manage-data.html["Administrez vos machines virtuelles de stockage et vos données"] pour plus d'informations.
 
@@ -111,9 +114,12 @@ Avec AFX, un nouveau VLAN HA est ajouté aux commutateurs du cluster principal p
 
 == Limitations du déploiement du cluster AFX
 
-Il existe plusieurs limitations, notamment des minimums et des maximums, appliquées par AFX lors de la configuration et de l'utilisation de votre cluster. Ces limites se répartissent en plusieurs catégories, notamment :
+AFX impose plusieurs limitations, notamment des valeurs minimales et maximales, lors de la configuration et de l'utilisation de votre cluster. Ces limites se répartissent en plusieurs catégories.
 
-Nœuds de contrôleur par cluster:: Chaque cluster AFX doit avoir au moins quatre nœuds.  Le nombre maximal de nœuds varie en fonction de la version ONTAP .
+
+CAUTION: Avant d’augmenter un paramètre opérationnel de votre système de stockage AFX, vous devez évaluer comment cela pourrait impacter vos applications ainsi que le cluster dans son ensemble. Par exemple, bien qu’augmenter le nombre de nœuds de contrôleur accroisse la capacité globale, cela pourrait également augmenter le trafic dans le réseau du cluster. Il est important de comprendre les implications de ces modifications de configuration et comment elles pourraient impacter votre environnement.
+
+Nœuds de contrôleur par cluster:: Chaque cluster AFX doit comporter au moins quatre nœuds. Le nombre maximal de nœuds varie selon la version d'ONTAP ; par exemple, la version 9.19.1 RC autorise jusqu'à 32 nœuds par cluster AFX.
 Capacité de stockage:: Il s’agit de la capacité totale de tous les disques SSD de la zone de disponibilité de stockage (SAZ) du cluster. La capacité de stockage maximale varie en fonction de la version ONTAP .
 Commutateurs de cluster:: Vous avez besoin d'au moins deux commutateurs dans votre réseau de stockage en cluster.  La valeur maximale autorisée est déterminée en fonction du nombre total de nœuds de contrôleur dans le cluster.
 

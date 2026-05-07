@@ -23,3 +23,13 @@ Après avoir préparé votre mise à niveau, il est recommandé d’effectuer le
 .Informations connexes
 * https://docs.netapp.com/us-en/ontap/upgrade/index.html["En savoir plus sur la mise à niveau ONTAP"^] .
 
+
+
+
+== Effectuez des vérifications préalables automatisées avant une mise à niveau planifiée
+
+Il n'est pas nécessaire d'être en cours de mise à niveau de votre logiciel ONTAP pour exécuter les vérifications préalables à la mise à niveau automatisée d'ONTAP. L'exécution de ces vérifications indépendamment du processus de mise à niveau automatisée d'ONTAP vous permet de voir quelles vérifications sont effectuées sur votre cluster et vous donne une liste des erreurs ou avertissements à corriger avant de commencer la mise à niveau proprement dite.
+
+À partir d'ONTAP 9.19.1, les erreurs et les avertissements sont affichés séparément pour vous aider à identifier facilement les problèmes qui doivent être résolus avant la mise à niveau.
+
+link:https://docs.netapp.com/us-en/ontap/upgrade/automated-pre-checks.html["Apprenez à exécuter les contrôles de pré-mise à niveau automatisés d'ONTAP"^].

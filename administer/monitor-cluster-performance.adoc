@@ -4,25 +4,42 @@ permalink: administer/monitor-cluster-performance.html
 keywords: afx, afx system, cluster performance 
 summary: Vous pouvez afficher un aperçu de haut niveau des performances de votre cluster AFX. 
 ---
-= Surveiller les performances du cluster du système de stockage AFX
+= Surveiller les performances et l'utilisation du stockage du cluster du système de stockage AFX
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Vous pouvez afficher un aperçu de haut niveau des performances de votre cluster AFX.
+Vous pouvez afficher un aperçu général des performances et de l'utilisation du stockage de votre cluster AFX.
 
 
 
 == Capacité de stockage
 
-Le tableau de bord du gestionnaire système inclut un affichage de haut niveau de l'utilisation du stockage pour le cluster.
+Surveillez l'utilisation de votre espace de stockage pour vous assurer de disposer d'une capacité suffisante pour les charges de travail actuelles et futures.
+
+
+
+=== Surveiller l'utilisation du stockage du cluster à un niveau élevé
+
+Dans ONTAP System Manager, vous pouvez visualiser un aperçu général de l'utilisation du stockage pour l'ensemble du cluster.
 
 .Étapes
 . Dans le Gestionnaire système, sélectionnez *Tableau de bord* dans le volet de navigation.
 . Localisez la mosaïque *Capacité* et affichez le stockage physique disponible et utilisé.
 . Sélectionnez *Historique* pour accéder à Active IQ afin d'afficher les données historiques.
+
+
+
+
+=== Surveiller les détails de la capacité de la zone de disponibilité du stockage
+
+À partir d'ONTAP 9.19.1, vous pouvez consulter les détails de capacité de votre zone de disponibilité de stockage, notamment les seuils d'espace, l'espace consommé par les snapshots et la réduction des données. Vous pouvez également définir des seuils d'utilisation de l'espace correspondant au pourcentage à partir duquel ONTAP génère des alertes d'avertissement et des alertes critiques.
+
+.Étapes
+. Dans le Gestionnaire système, sélectionnez *Cluster > Vue d'ensemble* puis *Zone de disponibilité*.
+. Pour modifier les seuils d'alerte ou d'espace critique, sélectionnez image:icon_edit_pencil_blue_outline.png["icône de modification en forme de crayon bleu"] sous le seuil que vous souhaitez modifier.
 
 
 
