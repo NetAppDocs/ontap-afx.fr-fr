@@ -124,7 +124,7 @@ Capacité de stockage:: Il s’agit de la capacité totale de tous les disques S
 Commutateurs de cluster:: Vous avez besoin d'au moins deux commutateurs dans votre réseau de stockage en cluster.  La valeur maximale autorisée est déterminée en fonction du nombre total de nœuds de contrôleur dans le cluster.
 
 
-Vous devriez consulter les détails disponibles dans l'outil NetApp Hardware Universe and Interoperability Matrix pour déterminer les capacités de votre cluster AFX.
+Vous devriez consulter les informations disponibles dans le NetApp Hardware Universe et l’outil Interoperability Matrix pour déterminer les capacités de votre cluster AFX. Consultez également link:../release-notes/changes-to-limits-defaults.html["Modifications apportées aux limites et aux valeurs par défaut d'ONTAP"] dans la section des notes de version d’AFX.
 
 
 

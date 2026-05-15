@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: release-notes/changes-to-limits-defaults.html 
+keywords: release notes, changes, updates, defaults, limits, afx storage system, afx system, afx 
+summary: 'Découvrez les modifications apportées aux limites et aux valeurs par défaut qui affectent les systèmes AFX. NetApp s"efforce d"aider ses clients à comprendre les changements les plus importants concernant les valeurs par défaut et les limites dans chaque version d"ONTAP.' 
+---
+= Modifications apportées aux limites et aux valeurs par défaut d'ONTAP affectant les systèmes AFX
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Découvrez les modifications apportées aux limites et aux valeurs par défaut qui affectent les systèmes AFX. NetApp s'efforce d'aider ses clients à comprendre les changements les plus importants concernant les valeurs par défaut et les limites dans chaque version d'ONTAP.
+
+
+TIP: Vous devriez consulter les détails disponibles dans l'outil NetApp Hardware Universe and Interoperability Matrix pour déterminer les capacités de votre cluster AFX.
+
+
+
+== Modifications des limites ONTAP
+
+[cols="2,4,4"]
+|===
+| Fonctionnalité | Modification de la limite | Modifié dans la version 
+
+
+| Nœuds par cluster  a| 
+Vous pouvez étendre votre cluster AFX jusqu'à 32 nœuds. Cela vous permet d'adapter votre système de stockage AFX à la croissance de vos charges de travail et applications.
+| ONTAP 9.19.1 RC 
+|===
+
+
+== Informations connexes
+
+* https://hwu.netapp.com/["Hardware Universe NetApp"^]
+* https://imt.netapp.com/["Outil de matrice d'interopérabilité NetApp"^]
+* https://docs.netapp.com/us-en/interoperability-matrix-tool/["Présentation de l'outil de matrice d'interopérabilité"^]
+

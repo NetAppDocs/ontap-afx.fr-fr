@@ -21,16 +21,11 @@ TIP: Découvrez le nouveau support amélioré pour https://docs.netapp.com/us-en
 
 
 
-== Performance et échelle
+== Performances
 
 [cols="2,4"]
 |===
 | Mise à jour | Description 
-
-
-| Taille étendue du cluster AFX  a| 
-ONTAP 9.19.1 prend en charge l'extension d'un cluster AFX jusqu'à un maximum de 32 nœuds. Cela vous permet de faire évoluer votre système de stockage AFX pour répondre aux exigences croissantes de vos charges de travail et applications.
-
 
 
 | Lecture séquentielle inter-fichiers (CFSR)  a| 
@@ -40,6 +35,11 @@ La lecture séquentielle inter-fichiers peut améliorer considérablement les pe
 
 | Déduplication globale  a| 
 La déduplication globale étend les économies d'espace de déduplication ONTAP à l'ensemble de la Storage Availability Zone (SAZ). En éliminant les blocs de données dupliqués sur tous les volumes de la SAZ, elle peut améliorer considérablement l'efficacité du stockage et réduire le coût de possession. Cette fonctionnalité est activée par défaut sur les systèmes AFX et fonctionne de manière transparente sans nécessiter de configuration administrative. Consultez link:../administer/additional-ontap-svm.html["Administration supplémentaire pour un système de stockage AFX SVM"] pour plus d'informations.
+
+
+
+| Efficacité de stockage dynamique  a| 
+L'optimisation dynamique du stockage optimise intelligemment les opérations d'efficacité du stockage (compression, déduplication et compactage) pour les charges de travail importantes exigeant des performances élevées et un débit maximal. Elle détecte automatiquement les conditions d'écriture à haut volume et suspend temporairement les processus d'efficacité du stockage en ligne et en arrière-plan afin d'éviter toute dégradation des performances lors des pics de charge. Lorsque le débit chute en dessous d'un seuil défini, les opérations d'efficacité du stockage reprennent et les économies sont récupérées sans intervention manuelle. Cette fonctionnalité est disponible sur les systèmes de stockage AFX et activée par défaut, sans aucune configuration requise.
 
 |===
 
