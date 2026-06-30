@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: install-afx-2k/power-on-configure-switch.html 
+keywords: afx, afx 2k, cable controllers, Cisco Nexus 9332D-GX2B, Cisco Nexus 9364D-GX2A, switches, switch, power on, configure switches, 
+summary: Apprenez comment allumer et configurer les commutateurs de votre système de stockage AFX 2K. 
+---
+= Mettez sous tension et configurez les commutateurs de votre système de stockage AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après avoir câblé votre système de stockage AFX 2K, vous devez mettre sous tension et configurer les commutateurs Cisco Nexus 9808, 9332D-GX2B ou 9364D-GX2A.
+
+.Étapes
+. Branchez les cordons d’alimentation des commutateurs sur les sources d’alimentation.
+. Connectez les câbles ISL entre les deux commutateurs.
++
+** Pour les commutateurs Cisco Nexus 9808, consultez la link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/9800/9808/nx-os/cisco-nexus-9808-nx-os-mode-switch-hardware-installation-guide/m-8000-modular-overview-ph2.html["Guide d'installation matérielle du commutateur Cisco Nexus 9808"^] pour plus d'informations.
+** Pour les commutateurs Cisco Nexus 9332D-GX2B, utilisez les ports 31/32 pour les connexions ISL. Voir le link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide/m_overview1.html["Guide d'installation matérielle du commutateur de mode Cisco Nexus 9332D-GX2B"^] pour plus d'informations.
+** Pour les commutateurs Cisco Nexus 9364D-GX2A, utilisez les ports 63/64 pour les connexions ISL. Voir le link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9364d-gx2a/cisco-nexus-9364d-gx2a-nx-os-mode-switch-hardware-installation-guide/m_overview1.html["Guide d'installation matérielle du commutateur de mode Cisco Nexus 9364D-GX2A"^] pour plus d'informations.
+
+
+. Allumez chaque interrupteur.
+. Configurez les commutateurs pour prendre en charge le système de stockage AFX 2K.
++
+** Pour plus d'informations sur la configuration des commutateurs, consultez le link:https://docs.netapp.com/us-en/ontap-systems-switches/afx/index.html["Configurer les commutateurs pour les systèmes de stockage AFX"^].
+
+
+
+
+.Quelle est la prochaine étape ?
+Après avoir configuré les commutateurs de votre système de stockage AFX 2K, link:power-on-hardware.html["Mettez sous tension le système de stockage AFX 2K"].

@@ -1,19 +1,19 @@
 ---
 sidebar: sidebar 
-permalink: install-setup/install-switches.html 
-keywords: afx, afx 1k, install, setup, switches, cisco 9332, cisco 9336, switches, 
-summary: Découvrez comment installer les commutateurs pour le système de stockage AFX 1K et les étagères de stockage. 
+permalink: install-afx-2k/install-switches.html 
+keywords: afx, afx 2k, install, setup, switches, cisco 9332, cisco 9336, switches, 
+summary: Découvrez comment installer les commutateurs pour le système de stockage AFX 2K et les étagères de stockage. 
 ---
-= Installez les commutateurs pour votre système de stockage AFX 1K
+= Installez les commutateurs de votre système de stockage AFX 2K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Une fois la préparation de l'installation du système de stockage AFX 1K terminée, vous devez installer les commutateurs dans l'armoire ou le rack Telco.
+Une fois vos préparatifs pour l'installation du système de stockage AFX 2K terminés, vous devez installer les commutateurs dans l'armoire ou le rack télécom.
 
-Installez les commutateurs Cisco Nexus 9332D-GX2B ou 9364D-GX2A dans l'armoire ou le rack.  Installez un kit de panneau traversant si vous utilisez le commutateur Cisco Nexus 9364D-GX2A.
+Installez les commutateurs Cisco Nexus 9808, 9332D-GX2B ou 9364D-GX2A dans l'armoire ou le rack. Installez un kit de panneau de passage si vous utilisez le commutateur Cisco Nexus 9364D-GX2A.
 
 .Avant de commencer
 Assurez-vous de disposer des composants suivants :
@@ -36,10 +36,22 @@ Le kit de panneau de transfert NetApp contient le matériel suivant :
 NOTE: Les cordons de démarrage ne sont pas inclus avec le kit de passage.  Contactez NetApp pour commander les câbles de démarrage appropriés s’ils ne sont pas livrés avec vos commutateurs.
 
 
-NOTE: Si le flux d'air de vos commutateurs est configuré pour une aspiration côté ports (ventilateurs et alimentations de couleur bordeaux), les ports réseau des commutateurs doivent être installés face à l'avant de l'armoire et les ventilateurs d'extraction face à l'arrière de l'armoire. Avec cette configuration, vous devez vous assurer d'utiliser des câbles suffisamment longs pour relier les ports réseau à l'avant de l'armoire aux ports de stockage à l'arrière de l'armoire. + Pour plus d'informations détaillées sur ces commutateurs, veuillez visiter le site web de Cisco : https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide.html["Guide d'installation matérielle du commutateur de mode Cisco Nexus 9332D-GX2B"^] et  https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9364d-gx2a/cisco-nexus-9364d-gx2a-nx-os-mode-switch-hardware-installation-guide.html["Guide d'installation matérielle du commutateur de mode Cisco Nexus 9364D-GX2A"^].
+NOTE: Si le flux d'air de vos commutateurs est configuré pour une aspiration côté ports (ventilateurs et alimentations de couleur bordeaux), les ports réseau des commutateurs doivent être installés face à l'avant de l'armoire et les ventilateurs d'extraction face à l'arrière de l'armoire. Avec cette configuration, vous devez vous assurer d'utiliser des câbles suffisamment longs pour relier les ports réseau situés à l'avant de l'armoire aux ports de stockage situés à l'arrière de l'armoire. + Pour plus d'informations détaillées sur ces commutateurs, veuillez visiter le site web de Cisco : link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/9800/9808/nx-os/cisco-nexus-9808-nx-os-mode-switch-hardware-installation-guide/m-8000-modular-overview-ph2.html["Guide d'installation matérielle du commutateur Cisco Nexus 9808"^], link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide.html["Guide d'installation matérielle du commutateur de mode Cisco Nexus 9332D-GX2B"^], et link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9364d-gx2a/cisco-nexus-9364d-gx2a-nx-os-mode-switch-hardware-installation-guide.html["Guide d'installation matérielle du commutateur de mode Cisco Nexus 9364D-GX2A"^].
 
 
 CAUTION: Portez systématiquement un bracelet antistatique relié à une prise de terre vérifiée lors des opérations d'installation et de maintenance. Le non-respect des précautions ESD appropriées peut causer des dommages permanents aux nœuds de contrôleur, aux baies de stockage et aux commutateurs réseau.
+
+
+
+== Installation du commutateur Cisco Nexus 9808
+
+Si vous installez le commutateur Cisco Nexus 9808, reportez-vous à la link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/9800/9808/nx-os/cisco-nexus-9808-nx-os-mode-switch-hardware-installation-guide/m-8000-install-chassis.html["Guide d'installation matérielle du commutateur Cisco Nexus 9808"^] pour obtenir des instructions détaillées sur la manière d’installer les commutateurs dans l’armoire ou le rack.
+
+
+
+== Installation des commutateurs Cisco Nexus 9332D-GX2B et 9364D-GX2A
+
+Si vous installez Cisco Nexus 9332D-GX2B ou 9364D, effectuez les étapes suivantes pour installer les commutateurs dans l'armoire ou le rack.
 
 .Étapes
 . Installer le panneau d'obturation traversant.
@@ -47,7 +59,7 @@ CAUTION: Portez systématiquement un bracelet antistatique relié à une prise d
 .. Déterminez l’emplacement vertical des commutateurs et du panneau d’obturation dans l’armoire ou le rack.
 .. Installez deux écrous à clip de chaque côté dans les trous carrés appropriés pour les rails avant de l'armoire.
 .. Centrez le panneau verticalement pour éviter toute intrusion dans l'espace rack adjacent, puis serrez les vis.
-.. Insérez les connecteurs femelles des deux cordons de démarrage depuis l’arrière du panneau et à travers l’ensemble de brosses.
+.. Faites passer les connecteurs femelles des deux cordons de raccordement depuis l'arrière du panneau à travers l'ensemble de brosses.
 +
 image::../media/cisco_9148_jumper_cords.gif[Connecteurs femelles du cordon de démarrage]
 
@@ -80,7 +92,7 @@ image::../media/3132q_front_bracket.gif[support avant]
 image::../media/ru_locations_for_3132q_v.gif[Emplacements des écrous de serrage]
 
 +
-Montez les deux commutateurs 9332D-GX2B dans des emplacements d'armoire offrant un accès efficace aux contrôleurs et aux étagères, tels que les rangées du milieu.
+Installez les deux commutateurs dans des emplacements d'armoire qui offrent un accès efficace aux contrôleurs et aux étagères, comme les rangées du milieu.
 
 . Installez les rails coulissants dans l’armoire ou le rack.
 +
@@ -174,4 +186,4 @@ Le port réseau de gestion est le port RJ-45 inférieur près du bloc d'alimenta
 
 
 .Quelle est la prochaine étape ?
-Après avoir installé les commutateurs dans l'armoire ou le rack, vouslink:deploy-hardware.html["installer le système de stockage AFX 1K et les étagères dans l'armoire ou le rack"] .
+Après avoir installé les commutateurs dans l'armoire ou le rack, vous link:deploy-hardware.html["Installez le système de stockage AFX 2K et les étagères dans l'armoire ou le rack"].

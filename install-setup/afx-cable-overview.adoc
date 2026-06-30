@@ -21,7 +21,7 @@ La configuration initiale du système de stockage AFX 1K prend en charge un mini
 
 Des nœuds de contrôleur et des étagères de disques supplémentaires étendent la configuration initiale du système de stockage AFX 1K.  Les configurations AFX 1K étendues suivent la même méthodologie de câblage basée sur un commutateur que le schéma illustré ci-dessous.
 
-image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Exemple de câblage du système de stockage AFK 1K"]
+image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Exemple de câblage pour un système de stockage AFX 1K, largeur=1000px"]
 
 
 

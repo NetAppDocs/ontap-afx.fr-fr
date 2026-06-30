@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: install-afx-2k/deploy-hardware.html 
+keywords: afx, afx 2k, install, setup, hardware, deploy 
+summary: 'Apprenez comment installer les kits de rails pour le système de stockage AFX 2K et les tiroirs disques, et sécuriser le matériel AFX dans l"armoire ou le rack télécom.' 
+---
+= Installez votre système de stockage AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après avoir installé les commutateurs, vous devez installer le matériel de votre système de stockage AFX 2K. Commencez par installer les kits de rails. Ensuite, installez et fixez votre système de stockage dans une armoire ou une baie de brassage.
+
+.Avant de commencer
+* Assurez-vous d'avoir les instructions fournies avec le kit de rail.
+* Comprendre les problèmes de sécurité liés au poids du système de stockage et de l’étagère de stockage.
+* Comprenez que le flux d’air à travers le système de stockage entre par l’avant où le cadre ou les embouts sont installés et s’échappe par l’arrière où se trouvent les ports.
+
+
+
+CAUTION: Portez systématiquement un bracelet antistatique relié à une prise de terre vérifiée lors des opérations d'installation et de maintenance. Le non-respect des précautions ESD appropriées peut causer des dommages permanents aux nœuds de contrôleur, aux baies de stockage et aux commutateurs réseau.
+
+.Étapes
+. Installez les kits de rails pour votre système de stockage et vos étagères de stockage, selon vos besoins, en suivant les instructions fournies avec les kits.
+. Installez et fixez votre contrôleur dans l'armoire ou le rack telco :
++
+.. Positionnez le système de stockage sur les rails au milieu de l'armoire ou du rack Telco, puis soutenez le système de stockage par le bas et faites-le glisser en place.
+.. Fixez le système de stockage à l'armoire ou au rack Telco à l'aide des vis de montage fournies.
+
+
+. Fixez la lunette à l’avant du contrôleur.
+. Si votre système de stockage AFX 2K est livré avec un dispositif de gestion des câbles, fixez-le à l'arrière du système de stockage.
++
+image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Installer un dispositif de gestion des câbles]
+
+. Installer et fixer l'étagère de rangement :
++
+.. Positionnez l'arrière de l'étagère de rangement sur les rails, puis soutenez l'étagère par le bas et faites-la glisser dans l'armoire ou le rack Telco.
++
+En général, les étagères de stockage et les contrôleurs doivent être installés à proximité des commutateurs.  Si vous installez plusieurs étagères de stockage, placez la première étagère de stockage directement au-dessus des contrôleurs.  Placez la deuxième étagère de rangement directement sous les contrôleurs.  Répétez ce modèle pour toutes les étagères de rangement supplémentaires.
+
+.. Fixez l'étagère de rangement à l'armoire ou au rack Telco à l'aide des vis de montage fournies.
+
+
+
+
+.Quelle est la prochaine étape ?
+Après avoir installé le matériel de votre système AFX, consultez le link:afx-cable-overview.html["Configurations de câblage prises en charge pour votre système de stockage AFX 2K"].

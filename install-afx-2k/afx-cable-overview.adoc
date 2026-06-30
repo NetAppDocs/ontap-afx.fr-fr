@@ -1,0 +1,74 @@
+---
+permalink: install-afx-2k/afx-cable-overview.html 
+sidebar: sidebar 
+keywords: afx, afx 2k, cable, overview, cisco 9332, cisco 9364, cabling, hardware, switches, storage shelves, disk shelves, controller nodes 
+summary: Découvrez comment câbler vos nœuds de contrôleur au réseau, aux commutateurs et aux étagères de stockage. 
+---
+= Configurations prises en charge pour votre système de stockage AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Découvrez les composants matériels pris en charge et les options de câblage pour le système de stockage AFX 2K, y compris les tiroirs disques de stockage compatibles, les commutateurs et les types de câbles requis pour une configuration correcte du système.
+
+
+
+== Configuration de câblage AFX 2K prise en charge
+
+La configuration initiale du système de stockage AFX 2K prend en charge un minimum de quatre nœuds de contrôleur connectés via des commutateurs doubles aux tiroirs disques de stockage.
+
+Des nœuds de contrôleur supplémentaires et des tiroirs disques étendent la configuration initiale du système de stockage AFX 2K. Les configurations AFX 2K étendues suivent la même méthodologie de câblage basée sur des commutateurs que le schéma illustré ci-dessous.
+
+image:../media/drw_afx_2k_cable_overview_half_node_ieops-2871.svg["Exemple de câblage du système de stockage AFX 2K, largeur=1000px"]
+
+
+
+== Composants matériels pris en charge
+
+Consultez la liste des tiroirs disques de stockage, des commutateurs et des types de câbles compatibles avec le système de stockage AFX 2K.
+
+[cols="35%,65%"]
+|===
+| Composant matériel | Câbles pris en charge 
+
+
+| AFX 2K (tiroir contrôleur)  a| 
+* Câbles 400GbE QDD vers 400GbE QSFP (connexions contrôleur-commutateur)
+* Câbles RJ-45 pour les connexions de gestion
+
+
+
+
+| NX224 (tiroir disque)  a| 
+* Câbles de dérivation QSFP-DD 400GbE vers 4x100GbE QSFP (connexions de commutateur à tiroir disque)
+
+
+
+
+| Cisco Nexus 9808 (commutateur)  a| 
+* Câbles de dérivation QSFP-DD 400GbE vers 4x100GbE QSFP (connexions de commutateur à tiroir disque)
+* 2 câbles 400 GbE pour les connexions ISL entre le commutateur A et le commutateur B
+* Câbles RJ-45 pour les connexions de gestion
+
+
+
+
+| Cisco Nexus 9332D-GX2B (commutateur)  a| 
+* Câbles de dérivation QSFP-DD 400GbE vers 4x100GbE QSFP (connexions de commutateur à tiroir disque)
+* 2 câbles 400 GbE pour les connexions ISL entre le commutateur A et le commutateur B
+* Câbles RJ-45 pour les connexions de gestion
+
+
+
+
+| Cisco Nexus 9364D-GX2A (commutateur)  a| 
+* Câbles de dérivation QSFP-DD 400GbE vers 4x100GbE QSFP (connexions de commutateur à tiroir disque)
+* 2 câbles 400 GbE pour les connexions ISL entre le commutateur A et le commutateur B
+* Câbles RJ-45 pour les connexions de gestion
+
+
+|===
+.Quelle est la prochaine étape ?
+Après avoir examiné la configuration système et les composants matériels pris en charge, link:install-network-reqs.html["Vérifiez les exigences réseau de votre système de stockage AFX 2K"].

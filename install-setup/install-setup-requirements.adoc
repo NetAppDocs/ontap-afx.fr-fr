@@ -39,9 +39,10 @@ Le contrôleur de stockage AFX et les étagères de stockage sont lourds.  Soyez
 
 Prenez les précautions nécessaires lorsque vous déplacez ou soulevez votre contrôleur de stockage AFX 1K.
 
-Un contrôleur de stockage AFX 1K peut peser jusqu'à 62,83 lb (28,5 kg).  Pour soulever le contrôleur de stockage, utilisez deux personnes ou un élévateur hydraulique.
+Un contrôleur de stockage AFX 1K peut peser jusqu'à 62,83 lb (28,5 kg). Pour soulever le contrôleur de stockage, utilisez deux personnes ou un élévateur hydraulique.
 
-image::../media/drw_a1k_weight_caution_ieops-1698.svg[Icône d'avertissement de levage ASA A1K]
+.Précaution de levage du contrôleur AFX 1K.
+image::../media/drw_a1k_weight_caution_ieops-1698.svg[Icône d'avertissement de levage AFX 1K]
 
 
 
@@ -51,8 +52,9 @@ Prenez les précautions nécessaires lorsque vous déplacez ou soulevez votre é
 
 .Étagère NX224
 --
-Une étagère NX224 peut peser jusqu'à 60,1 lb (27,3 kg).  Pour soulever l'étagère, utilisez deux personnes ou un élévateur hydraulique.  Gardez tous les composants sur l’étagère (à l’avant et à l’arrière) pour éviter de déséquilibrer le poids de l’étagère.
+Une étagère NX224 peut peser jusqu'à 60,1 lb (27,3 kg). Pour soulever l'étagère, utilisez deux personnes ou un élévateur hydraulique. Gardez tous les composants dans l'étagère (à l'avant comme à l'arrière) afin d'éviter de déséquilibrer le poids de l'étagère.
 
+.Précaution de levage du tiroir NX224.
 image::../media/drw_nx224_lifting_weight_ieops-2437.svg[Attention au levage du NX224 NSM100]
 
 .Informations connexes
