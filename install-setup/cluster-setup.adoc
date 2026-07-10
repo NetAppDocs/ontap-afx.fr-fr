@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: install-setup/cluster-setup.html 
 keywords: afx, afx system, cluster setup, setup 
-summary: 'Après l"installation de votre matériel AFX, vous pouvez finaliser la configuration du cluster ONTAP. Ce processus implique des phases de configuration associées que vous devez effectuer séquentiellement. Dans ce cadre, vous pouvez éventuellement ajouter les nœuds de calcul de données (DCN) exécutant l"AI Data Engine (AIDE), permettant ainsi au cluster de stockage AFX et au cluster DCN de fonctionner comme un seul système géré via le même plan de contrôle ONTAP.' 
+summary: 'Après l"installation de votre matériel AFX, vous pouvez finaliser la configuration du cluster ONTAP. Ce processus implique des phases de configuration associées que vous devez effectuer séquentiellement.' 
 ---
 = Configurez votre cluster ONTAP de système de stockage AFX
 :allow-uri-read: 
@@ -11,14 +11,14 @@ summary: 'Après l"installation de votre matériel AFX, vous pouvez finaliser la
 
 
 [role="lead"]
-Après l'installation de votre matériel AFX, vous pouvez finaliser la configuration du cluster ONTAP. Ce processus implique des phases de configuration associées que vous devez effectuer séquentiellement. Dans ce cadre, vous pouvez éventuellement ajouter les nœuds de calcul de données (DCN) exécutant l'AI Data Engine (AIDE), permettant ainsi au cluster de stockage AFX et au cluster DCN de fonctionner comme un seul système géré via le même plan de contrôle ONTAP.
+Après l'installation de votre matériel AFX, vous pouvez finaliser la configuration du cluster ONTAP. Ce processus implique des phases de configuration associées que vous devez effectuer séquentiellement.
 
 
 
 [[prepare-to-set-up-an-afx-storage-system]]
 == Préparez-vous à configurer un système de stockage AFX
 
-Avant de configurer votre cluster ONTAP, vous devez consulter les exigences de base d'AFX et les considérations supplémentaires d'AIDE afin de vous assurer que vous disposez de toutes les informations et ressources nécessaires pour mener à bien le processus de configuration.
+Avant de configurer votre cluster ONTAP, vous devez consulter les exigences de base d'AFX afin de vous assurer que vous disposez de toutes les informations et ressources nécessaires pour mener à bien le processus de configuration.
 
 
 
@@ -55,18 +55,6 @@ Vous aurez également besoin des informations réseau suivantes :
 
 
 
-[[additional-aide-considerations]]
-=== Considérations supplémentaires relatives à l'AIDE
-
-Lors de la première installation et configuration d'AFX, vous pouvez inclure en option NetApp AI Data Engine (AIDE). AIDE prend en charge deux modèles de déploiement : le logiciel AIDE sur des serveurs tiers ou des nœuds de calcul de données (DCN) fournis par NetApp. Si vous prévoyez de configurer AIDE, complétez d'abord les prérequis pour votre modèle de déploiement :
-
-* Pour les déploiements de serveurs tiers, complétez https://docs.netapp.com/us-en/ai-data-engine/install-aide-server/aide-mde-server-hardware-requirements.html["Installation matérielle de AI Data Engine sur des serveurs tiers"^], puis https://docs.netapp.com/us-en/ai-data-engine/install-setup/install-aide-as-software.html["installer le logiciel AIDE sur des serveurs tiers"^].
-* Pour les déploiements NetApp DCN, complétez https://docs.netapp.com/us-en/ai-data-engine/install-dcn/aide-dcn-hardware-requirements.html["Installation matérielle du AI Data Engine sur les nœuds de calcul de données fournis par NetApp"^].
-* Obtenez les adresses et toute configuration réseau associée pour les nœuds de calcul.
-
-
-
-
 [[perform-initial-cluster-setup]]
 == Effectuer la configuration initiale du cluster
 
@@ -95,7 +83,6 @@ Fournir et vérifier le mot de passe pour le `admin` compte. Sélectionnez *Cont
 +
 Fournissez les adresses IP et les masques de sous-réseau.
 
-. Si vous installez AI Data Engine avec votre système de stockage AFX, veuillez fournir les adresses IP des trois nœuds de calcul.
 . Configurez les services réseau, notamment DNS et NIS. Sélectionnez *Continue*.
 +
 Définissez les détails de vos serveurs DNS et NTP.
@@ -138,7 +125,6 @@ Vous devez disposer des informations suivantes :
 
 
 .Quelle est la prochaine étape
-* Si vous avez inclus AIDE dans la configuration du cluster AFX, complétez les étapes de configuration supplémentaires d'AIDE. La configuration de l'authentification s'applique à tous les déploiements AIDE. Une licence est requise pour les déploiements NetApp DCN qui utilisent des fonctionnalités AIDE sous licence ; les déploiements de serveurs tiers sont axés sur les métadonnées et ne nécessitent pas de licence AIDE. Voir  https://docs.netapp.com/us-en/ai-data-engine/install-setup/cluster-setup-afx.html["Configurer AI Data Engine"^] pour plus d'informations.
 * Tu devraislink:../get-started/prepare-cluster-admin.html["Préparez-vous à administrer AFX"] avant d'utiliser votre cluster AFX dans un environnement de production.
 
 
@@ -147,7 +133,6 @@ Vous devez disposer des informations suivantes :
 [[related-information]]
 == Informations connexes
 
-* link:../get-started/learn-about-aide.html["Découvrez le NetApp AI Data Engine"]
 * link:../administer/configure-svm.html["Configurer un SVM AFX"]
 * link:../get-started/prepare-cluster-admin.html["Préparez-vous à administrer AFX"]
 

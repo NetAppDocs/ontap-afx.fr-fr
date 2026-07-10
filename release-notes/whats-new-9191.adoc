@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/whats-new-9191.html 
-keywords: 'afx, release notes, what"s new, 9.19.1, ai data engine, aide' 
+keywords: 'afx, release notes, what"s new, 9.19.1' 
 summary: Découvrez les nouvelles fonctionnalités incluses dans ONTAP 9.19.1 et disponibles avec votre système de stockage AFX. 
 ---
 = Nouveautés d'ONTAP 9.19.1 pour les systèmes de stockage AFX
@@ -15,9 +15,6 @@ summary: Découvrez les nouvelles fonctionnalités incluses dans ONTAP 9.19.1 et
 
 [role="lead"]
 Découvrez les nouvelles fonctionnalités incluses dans ONTAP 9.19.1 et disponibles avec votre système de stockage AFX.
-
-
-TIP: Découvrez le nouveau support amélioré pour https://docs.netapp.com/us-en/ai-data-engine/release-notes/whats-new.html["AI Data Engine"^].
 
 
 
