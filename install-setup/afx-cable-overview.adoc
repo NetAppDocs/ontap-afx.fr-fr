@@ -15,6 +15,7 @@ Découvrez les composants matériels pris en charge et les options de câblage p
 
 
 
+[[supported-afx-1k-cabling-configuration]]
 == Configuration de câblage AFX 1K prise en charge
 
 La configuration initiale du système de stockage AFX 1K prend en charge un minimum de quatre nœuds de contrôleur connectés via des commutateurs doubles aux étagères de disques de stockage.
@@ -25,6 +26,7 @@ image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Exemple de câbl
 
 
 
+[[supported-hardware-components]]
 == Composants matériels pris en charge
 
 Passez en revue les étagères de disques de stockage, les commutateurs et les types de câbles compatibles avec le système de stockage AFX 1K.

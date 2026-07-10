@@ -54,8 +54,19 @@ Tous les ports « a » sont connectés au commutateur A, et tous les ports « b 
 
 NOTE: Les configurations de commutateur Cisco Nexus 9332D-GX2B et 9364D-GX2A pour le système de stockage AFX 1K nécessitent des connexions de câble de dérivation 4x100GbE.
 
+* L'utilisation simultanée de connexions (câbles) cuivre et optiques n'est pas prise en charge par les adaptateurs NIC NVIDIA C6X-DX et CX7 (100GbE). Vous devez utiliser exclusivement des connexions cuivre ou optiques et éviter de combiner différents types de connexions. Le mélange des types peut entraîner une saturation du lien après une utilisation prolongée.
++
+Assurez-vous de disposer des câbles adaptés à votre type de connexion avant de câbler les commutateurs.
+
++
+
+NOTE: Pour plus d'informations sur le mélange des types de connexion, consultez l'article de la base de connaissances NetApp link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-Issues/CHW-3504["Des erreurs de liaison CRC sont observées sur la carte réseau CX6-DX avec des câbles de dérivation mixtes en cuivre et en fibre optique sur les ports"^].
 
 
+
+
+
+[[step-1-connect-the-controllers-to-the-management-network]]
 == Étape 1 : connecter les contrôleurs au réseau de gestion
 
 Connectez le port de gestion (clé) de chaque contrôleur à l'un des commutateurs de gestion ou connectez-les directement à votre réseau de gestion.
@@ -76,6 +87,7 @@ IMPORTANT: Ne branchez pas encore les cordons d’alimentation.
 
 
 
+[[step-2-connect-the-controllers-to-the-host-network]]
 == Étape 2 : connectez les contrôleurs au réseau hôte
 
 Connectez les ports du module Ethernet à votre réseau hôte.
@@ -125,6 +137,7 @@ image::../media/drw_afx_network_cabling_b_ieops-2814.svg[Câble vers réseau Eth
 
 
 
+[[step-3-cable-the-cluster-ha-and-storage-connections-to-switch-a]]
 == Étape 3 : Câblez les connexions du cluster, de l’interconnexion haute disponibilité et du stockage au commutateur A
 
 Utilisez le câble de dérivation 4x100GbE pour connecter les ports de cluster, d'interconnexion haute disponibilité et de stockage des contrôleurs au commutateur réseau A. Utilisez le câble d'interconnexion cluster et HA pour connecter les ports e1a et e7a au commutateur A. Les ports e1a sont utilisés pour les connexions HA et les ports e7a sont utilisés pour les connexions de cluster. Pour les connexions de stockage, connectez les ports e10a et e11a au commutateur A.
@@ -157,6 +170,7 @@ image::../media/drw_afx_ha_cluster_storage_a_ieops-2779.svg[Cluster de contrôle
 
 
 
+[[step-4-cable-the-cluster-ha-and-storage-connections-to-switch-b]]
 == Étape 4 : Câblez les connexions du cluster, de l’interconnexion haute disponibilité et du stockage au commutateur B
 
 Utilisez le câble de dérivation 4x100GbE pour connecter les ports de cluster, d'interconnexion haute disponibilité et de stockage des contrôleurs au commutateur réseau B. Utilisez le câble d'interconnexion cluster et interconnexion haute disponibilité pour connecter les ports e1b et e7b au commutateur B. Les ports e1b sont utilisés pour les connexions interconnexion haute disponibilité, et les ports e7b sont utilisés pour les connexions de cluster. Pour les connexions de stockage, connectez les ports e10b et e11b au commutateur B.
@@ -188,6 +202,7 @@ image::../media/drw_afx_ha_cluster_storage_b_ieops-2780.svg[Cluster de contrôle
 
 
 
+[[step-5-cable-the-shelf-to-switch-connections]]
 == Étape 5 : Câbler les connexions de l'étagère au commutateur
 
 Connectez les étagères de stockage NX224 aux commutateurs.

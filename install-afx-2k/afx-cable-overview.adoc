@@ -15,6 +15,7 @@ Découvrez les composants matériels pris en charge et les options de câblage p
 
 
 
+[[supported-afx-2k-cabling-configuration]]
 == Configuration de câblage AFX 2K prise en charge
 
 La configuration initiale du système de stockage AFX 2K prend en charge un minimum de quatre nœuds de contrôleur connectés via des commutateurs doubles aux tiroirs disques de stockage.
@@ -25,6 +26,7 @@ image:../media/drw_afx_2k_cable_overview_half_node_ieops-2871.svg["Exemple de c�
 
 
 
+[[supported-hardware-components]]
 == Composants matériels pris en charge
 
 Consultez la liste des tiroirs disques de stockage, des commutateurs et des types de câbles compatibles avec le système de stockage AFX 2K.

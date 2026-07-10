@@ -18,6 +18,7 @@ NOTE: Chaque utilisateur ONTAP doit avoir un rôle attribué.  Un rôle inclut d
 
 
 
+[[create-an-account-role]]
 == Créer un rôle de compte
 
 Les rôles des administrateurs de cluster et des administrateurs de machines virtuelles de stockage sont automatiquement créés lors de la configuration et de l'initialisation de votre cluster AFX.  Vous pouvez créer des rôles de compte d'utilisateur supplémentaires pour définir des fonctions spécifiques que les utilisateurs affectés aux rôles peuvent exécuter sur votre cluster.
@@ -32,6 +33,7 @@ Les rôles des administrateurs de cluster et des administrateurs de machines vir
 
 
 
+[[create-a-cluster-account]]
 == Créer un compte de cluster
 
 Vous pouvez créer un compte au niveau du cluster à utiliser lors de l'administration du cluster ou de la SVM.
@@ -54,6 +56,7 @@ Un nouveau compte est créé et disponible pour être utilisé avec votre cluste
 
 
 
+[[related-information]]
 == Informations connexes
 
 * link:../administer/prepare-authentication.html["Préparer les services d'authentification"]

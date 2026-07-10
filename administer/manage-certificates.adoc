@@ -15,6 +15,7 @@ Selon votre environnement, vous devrez créer et gérer des certificats numériq
 
 
 
+[[generate-a-certificate-signing-request]]
 == Générer une demande de signature de certificat
 
 Pour commencer à utiliser un certificat numérique, vous devez générer une demande de signature de certificat (CSR).  Un CSR est utilisé pour demander un certificat signé auprès d'une autorité de certification (CA). Dans ce cadre, ONTAP crée une paire de clés publique/privée et inclut la clé publique dans le CSR.
@@ -33,6 +34,7 @@ Vous avez généré un CSR qui peut être utilisé pour demander un certificat d
 
 
 
+[[add-a-trusted-certificate-authority]]
 == Ajouter une autorité de certification de confiance
 
 ONTAP fournit un ensemble par défaut de certificats racine de confiance à utiliser avec Transport Layer Security (TLS) et d'autres protocoles.  Vous pouvez ajouter des autorités de certification de confiance supplémentaires selon vos besoins.
@@ -50,6 +52,7 @@ Vous avez ajouté une autorité de certification de confiance à votre système 
 
 
 
+[[renew-or-delete-a-trusted-certificate-authority]]
 == Renouveler ou supprimer une autorité de certification de confiance
 
 Les autorités de certification de confiance doivent être renouvelées chaque année.  Si vous ne souhaitez pas renouveler un certificat expiré, vous devez le supprimer.
@@ -83,6 +86,7 @@ Vous avez renouvelé ou supprimé une autorité de certification de confiance ex
 
 
 
+[[add-a-clientserver-certificate-or-local-certificate-authority]]
 == Ajouter un certificat client/serveur ou une autorité de certification locale
 
 Vous pouvez ajouter un certificat client/serveur ou une autorité de certification locale dans le cadre de l'activation de services Web sécurisés.
@@ -99,6 +103,7 @@ Vous avez ajouté un nouveau certificat client/serveur ou des autorités locales
 
 
 
+[[renew-or-delete-a-clientserver-certificate-or-local-certificate-authorities]]
 == Renouveler ou supprimer un certificat client/serveur ou des autorités de certification locales
 
 Les certificats client/serveur et les autorités de certification locales doivent être renouvelés chaque année.  Si vous ne souhaitez pas renouveler un certificat expiré ou des autorités de certification locales, vous devez les supprimer.
@@ -130,6 +135,7 @@ Vous avez renouvelé ou supprimé un certificat client/serveur ou une autorité 
 
 
 
+[[related-information]]
 == Informations connexes
 
 * https://docs.netapp.com/us-en/ontap/authentication/install-server-certificate-cluster-svm-ssl-server-task.html["Générer et installer un certificat serveur signé par une autorité de certification dans ONTAP"^]

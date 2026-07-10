@@ -18,6 +18,7 @@ Enregistrez les informations requises pour chaque réseau auquel vous vous conne
 
 
 
+[[gather-network-information]]
 == Recueillir des informations sur le réseau
 
 Avant de commencer l'installation de votre système de stockage AFX 2K, rassemblez les informations réseau nécessaires
@@ -48,12 +49,14 @@ Lors de la configuration du cluster, ONTAP recommande un ensemble d'interfaces r
 
 
 
+[[network-requirements-for-cisco-switches]]
 == Exigences réseau pour les commutateurs Cisco
 
 Pour l'installation et la maintenance des commutateurs Cisco Nexus 9808, Cisco Nexus 9332D-GX2 et 9364D-GX2A, assurez-vous de consulter les exigences en matière de câblage et de réseau.
 
 
 
+[[network-requirements]]
 === Exigences réseau
 
 Vous avez besoin des informations réseau suivantes pour toutes les configurations de commutateur.
@@ -65,6 +68,7 @@ Vous avez besoin des informations réseau suivantes pour toutes les configuratio
 
 
 
+[[cabling-requirements]]
 === Exigences de câblage
 
 * Vous disposez du nombre et du type de câbles et de connecteurs de câbles appropriés pour vos commutateurs. Voir le https://hwu.netapp.com["Hardware Universe"^] .

@@ -15,6 +15,7 @@ Pour sauvegarder les données de votre système AFX, vous devez créer un instan
 
 
 
+[[before-you-begin]]
 == Avant de commencer
 
 Un instantané est une copie locale en lecture seule de vos données que vous pouvez utiliser pour restaurer des volumes à des moments précis.  Les instantanés peuvent être créés manuellement à la demande ou automatiquement à intervalles réguliers en fonction d'unlink:policies-schedules.html["politique et calendrier des instantanés"] .
@@ -36,6 +37,7 @@ Les instantanés automatisés sont créés en fonction des définitions de strat
 
 
 
+[[create-a-snapshot]]
 == Créer un instantané
 
 Créez un instantané d’un volume ou d’un groupe de cohérence.
@@ -149,6 +151,7 @@ Le transfert initial de données pour la réplication démarre immédiatement pa
 ====
 
 
+[[related-information]]
 == Informations connexes
 
 * https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Créer une politique de snapshot ONTAP"^]

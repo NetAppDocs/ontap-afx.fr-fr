@@ -15,6 +15,7 @@ Le système AFX comprend plusieurs options pour surveiller le stockage géré pa
 
 
 
+[[display-nas-clients]]
 == Afficher les clients NAS
 
 Vous pouvez afficher une liste des clients NFS et SMB/CIFS actuellement connectés au cluster AFX.
@@ -27,6 +28,7 @@ Vous pouvez afficher une liste des clients NFS et SMB/CIFS actuellement connect�
 
 
 
+[[related-information]]
 == Informations connexes
 
 * link:../manage-data/prepare-manage-data.html["Préparez-vous à gérer vos données AFX"]

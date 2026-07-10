@@ -18,6 +18,7 @@ NOTE: La création d’une ressource réseau est une première étape importante
 
 
 
+[[create-a-broadcast-domain]]
 == Créer un domaine de diffusion
 
 Un domaine de diffusion simplifie la gestion de votre réseau de cluster en regroupant les ports qui font partie du même réseau de couche deux.  Les machines virtuelles de stockage (SVM) peuvent ensuite se voir attribuer des ports dans le groupe pour le trafic de données ou de gestion.
@@ -49,6 +50,7 @@ Le MTU est le plus grand paquet de données pouvant être accepté dans le domai
 
 
 
+[[create-an-ipspace]]
 == Créer un espace IP
 
 Un espace IP est un domaine administratif pour les adresses IP et la configuration réseau associée.  Ces espaces peuvent être utilisés pour prendre en charge vos SVM via une administration et un routage isolés.  Par exemple, ils sont utiles lorsque les clients ont des adresses IP qui se chevauchent à partir de la même adresse IP et de la même plage de sous-réseaux.
@@ -71,6 +73,7 @@ Vous pouvez utiliser l'espace IP pour créer un sous-réseau.
 
 
 
+[[create-a-subnet]]
 == Créer un sous-réseau
 
 Un sous-réseau ou sous-réseau impose une division logique de l'espace d'adressage IP dans votre réseau.  Il vous permet d'allouer des blocs dédiés d'adresses IP pour la création d'une interface réseau (LIF).  Les sous-réseaux simplifient la création de LIF en vous permettant d'utiliser le nom du sous-réseau au lieu d'une combinaison spécifique d'adresse IP et de masque de réseau.
@@ -94,6 +97,7 @@ Le nouveau sous-réseau simplifiera la création de vos interfaces réseau.
 
 
 
+[[create-a-network-interface]]
 == Créer une interface réseau
 
 Une interface réseau logique (LIF) se compose d'une adresse IP et de paramètres de configuration réseau associés.  Il peut être associé à un port physique ou logique et est généralement utilisé par les clients pour accéder aux données fournies par un SVM.  Les LIF offrent une résilience en cas de panne et peuvent migrer entre les ports des nœuds afin que la communication ne soit pas interrompue.
@@ -107,6 +111,7 @@ Une interface réseau logique (LIF) se compose d'une adresse IP et de paramètre
 
 
 
+[[related-information]]
 == Informations connexes
 
 * link:../administer/manage-ethernet-ports.html["Gérer les ports Ethernet AFX"]

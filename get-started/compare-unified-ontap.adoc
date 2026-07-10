@@ -18,6 +18,7 @@ TIP: La documentation AFX inclut des liens vers diverses rubriques du site de do
 
 
 
+[[configuration-differences]]
 == Différences de configuration
 
 Il existe quelques domaines dans lesquels la configuration AFX diffère des systèmes AFF et FAS .
@@ -27,12 +28,14 @@ Il existe quelques domaines dans lesquels la configuration AFX diffère des syst
 
 
 
+[[unsupported-or-restricted-unified-ontap-capabilities]]
 == Fonctionnalités Unified ONTAP non prises en charge ou restreintes
 
 NetApp AFX est optimisé pour les charges de travail NAS et objets hautes performances. De ce fait, il existe des différences avec les systèmes de stockage AFF et FAS. Les fonctionnalités suivantes ne sont pas disponibles avec le NetApp AFX ; la liste est organisée par fonctionnalité principale ou domaine fonctionnel. Vous devriez également consulter les mises à jour et les modifications pour AFX dans link:../release-notes/whats-new-9171.html["Quoi de neuf"] en fonction de votre version d'ONTAP.
 
 
 
+[[block-and-san]]
 === Bloc et SAN
 
 * Administration SAN et accès client
@@ -42,6 +45,7 @@ NetApp AFX est optimisé pour les charges de travail NAS et objets hautes perfor
 
 
 
+[[aggregates-and-physical-storage]]
 === Granulats et stockage physique
 
 * MetroCluster
@@ -56,6 +60,7 @@ NetApp AFX est optimisé pour les charges de travail NAS et objets hautes perfor
 
 
 
+[[data-replication-snapmirror]]
 === Réplication des données (SnapMirror)
 
 
@@ -67,6 +72,7 @@ NOTE: La réplication de toutes les données est prise en charge dans les deux s
 
 
 
+[[manageability]]
 === Facilité de gestion
 
 * API ONTAPI (ZAPI)
@@ -78,6 +84,7 @@ NOTE: La réplication de toutes les données est prise en charge dans les deux s
 
 
 
+[[changes-to-the-command-line-interface]]
 == Modifications apportées à l'interface de ligne de commande
 
 L'interface de ligne de commande ONTAP disponible avec AFX reflète généralement l'interface de ligne de commande disponible avec les systèmes AFF et FAS .  Mais il existe plusieurs différences, notamment :
@@ -95,6 +102,7 @@ L'interface de ligne de commande ONTAP disponible avec AFX reflète généraleme
 
 
 
+[[related-information]]
 == Informations connexes
 
 * link:../get-started/system-design.html["Caractéristiques du système AFX"]

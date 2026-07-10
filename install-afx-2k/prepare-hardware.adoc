@@ -15,6 +15,7 @@ Préparez-vous à installer votre système de stockage AFX 2K en préparant le s
 
 
 
+[[step-1-prepare-the-site]]
 == Étape 1 : Préparer le site
 
 Pour installer votre système de stockage AFX 2K, assurez-vous que le site et l'armoire ou le rack que vous prévoyez d'utiliser répondent aux spécifications de votre configuration.
@@ -33,6 +34,7 @@ Pour installer votre système de stockage AFX 2K, assurez-vous que le site et l'
 
 
 
+[[step-2-unpack-the-boxes]]
 == Étape 2 : Déballer les cartons
 
 Après avoir vérifié que le site et l’armoire répondent aux spécifications, déballez les cartons et comparez le contenu au bordereau d’expédition.
@@ -74,6 +76,7 @@ Les éléments suivants sont quelques-uns du contenu que vous pourriez voir dans
 
 
 
+[[step-3-register-your-storage-system]]
 == Étape 3 : Enregistrez votre système de stockage
 
 Après vous être assuré que votre site répond aux exigences des spécifications de votre système de stockage AFX 2K et avoir vérifié que vous disposez de toutes les pièces commandées, enregistrez votre système de stockage.
@@ -114,7 +117,7 @@ Client NetApp existant
  a| 
 Nouveau client NetApp
  a| 
-.. Cliquez sur *S'inscrire maintenant* et créez un compte.
+.. Sélectionnez *S'inscrire maintenant* et créez un compte.
 .. Sélectionnez *Systèmes* > *Enregistrer les systèmes*.
 .. Saisissez le numéro de série du système de stockage et les détails demandés.
 

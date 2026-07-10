@@ -21,6 +21,7 @@ TIP: Découvrez le nouveau support amélioré pour https://docs.netapp.com/us-en
 
 
 
+[[performance]]
 == Performances
 
 [cols="2,4"]
@@ -44,6 +45,7 @@ L'optimisation dynamique du stockage optimise intelligemment les opérations d'e
 |===
 
 
+[[rest-api]]
 == API REST
 
 [cols="2,4"]
@@ -57,6 +59,7 @@ ONTAP 9.19.1 ajoute six paramètres actuellement disponibles dans le point de te
 |===
 
 
+[[security]]
 == Sécurité
 
 [cols="2,4"]
@@ -75,6 +78,7 @@ Vous pouvez décharger le chiffrement et le déchiffrement Transport Layer Secur
 |===
 
 
+[[storage-resource-management]]
 == Gestion des ressources de stockage
 
 [cols="2,4"]
@@ -93,6 +97,7 @@ Vous pouvez modifier les paramètres par défaut qui déterminent comment les gr
 |===
 
 
+[[upgrade]]
 == Mise à niveau
 
 [cols="2,4"]

@@ -15,6 +15,7 @@ Après avoir installé le matériel du rack pour votre système de stockage AFX 
 
 
 
+[[step-1-power-on-the-shelf-and-assign-shelf-id]]
 == Étape 1 : Allumez l’étagère et attribuez-lui un identifiant.
 
 Chaque étagère possède un identifiant unique, garantissant sa distinction dans la configuration de votre système de stockage.
@@ -122,6 +123,7 @@ L'alimentation s'allume dès que vous branchez le cordon d'alimentation.  Sa LED
 
 
 
+[[step-2-power-on-the-controller-nodes]]
 == Étape 2 : Mettre sous tension les nœuds du contrôleur
 
 Après avoir activé vos étagères de stockage et leur avoir attribué des identifiants uniques, mettez sous tension les nœuds du contrôleur de stockage.
@@ -160,6 +162,7 @@ image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Schéma de connexion
 
 
 
+[[step-3-verify-the-switch-connections]]
 == Étape 3 : Vérifiez les connexions du commutateur
 
 À partir de l'interface de ligne de commande du commutateur, vérifiez que les ports du commutateur connectés aux ports du cluster sont opérationnels, que les nœuds du cluster se trouvent dans leurs VLAN de cluster respectifs et que la connexion ISL entre les deux commutateurs est fonctionnelle.
@@ -407,13 +410,4 @@ cs1#
 
 
 .Quelle est la prochaine étape ?
-Après avoir mis sous tension votre système de stockage AFX 1K, terminez la configuration en fonction de votre option de déploiement :
-
-* Pour les déploiements de systèmes de stockage AFX 1K dédiés, rendez-vous sur link:../install-setup/cluster-setup.html["Configurer un cluster AFX"].
-* Pour les déploiements AFX 1K avec AI Data Engine (AIDE), installez des serveurs tiers AIDE ou des nœuds de calcul de données fournis par NetApp :
-+
-** Pour les déploiements de serveurs tiers, complétez https://docs.netapp.com/us-en/ai-data-engine/install-aide-server/aide-mde-server-hardware-requirements.html["Installation matérielle de AI Data Engine sur des serveurs tiers"^], puis https://docs.netapp.com/us-en/ai-data-engine/install-setup/install-aide-as-software.html["installer le logiciel AIDE sur des serveurs tiers"^].
-** Pour les déploiements NetApp DCN, complétez https://docs.netapp.com/us-en/ai-data-engine/install-dcn/aide-dcn-hardware-requirements.html["Installation matérielle du AI Data Engine sur les nœuds de calcul de données fournis par NetApp"^].
-
-
-
+Après avoir mis sous tension votre système de stockage AFX 1K, link:../install-setup/cluster-setup.html["Configurer le cluster AFX"].

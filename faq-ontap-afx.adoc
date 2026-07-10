@@ -18,6 +18,7 @@ Cette liste FAQ fournit des réponses aux questions que vous pourriez avoir sur 
 
 
 
+[[general]]
 == Général
 
 .Qu'est-ce qu'une personnalité ONTAP ?
@@ -50,6 +51,7 @@ Le deuxième concept lié au stockage désagrégé est que les agrégats et la g
 
 
 
+[[interoperability]]
 == Interopérabilité
 
 .Puis-je mélanger des nœuds système AFX avec des nœuds système AFF, ASA ou FAS dans le même cluster ONTAP ?
@@ -68,6 +70,7 @@ Non. Seule l'API REST ONTAP est prise en charge avec AFX.  Tout code d’automat
 
 
 
+[[advanced-concepts]]
 == Concepts avancés
 
 .Quels sont les protocoles de données pris en charge avec un système de stockage AFX ?

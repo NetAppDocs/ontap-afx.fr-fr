@@ -21,6 +21,7 @@ TIP: Découvrez le nouveau support amélioré pour https://docs.netapp.com/us-en
 
 
 
+[[storage-resource-management-enhancements]]
 == Améliorations de la gestion des ressources de stockage
 
 [cols="2,4"]

@@ -76,10 +76,19 @@ Les composants du connecteur sont délicats et il faut faire attention lors de l
 +
 Les connexions de stockage en étagère peuvent être réalisées sur n'importe quel port de dérivation 100GbE du commutateur. Les connexions HA/Cluster peuvent être réalisées sur n'importe quel port 400GbE du commutateur. Tous les ports de contrôleur « a » sont connectés au commutateur A, et tous les ports de contrôleur « b » sont connectés au commutateur B.
 
+* L'utilisation simultanée de connexions (câbles) cuivre et optiques n'est pas prise en charge par les adaptateurs NIC NVIDIA C6X-DX et CX7 (100GbE). Vous devez utiliser exclusivement des connexions cuivre ou optiques et éviter de combiner différents types de connexions. Le mélange des types peut entraîner une saturation du lien après une utilisation prolongée.
++
+Assurez-vous de disposer des câbles adaptés à votre type de connexion avant de câbler les commutateurs.
+
++
+
+NOTE: Pour plus d'informations sur le mélange des types de connexion, consultez l'article de la base de connaissances NetApp link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-Issues/CHW-3504["Des erreurs de liaison CRC sont observées sur la carte réseau CX6-DX avec des câbles de dérivation mixtes en cuivre et en fibre optique sur les ports"^].
 
 
 
 
+
+[[step-1-connect-the-controllers-to-the-management-network]]
 == Étape 1 : connecter les contrôleurs au réseau de gestion
 
 Connectez le port de gestion (clé) de chaque contrôleur à l'un des commutateurs de gestion ou connectez-les directement à votre réseau de gestion.
@@ -101,6 +110,7 @@ IMPORTANT: Ne branchez pas encore les cordons d’alimentation.
 
 
 
+[[step-2-connect-the-controllers-to-the-host-network]]
 == Étape 2 : connectez les contrôleurs au réseau hôte
 
 Connectez les ports du module Ethernet à votre réseau hôte.
@@ -150,6 +160,7 @@ image::../media/drw_afx_2k_host_switch_b_ieops-2865.svg[Câble vers réseau Ethe
 
 
 
+[[step-3-cable-the-cluster-and-ha-connections]]
 == Étape 3 : Câblez les connexions du cluster et de l'interconnexion haute disponibilité
 
 Utilisez le câble d'interconnexion Cluster et interconnexion haute disponibilité pour connecter les ports e1a et e2a au commutateur A et les ports e1b et e2b au commutateur B. Les ports e1a/e1b sont utilisés pour les connexions interconnexion haute disponibilité, et les ports e2a/e2b sont utilisés pour les connexions de cluster.
@@ -197,6 +208,7 @@ image::../media/drw_afx_2k_cluster_switch_b_ieops-2867.svg[Câblez les connexion
 
 
 
+[[step-4-cable-the-controller-to-switch-storage-connections]]
 == Étape 4 : Câblez les connexions de stockage du contrôleur au commutateur
 
 Connectez les ports de stockage du contrôleur aux commutateurs. Assurez-vous d'avoir les câbles et connecteurs adaptés à vos commutateurs. Voir  https://hwu.netapp.com["Hardware Universe"^] pour plus d'informations.
@@ -245,6 +257,7 @@ image::../media/drw_afx_2k_storage_connection_b_ieops-2870.svg[Câble de stockag
 
 
 
+[[step-5-cable-the-shelf-to-switch-connections]]
 == Étape 5 : Câbler les connexions de l'étagère au commutateur
 
 Connectez les tiroirs disque NX224 aux ports de dérivation 100GbE des commutateurs.

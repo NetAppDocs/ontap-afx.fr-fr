@@ -15,6 +15,7 @@ Il existe plusieurs tâches administratives que vous pouvez effectuer dans le ca
 
 
 
+[[create-a-qtree]]
 == Créer un qtree
 
 Un qtree est une subdivision logique au sein d'un volume que vous pouvez créer pour organiser et administrer les données.
@@ -27,6 +28,7 @@ Un qtree est une subdivision logique au sein d'un volume que vous pouvez créer 
 
 
 
+[[create-a-quota]]
 == Créer un quota
 
 Un quota est une limite définie sur la quantité d'espace de stockage ou le nombre de fichiers pouvant être utilisés par un utilisateur, un groupe ou un qtree.  Les quotas sont utilisés pour gérer et contrôler l'utilisation des ressources au sein d'un système AFX.

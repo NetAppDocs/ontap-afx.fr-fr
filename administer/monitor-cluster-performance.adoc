@@ -15,12 +15,14 @@ Vous pouvez afficher un aperçu général des performances et de l'utilisation d
 
 
 
+[[storage-capacity]]
 == Capacité de stockage
 
 Surveillez l'utilisation de votre espace de stockage pour vous assurer de disposer d'une capacité suffisante pour les charges de travail actuelles et futures.
 
 
 
+[[monitor-high-level-cluster-storage-utilization]]
 === Surveiller l'utilisation du stockage du cluster à un niveau élevé
 
 Dans ONTAP System Manager, vous pouvez visualiser un aperçu général de l'utilisation du stockage pour l'ensemble du cluster.
@@ -33,6 +35,7 @@ Dans ONTAP System Manager, vous pouvez visualiser un aperçu général de l'util
 
 
 
+[[monitor-storage-availability-zone-capacity-details]]
 === Surveiller les détails de la capacité de la zone de disponibilité du stockage
 
 À partir d'ONTAP 9.19.1, vous pouvez consulter les détails de capacité de votre zone de disponibilité de stockage, notamment les seuils d'espace, l'espace consommé par les snapshots et la réduction des données. Vous pouvez également définir des seuils d'utilisation de l'espace correspondant au pourcentage à partir duquel ONTAP génère des alertes d'avertissement et des alertes critiques.
@@ -44,6 +47,7 @@ Dans ONTAP System Manager, vous pouvez visualiser un aperçu général de l'util
 
 
 
+[[cluster-performance]]
 == Performances du cluster
 
 Le gestionnaire de système fournit un aperçu détaillé des performances du cluster AFX.
@@ -57,6 +61,7 @@ Le gestionnaire de système fournit un aperçu détaillé des performances du cl
 
 
 
+[[related-information]]
 == Informations connexes
 
 * link:../administer/additional-ontap-cluster.html["Administration supplémentaire du cluster AFX"]

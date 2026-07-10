@@ -43,12 +43,14 @@ CAUTION: Portez systématiquement un bracelet antistatique relié à une prise d
 
 
 
+[[cisco-nexus-9808-switch-installation]]
 == Installation du commutateur Cisco Nexus 9808
 
 Si vous installez le commutateur Cisco Nexus 9808, reportez-vous à la link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/9800/9808/nx-os/cisco-nexus-9808-nx-os-mode-switch-hardware-installation-guide/m-8000-install-chassis.html["Guide d'installation matérielle du commutateur Cisco Nexus 9808"^] pour obtenir des instructions détaillées sur la manière d’installer les commutateurs dans l’armoire ou le rack.
 
 
 
+[[cisco-nexus-9332d-gx2b-and-9364d-gx2a-switch-installation]]
 == Installation des commutateurs Cisco Nexus 9332D-GX2B et 9364D-GX2A
 
 Si vous installez Cisco Nexus 9332D-GX2B ou 9364D, effectuez les étapes suivantes pour installer les commutateurs dans l'armoire ou le rack.

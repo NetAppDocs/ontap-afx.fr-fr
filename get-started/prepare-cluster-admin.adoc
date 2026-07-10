@@ -15,6 +15,7 @@ Avant de déployer AFX dans un environnement de production, il est essentiel de 
 
 
 
+[[understand-storage-virtual-machines]]
 == Comprendre les machines virtuelles de stockage
 
 Une machine virtuelle de stockage (SVM) est un environnement de serveur ou de locataire isolé au sein d'un cluster ONTAP .  Vous pouvez configurer un SVM pour fournir des données aux clients connectés.  Vous devez être familiarisé avec les capacités et les caractéristiques des SVM AFX.
@@ -28,6 +29,7 @@ Interfaces réseau dédiées:: Chaque SVM dispose de son propre ensemble dédié
 
 
 
+[[two-afx-administrative-levels]]
 == Deux niveaux administratifs AFX
 
 Les tâches administratives ONTAP que vous effectuez avec AFX appartiennent généralement à deux catégories différentes.  Certaines tâches s'appliquent au cluster ONTAP dans son ensemble, tandis que d'autres tâches s'appliquent à un SVM spécifique.  Il en résulte un modèle administratif à deux niveaux.
@@ -43,6 +45,7 @@ Administrateur SVM:: Un rôle d’administrateur SVM a le contrôle d’un SVM s
 
 
 
+[[three-administrative-interfaces]]
 == Trois interfaces administratives
 
 Comme les systèmes AFF et FAS , AFX dispose de trois interfaces d’administration.  Le LIF (ou adresse IP) que vous devez utiliser varie en fonction de l'interface d'administration et de votre environnement.
@@ -65,12 +68,14 @@ NOTE: L'interface utilisateur du gestionnaire de système est préférée pour l
 |===
 
 
+[[learn-to-search-filter-and-sort-information-in-system-manager]]
 == Apprenez à rechercher, filtrer et trier les informations dans le Gestionnaire système
 
 L'interface utilisateur du System Manager comprend un ensemble robuste de fonctionnalités vous permettant d'accéder et d'afficher les informations dont vous avez besoin.  Apprendre à utiliser ces fonctionnalités vous aidera à mieux administrer le système de stockage AFX. Voir https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["Rechercher, filtrer, trier les informations dans le Gestionnaire système"^] pour plus d'informations.
 
 
 
+[[access-the-ontap-cli]]
 == Accéder à l'interface de ligne de commande ONTAP
 
 Bien que vous puissiez utiliser System Manager pour la plupart des tâches d'administration AFX, certaines tâches ne peuvent être effectuées qu'à l'aide de l'interface de ligne de commande ONTAP .
@@ -104,6 +109,7 @@ Vous aurez besoin des éléments suivants :
 
 
 
+[[working-with-ontap-ha-pairs]]
 == Travailler avec des paires ONTAP HA
 
 Comme avec Unified ONTAP, les nœuds de cluster AFX sont configurés en paires haute disponibilité (HA) pour la tolérance aux pannes et les opérations sans interruption.  Le couplage HA permet aux opérations de stockage de rester en ligne en cas de défaillance d'un nœud, comme un basculement de stockage.  Chaque nœud est associé à un autre nœud pour former une seule paire.  Cela se fait généralement à l'aide d'une connexion directe entre les modules NVRAM des deux nœuds.
@@ -112,6 +118,7 @@ Avec AFX, un nouveau VLAN HA est ajouté aux commutateurs du cluster principal p
 
 
 
+[[afx-cluster-deployment-limitations]]
 == Limitations du déploiement du cluster AFX
 
 AFX impose plusieurs limitations, notamment des valeurs minimales et maximales, lors de la configuration et de l'utilisation de votre cluster. Ces limites se répartissent en plusieurs catégories.
@@ -128,6 +135,7 @@ Vous devriez consulter les informations disponibles dans le NetApp Hardware Univ
 
 
 
+[[confirm-afx-system-health]]
 == Confirmer l'état du système AFX
 
 Avant d’effectuer toute tâche d’administration AFX, vous devez vérifier l’état du cluster.
@@ -170,6 +178,7 @@ link:../administer/view-insights.html["Utilisez Insights pour optimiser les perf
 
 
 
+[[quick-start-for-creating-and-using-an-svm]]
 == Démarrage rapide pour la création et l'utilisation d'un SVM
 
 Après avoir installé et configuré le cluster AFX, vous pouvez commencer à effectuer les tâches d’administration typiques de la plupart des déploiements AFX.  Voici les étapes de haut niveau nécessaires pour commencer à partager des données avec les clients.
@@ -192,6 +201,7 @@ link:../manage-data/prepare-manage-data.html["Préparer"]pour allouer et gérer 
 
 
 
+[[related-information]]
 == Informations connexes
 
 * https://hwu.netapp.com/["Hardware Universe NetApp"^]

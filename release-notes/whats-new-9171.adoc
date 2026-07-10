@@ -18,6 +18,7 @@ Découvrez les nouvelles fonctionnalités incluses avec ONTAP 9.17.1 qui sont di
 
 
 
+[[platforms]]
 == Plateformes
 
 [cols="2,4"]

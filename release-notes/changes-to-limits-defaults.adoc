@@ -21,6 +21,7 @@ TIP: Vous devriez consulter les détails disponibles dans l'outil NetApp Hardwar
 
 
 
+[[changes-to-ontap-limits]]
 == Modifications des limites ONTAP
 
 [cols="2,4,4"]
@@ -34,6 +35,7 @@ Vous pouvez étendre votre cluster AFX jusqu'à 32 nœuds. Cela vous permet d'ad
 |===
 
 
+[[related-information]]
 == Informations connexes
 
 * https://hwu.netapp.com/["Hardware Universe NetApp"^]

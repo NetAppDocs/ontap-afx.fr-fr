@@ -15,6 +15,7 @@ Passez en revue l’équipement nécessaire et les précautions de levage pour v
 
 
 
+[[equipment-needed-for-install]]
 == Équipement nécessaire à l'installation
 
 Pour installer votre système de stockage AFX 1K, vous avez besoin de l'équipement et des outils suivants.
@@ -29,12 +30,14 @@ Pour installer votre système de stockage AFX 1K, vous avez besoin de l'équipem
 
 
 
+[[lifting-precautions]]
 == Précautions de levage
 
 Le contrôleur de stockage AFX et les étagères de stockage sont lourds.  Soyez prudent lorsque vous soulevez et déplacez ces objets.
 
 
 
+[[storage-controller-weights]]
 === Poids du contrôleur de stockage
 
 Prenez les précautions nécessaires lorsque vous déplacez ou soulevez votre contrôleur de stockage AFX 1K.
@@ -46,6 +49,7 @@ image::../media/drw_a1k_weight_caution_ieops-1698.svg[Icône d'avertissement de 
 
 
 
+[[storage-shelf-weights]]
 === Poids des étagères de stockage
 
 Prenez les précautions nécessaires lorsque vous déplacez ou soulevez votre étagère.

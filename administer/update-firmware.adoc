@@ -15,6 +15,7 @@ ONTAP télécharge et met à jour automatiquement le micrologiciel et les fichie
 
 
 
+[[enable-automatic-updates]]
 == Activer les mises à jour automatiques
 
 Lorsque vous activez les mises à jour automatiques pour votre cluster AFX, les mises à jour recommandées pour le micrologiciel de stockage, le micrologiciel SP/ BMC et les fichiers système sont automatiquement téléchargées et installées par défaut.
@@ -33,6 +34,7 @@ Les mises à jour recommandées sont automatiquement téléchargées et install�
 
 
 
+[[disable-automatic-updates]]
 == Désactiver les mises à jour automatiques
 
 Désactivez les mises à jour automatiques si vous souhaitez avoir la possibilité d'afficher les mises à jour recommandées avant leur installation.  Si vous désactivez les mises à jour automatiques, vous devez effectuer les mises à jour du micrologiciel et des fichiers système manuellement.
@@ -47,6 +49,7 @@ Les mises à jour automatiques sont désactivées.  Vous devez vérifier réguli
 
 
 
+[[view-automatic-updates]]
 == Afficher les mises à jour automatiques
 
 Affichez la liste des mises à jour du micrologiciel et des fichiers système qui ont été téléchargées sur votre cluster et qui sont programmées pour une installation automatique.  Affichez également les mises à jour qui ont été précédemment installées automatiquement.
@@ -58,6 +61,7 @@ Affichez la liste des mises à jour du micrologiciel et des fichiers système qu
 
 
 
+[[edit-automatic-updates]]
 == Modifier les mises à jour automatiques
 
 Vous pouvez choisir de télécharger et d'installer automatiquement les mises à jour recommandées pour votre micrologiciel de stockage, votre micrologiciel SP/ BMC et vos fichiers système sur votre cluster, ou vous pouvez choisir de supprimer automatiquement les mises à jour recommandées.  Si vous souhaitez contrôler manuellement l'installation ou le rejet des mises à jour, sélectionnez cette option pour être averti lorsqu'une mise à jour recommandée est disponible ; vous pouvez ensuite choisir manuellement de l'installer ou de la rejeter.
@@ -74,6 +78,7 @@ Les mises à jour automatiques sont modifiées en fonction de vos sélections.
 
 
 
+[[update-firmware-manually]]
 == Mettre à jour le firmware manuellement
 
 Si vous souhaitez avoir la possibilité d'afficher les mises à jour recommandées avant qu'elles ne soient téléchargées et installées, vous pouvez désactiver les mises à jour automatiques et mettre à jour votre micrologiciel manuellement.

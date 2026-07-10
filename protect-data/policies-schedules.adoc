@@ -15,6 +15,7 @@ Vous pouvez utiliser des stratégies de capture instantanée pour protéger les 
 
 
 
+[[create-a-new-protection-policy-schedule]]
 == Créer un nouveau calendrier de politique de protection
 
 Une planification de politique de protection définit la fréquence à laquelle une politique de snapshots est exécutée.  Vous pouvez créer des planifications à exécuter à intervalles réguliers en fonction d'un certain nombre de jours, d'heures ou de minutes.  Par exemple, vous pouvez créer un programme pour qu'il s'exécute toutes les heures ou une seule fois par jour.  Vous pouvez également créer des programmes à exécuter à des heures spécifiques, certains jours de la semaine ou du mois.  Par exemple, vous pouvez créer un programme qui s'exécutera à 00h15 le 20 de chaque mois.
@@ -33,6 +34,7 @@ Maintenant que vous avez créé une nouvelle planification de stratégie, vous p
 
 
 
+[[create-a-snapshot-policy]]
 == Créer une politique de capture instantanée
 
 Une politique de snapshot définit la fréquence à laquelle les snapshots sont pris, le nombre maximal de snapshots autorisés et la durée de conservation des snapshots.
@@ -51,6 +53,7 @@ Maintenant que vous avez créé une politique de snapshot, vous pouvez l’appli
 
 
 
+[[apply-a-snapshot-policy-to-a-consistency-group]]
 == Appliquer une politique de snapshot à un groupe de cohérence
 
 Appliquez une stratégie de snapshot à un groupe de cohérence pour créer, conserver et étiqueter automatiquement les snapshots du groupe de cohérence.
@@ -67,6 +70,7 @@ Maintenant que vos données sont protégées par des instantanés, vous devezlin
 
 
 
+[[edit-delete-or-disable-a-snapshot-policy]]
 == Modifier, supprimer ou désactiver une politique de capture instantanée
 
 Modifiez une stratégie de snapshot pour modifier le nom de la stratégie, le nombre maximal de snapshots ou l'étiquette SnapMirror .  Supprimez une politique pour la supprimer ainsi que ses données de sauvegarde associées de votre cluster.  Désactivez une stratégie pour arrêter temporairement la création ou le transfert des instantanés spécifiés par la stratégie.
@@ -82,6 +86,7 @@ Vous avez modifié, supprimé ou désactivé la politique de capture instantané
 
 
 
+[[edit-a-replication-policy]]
 == Modifier une politique de réplication
 
 Modifiez une politique de réplication pour modifier la description de la politique, la planification du transfert et les règles.  Vous pouvez également modifier la politique pour activer ou désactiver la compression réseau.

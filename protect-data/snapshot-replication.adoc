@@ -17,6 +17,7 @@ Pour configurer la réplication Snapshot, vous devez établir une relation de r�
 
 
 
+[[step-1-create-a-cluster-peer-relationship]]
 == Étape 1 : Créer une relation entre homologues de cluster
 
 Avant de pouvoir protéger vos données en les répliquant sur un cluster distant, vous devez créer une relation d’homologue de cluster entre le cluster local et le cluster distant.
@@ -38,6 +39,7 @@ Vous avez effectué un appairage entre un cluster AFX local et un cluster distan
 
 
 
+[[step-2-optionally-create-a-replication-policy]]
 == Étape 2 : (facultatif) Créez une politique de réplication
 
 La stratégie de réplication des snapshots définit quand les mises à jour effectuées sur le cluster AFX sont répliquées sur le site distant.
@@ -79,6 +81,7 @@ Vous avez créé une politique de réplication et êtes maintenant prêt à cré
 
 
 
+[[step-3-create-a-replication-relationship]]
 == Étape 3 : Créer une relation de réplication
 
 Une relation de réplication de snapshot établit une connexion entre votre système AFX et un emplacement distant afin que vous puissiez répliquer des groupes de cohérence vers un cluster distant.  Les groupes de cohérence répliqués peuvent être utilisés pour la reprise après sinistre ou pour la migration de données.
@@ -166,6 +169,7 @@ Maintenant que vous avez créé une politique et une relation de réplication, v
 
 
 
+[[step-4-test-replication-failover]]
 == Étape 4 : Tester le basculement de réplication
 
 Vous pouvez également valider que vous pouvez diffuser avec succès les données des volumes répliqués sur un cluster distant si le cluster source est hors ligne.

@@ -15,6 +15,7 @@ Vous pouvez consulter les événements et les messages du journal d'audit géné
 
 
 
+[[events]]
 == Événements
 
 Les messages d’événements fournissent un enregistrement précieux de l’activité du système.  Chaque événement comprend une description et un identifiant unique ainsi qu'une action recommandée.
@@ -28,6 +29,7 @@ Les messages d’événements fournissent un enregistrement précieux de l’act
 
 
 
+[[audit-log]]
 == Journal d'audit
 
 Le journal d’audit comprend un enregistrement de l’activité du système basé sur l’utilisation de protocoles d’accès tels que HTTP.
@@ -39,6 +41,7 @@ Le journal d’audit comprend un enregistrement de l’activité du système bas
 
 
 
+[[manage-notifications]]
 == Gérer les notifications
 
 AFX prend en charge plusieurs types de notifications que vous pouvez transférer.

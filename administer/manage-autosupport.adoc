@@ -20,6 +20,7 @@ NOTE: Vous devez vous connecter au Gestionnaire système à l’aide d’un comp
 
 
 
+[[test-autosupport-connectivity]]
 == Tester la connectivité AutoSupport
 
 Après avoir configuré votre cluster, vous devez tester votre connectivité AutoSupport pour vérifier que le support technique peut recevoir les messages générés par AutoSupport.
@@ -32,6 +33,7 @@ Après avoir configuré votre cluster, vous devez tester votre connectivité Aut
 
 
 
+[[add-autosupport-recipients]]
 == Ajouter des destinataires AutoSupport
 
 Vous pouvez éventuellement ajouter des membres de votre organisation de support interne à la liste des adresses e-mail qui reçoivent les messages AutoSupport .
@@ -54,6 +56,7 @@ Les adresses e-mail que vous avez ajoutées recevront de nouveaux messages AutoS
 
 
 
+[[send-autosupport-data]]
 == Envoyer des données AutoSupport
 
 Si un problème survient avec votre système AFX, vous devez envoyer manuellement les données AutoSupport .  Cela peut réduire considérablement le temps nécessaire pour identifier et résoudre le problème.
@@ -70,6 +73,7 @@ Vos données AutoSupport sont envoyées au support technique.
 
 
 
+[[suppress-support-case-generation]]
 == Supprimer la génération de dossiers d'assistance
 
 Si vous effectuez une mise à niveau ou une maintenance sur votre système AFX, vous souhaiterez peut-être supprimer la génération de dossiers d'assistance AutoSupport jusqu'à ce que votre mise à niveau ou votre maintenance soit terminée.
@@ -86,6 +90,7 @@ Les cas AutoSupport ne seront pas générés pendant la période que vous avez s
 
 
 
+[[resume-support-case-generation]]
 == Génération de cas d'assistance de reprise
 
 Si vous avez supprimé la génération de cas d'assistance pendant une fenêtre de mise à niveau ou de maintenance, vous devez reprendre la génération de cas d'assistance immédiatement après la fin de votre mise à niveau ou de votre maintenance.
@@ -102,6 +107,7 @@ Les cas AutoSupport seront générés automatiquement pour votre système AFX se
 
 
 
+[[related-information]]
 == Informations connexes
 
 * https://docs.netapp.com/us-en/ontap/system-admin/manage-autosupport-concept.html["En savoir plus sur ONTAP AutoSupport"^]

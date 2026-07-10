@@ -26,6 +26,7 @@ Après avoir préparé votre mise à niveau, il est recommandé d’effectuer le
 
 
 
+[[execute-automated-pre-upgrade-checks-before-a-planned-upgrade]]
 == Effectuez des vérifications préalables automatisées avant une mise à niveau planifiée
 
 Il n'est pas nécessaire d'être en cours de mise à niveau de votre logiciel ONTAP pour exécuter les vérifications préalables à la mise à niveau automatisée d'ONTAP. L'exécution de ces vérifications indépendamment du processus de mise à niveau automatisée d'ONTAP vous permet de voir quelles vérifications sont effectuées sur votre cluster et vous donne une liste des erreurs ou avertissements à corriger avant de commencer la mise à niveau proprement dite.
