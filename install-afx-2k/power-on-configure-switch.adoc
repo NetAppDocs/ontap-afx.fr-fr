@@ -25,7 +25,9 @@ Après avoir câblé votre système de stockage AFX 2K, vous devez mettre sous t
 . Allumez chaque interrupteur.
 . Configurez les commutateurs pour prendre en charge le système de stockage AFX 2K.
 +
-** Pour plus d'informations sur la configuration des commutateurs, voir link:https://docs.netapp.com/us-en/ontap-systems-switches/afx/index.html["Configurer les commutateurs pour les systèmes de stockage AFX"^].
+** Pour les commutateurs Cisco Nexus 9808, consultez la documentation relative aux commutateurs de cluster et de stockage link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9808/configure-switch-workflow-9808.html["Configurer le commutateur Cisco Nexus 9808"^].
+** Pour les commutateurs Cisco Nexus 9332D-GX2B, consultez la documentation relative aux commutateurs de cluster et de stockage link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9332d-gx2b/configure-switch-workflow-9332d.html["Configurer le commutateur Cisco Nexus 9332D-GX2B"^].
+** Pour les commutateurs Cisco Nexus 9364D-GX2A, consultez la documentation relative aux commutateurs de cluster et de stockage link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9364d-gx2a/configure-switch-workflow-9364d.html["Configurer le commutateur Cisco Nexus 9364D-GX2A"^].
 
 
 
