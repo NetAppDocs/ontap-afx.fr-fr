@@ -18,6 +18,34 @@ Découvrez les nouvelles fonctionnalités incluses dans ONTAP 9.19.1 et disponib
 
 
 
+[[data-protection]]
+== Protection des données
+
+[cols="2,4"]
+|===
+| Mise à jour | Description 
+
+
+| link:../administer/additional-ontap-svm.html["Protégez avec ONTAP SnapMirror active sync pour NAS"]  a| 
+SnapMirror active sync prend en charge les charges de travail NAS au niveau SVM en utilisant NFS et SMB sur les clusters AFX (4 nœuds uniquement) et l’accès en lecture-écriture uniquement sur le cluster principal.
+
+|===
+
+
+[[networking]]
+== Réseautique
+
+[cols="2,4"]
+|===
+| Mise à jour | Description 
+
+
+| link:../administer/additional-ontap-cluster.html#performance["Améliorations des performances TCP"]  a| 
+À partir d'ONTAP 9.19.1, ONTAP améliore les performances de transfert de données TCP sur les liaisons WAN à latence élevée et sujettes aux pertes en intégrant deux fonctionnalités de récupération des pertes, PRR et RACK, dans la pile TCP d'ONTAP.
+
+|===
+
+
 [[performance]]
 == Performances
 
@@ -64,13 +92,18 @@ ONTAP 9.19.1 ajoute six paramètres actuellement disponibles dans le point de te
 | Mise à jour | Description 
 
 
-| Prise en charge ARP/IA pour les volumes primaires éligibles SnapMirror  a| 
+| https://docs.netapp.com/us-en/ontap/anti-ransomware/use-cases-restrictions-concept.html#snapmirroreligible["Prise en charge ARP/IA pour les volumes primaires SnapMirror"^]  a| 
 ARP/AI prend en charge les volumes primaires éligibles dans des relations SnapMirror synchrones avec les systèmes AFX. ARP/AI s'exécute sur le volume primaire actif en lecture-écriture, crée des instantanés ARP dédiés au volume primaire et assure la détection des ransomwares grâce à l'apprentissage automatique.
 
 
 
 | link:../administer/additional-ontap-cluster.html["Prise en charge du déchargement matériel TLS"]  a| 
 Vous pouvez décharger le chiffrement et le déchiffrement Transport Layer Security (TLS) de l'ensemble de votre cluster sur des cartes Ethernet compatibles. Cela réduit la charge du processeur et améliore les performances des systèmes utilisant TLS.
+
+
+
+| link:../administer/additional-ontap-svm.html["NFS sur TLS v3"]  a| 
+À partir de ONTAP 9.19.1, ONTAP ajoute la prise en charge sur site de NFS sur TLS avec TLS 1.3 pour chiffrer le trafic NFS en transit sur les SVM activés pour NFS. Cette version prend également en charge l’authentification mutuelle TLS par LIF en option et les contrôles de stratégie d’exportation pour refuser l’accès TCP non TLS aux clients correspondants.
 
 |===
 

@@ -24,14 +24,19 @@ TIP: Vous devriez consulter les détails disponibles dans l'outil NetApp Hardwar
 [[changes-to-ontap-limits]]
 == Modifications des limites ONTAP
 
-[cols="2,4,4"]
+[cols="1,3,1"]
 |===
 | Fonctionnalité | Modification de la limite | Modifié dans la version 
 
 
 | Nœuds par cluster  a| 
-Vous pouvez étendre votre cluster AFX jusqu'à 32 nœuds. Cela vous permet d'adapter votre système de stockage AFX à la croissance de vos charges de travail et applications.
-| ONTAP 9.19.1 RC 
+Vous pouvez étendre votre cluster AFX jusqu'à 32 nœuds. Cela vous permet d'adapter votre système de stockage AFX à la croissance de vos charges de travail et applications. Veuillez noter que la prise en charge de 32 nœuds offre un ensemble de fonctionnalités limitées ; consultez votre équipe de compte NetApp pour plus de détails.
+| ONTAP 9.19.1 
+
+
+| Volumes par FlexGroup  a| 
+Le nombre maximal de volumes dans un FlexGroup a été porté à 512 avec 32 nœuds. Cela permet au système de stockage AFX de fournir pleinement les capacités de performance pour les clusters de plus grande taille.
+| ONTAP 9.19.1 
 |===
 
 
