@@ -37,6 +37,11 @@ Vous pouvez étendre votre cluster AFX jusqu'à 32 nœuds. Cela vous permet d'ad
 | Volumes par FlexGroup  a| 
 Le nombre maximal de volumes dans un FlexGroup a été porté à 512 avec 32 nœuds. Cela permet au système de stockage AFX de fournir pleinement les capacités de performance pour les clusters de plus grande taille.
 | ONTAP 9.19.1 
+
+
+| SnapMirror cloud prise en charge  a| 
+Le nombre maximal de compartiments S3 pris en charge par SnapMirror cloud a été augmenté à 100. Cela vous permet de créer davantage de compartiments S3 pour vos charges de travail et vos applications.
+| ONTAP 9.19.1 
 |===
 
 

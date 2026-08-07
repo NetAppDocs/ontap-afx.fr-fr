@@ -2078,4 +2078,11 @@
   <block id="e8eb207e6de7c7757810bc07b0846e79" category="inline-link-macro">NFS sur TLS v3</block>
   <block id="9f76431b14eae171858837b9c8175543" category="cell"><block ref="9f76431b14eae171858837b9c8175543" category="inline-link-macro-rx"></block></block>
   <block id="fb78157da1449370c33ba54cae495e1f" category="paragraph">À partir de ONTAP 9.19.1, ONTAP ajoute la prise en charge sur site de NFS sur TLS avec TLS 1.3 pour chiffrer le trafic NFS en transit sur les SVM activés pour NFS. Cette version prend également en charge l’authentification mutuelle TLS par LIF en option et les contrôles de stratégie d’exportation pour refuser l’accès TCP non TLS aux clients correspondants.</block>
+  <block id="5a7a5c8d2eee66d24f7458eee76c2938" category="inline-link">Sauvegardez des données dans le cloud à l'aide d'ONTAP SnapMirror Cloud</block>
+  <block id="989d9263b7c2ecdd061c7f8f17651198" category="list-text"><block ref="989d9263b7c2ecdd061c7f8f17651198" category="inline-link-rx"></block></block>
+  <block id="bf34fdc864301c032f0e276e4ff8833a" category="cell">SnapMirror cloud prise en charge</block>
+  <block id="e23180ba684584a4c88cfa3b05724d54" category="paragraph">Le nombre maximal de compartiments S3 pris en charge par SnapMirror cloud a été augmenté à 100. Cela vous permet de créer davantage de compartiments S3 pour vos charges de travail et vos applications.</block>
+  <block id="9c1a79f4f2d2fd2b367f6ed1bb37d7ae" category="inline-link-macro">SnapMirror la limite de prise en charge du cloud a été portée à 100 compartiments S3</block>
+  <block id="b2d786633879a334695de09f0ae3cfb0" category="cell"><block ref="b2d786633879a334695de09f0ae3cfb0" category="inline-link-macro-rx"></block></block>
+  <block id="0f2919ddc73a7864a3605abad5d389c6" category="paragraph">SnapMirror cloud augmente à 100 le nombre de compartiments S3 pris en charge.</block>
 </blocks>
