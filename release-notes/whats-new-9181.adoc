@@ -63,6 +63,10 @@ xref:../administer/configure-svm.html[Prise en charge des groupes de stratégies
 Vous pouvez attribuer une politique QoS à une SVM et aux volumes sous cette SVM en même temps.
 
 |===
-.Informations connexes
+
+
+[[related-information]]
+== Informations connexes
+
 * https://docs.netapp.com/us-en/ontap/release-notes/index.html["Points forts de la version ONTAP 9"^]
 

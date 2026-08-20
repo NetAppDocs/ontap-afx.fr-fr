@@ -38,6 +38,26 @@ Les composants du système de stockage NetApp AFX suivants sont disponibles avec
 
 
 |===
-.Informations connexes
+
+
+[[storage-resource-management-enhancements]]
+== Améliorations de la gestion des ressources de stockage
+
+[cols="30%,70%"]
+|===
+| Mise à jour | Description 
+
+
+ a| 
+xref:../manage-data/monitor-debug-storage.html[Surveiller et dépanner un système de stockage AFX]
+ a| 
+Les volumes créés sur les SVM nouvellement créées sur les clusters ONTAP alloués aux protocoles NAS ont l’analyse du système de fichiers (FSA) activée par défaut. FSA est automatiquement activée dès la création d’un volume, offrant des capacités d’analyse immédiates sans configuration supplémentaire.
+
+|===
+
+
+[[related-information]]
+== Informations connexes
+
 * https://docs.netapp.com/us-en/ontap/release-notes/index.html["Points forts de la version ONTAP 9"^]
 

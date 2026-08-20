@@ -170,6 +170,10 @@ Vous pouvez modifier les paramètres par défaut qui déterminent comment les gr
 Lors de l'exécution des vérifications automatisées préalables à la mise à niveau, les erreurs et les avertissements sont affichés séparément afin de vous aider à identifier facilement les problèmes qui doivent être résolus avant la mise à niveau.
 
 |===
-.Informations connexes
+
+
+[[related-information]]
+== Informations connexes
+
 * https://docs.netapp.com/us-en/ontap/release-notes/index.html["Points forts de la version ONTAP 9"^]
 
