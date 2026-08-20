@@ -11,10 +11,10 @@ summary: 'Outre l"administration classique du cluster AFX, vous devrez peut-êtr
 
 
 [role="lead"]
-Outre l'administration classique du cluster AFX, vous devrez peut-être effectuer d'autres tâches en fonction de votre environnement.  La plupart des tâches supplémentaires peuvent être effectuées à l’aide du Gestionnaire système, même si dans certains cas, vous devrez peut-être utiliser l’interface de ligne de commande.
+Outre l'administration classique d'un cluster AFX, il peut y avoir d'autres tâches que vous devez effectuer selon votre environnement. La plupart des tâches supplémentaires peuvent être effectuées à l'aide de System Manager, bien que dans certains cas, vous puissiez avoir besoin d'utiliser la CLI. Les fonctionnalités et l'administration ONTAP décrites sont communes aux systèmes de stockage AFX ainsi qu'aux systèmes AFF ou FAS exécutant Unified ONTAP. Des liens vers la documentation Unified ONTAP pertinente sont inclus le cas échéant.
 
 
-NOTE: Les fonctionnalités et l'administration ONTAP décrites sont communes aux systèmes de stockage AFX et aux systèmes AFF ou FAS exécutant Unified ONTAP.  Des liens vers la documentation Unified ONTAP pertinente sont inclus, le cas échéant.
+TIP: Consultez les brèves descriptions des fonctionnalités et de la configuration supplémentaires d'ONTAP AFX. Si vous ne trouvez pas l'option que vous recherchez, assurez-vous également de consulter les liens en bas de page pour des ressources supplémentaires.
 
 
 
@@ -140,4 +140,6 @@ Avec ONTAP, un miroir de répartition de charge (LSM) est une réplique SnapMirr
 * https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Présentation de l'implémentation d' ONTAP OAuth 2.0"^]
 * link:../administer/additional-ontap-svm.html["Administration supplémentaire pour les SVM AFX"]
 * https://docs.netapp.com/us-en/ontap/data-protection/manage-snapmirror-root-volume-replication-concept.html["Découvrez la réplication du volume racine ONTAP SnapMirror"^]
+* https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Préparez-vous à utiliser la sécurité IP sur le réseau ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/networking/configure_network_security_using_federal_information_processing_standards_fips.html["Configurez la sécurité réseau ONTAP à l'aide de FIPS pour toutes les connexions SSL"^]
 

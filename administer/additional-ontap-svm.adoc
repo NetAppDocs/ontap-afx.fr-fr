@@ -11,10 +11,10 @@ summary: 'Outre l"administration AFX SVM classique, il peut y avoir d"autres tâ
 
 
 [role="lead"]
-Outre l'administration AFX SVM classique, il peut y avoir d'autres tâches que vous devez effectuer en fonction de votre environnement.  La plupart des tâches supplémentaires peuvent être effectuées à l’aide du Gestionnaire système, même si dans certains cas, vous devrez peut-être utiliser l’interface de ligne de commande.
+Outre l'administration standard des SVM AFX, il peut y avoir d'autres tâches à effectuer selon votre environnement. La plupart des tâches supplémentaires peuvent être réalisées à l'aide de System Manager, bien que dans certains cas, vous puissiez avoir besoin d'utiliser la CLI. Les fonctionnalités et l'administration ONTAP décrites sont communes aux systèmes de stockage AFX ainsi qu'aux systèmes AFF ou FAS exécutant Unified ONTAP. Des liens vers la documentation Unified ONTAP pertinente sont inclus le cas échéant.
 
 
-NOTE: Les fonctionnalités et l'administration ONTAP décrites sont communes aux systèmes de stockage AFX et aux systèmes AFF ou FAS exécutant Unified ONTAP.  Des liens vers la documentation Unified ONTAP pertinente sont inclus, le cas échéant.
+TIP: Consultez les brèves descriptions des fonctionnalités et de la configuration supplémentaires d'ONTAP AFX. Si vous ne trouvez pas l'option que vous recherchez, assurez-vous également de consulter les liens en bas de page pour des ressources supplémentaires.
 
 
 
