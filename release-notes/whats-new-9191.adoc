@@ -17,6 +17,9 @@ summary: Découvrez les nouvelles fonctionnalités incluses dans ONTAP 9.19.1 et
 Découvrez les nouvelles fonctionnalités incluses dans ONTAP 9.19.1 et disponibles avec votre système de stockage AFX.
 
 
+NOTE: Plusieurs nouvelles fonctionnalités sont disponibles pour AFX avec ONTAP 9.19.1. Certaines de ces fonctionnalités sont spécifiques à AFX, tandis que beaucoup d'autres proviennent d'une base de produits commune partagée. En plus d'examiner les fonctionnalités AFX décrites ci-dessous, vous devez également vous référer à https://docs.netapp.com/us-en/ontap/release-notes/whats-new-9191.html["Nouveautés dans ONTAP 9.19.1"^].
+
+
 
 [[data-protection]]
 == Protection des données
@@ -85,6 +88,29 @@ L'optimisation dynamique du stockage optimise intelligemment les opérations d'e
 
 | Amélioration du placement équilibré pour l'orchestration du stockage Kubernetes  a| 
 ONTAP 9.19.1 ajoute six paramètres actuellement disponibles dans le point de terminaison de l’API REST `/storage/volumes` au point de terminaison `/applications/containers`. Cette amélioration permet aux clients utilisant NetApp Trident pour l’orchestration du stockage Kubernetes de créer des volumes avec la fonctionnalité de placement équilibré native d’ONTAP.
+
+|===
+
+
+[[s3-object-storage]]
+== stockage d'objets S3
+
+[cols="30%,70%"]
+|===
+| Mise à jour | Description 
+
+
+ a| 
+xref:../manage-data/manage-buckets.html[Gérer les compartiments du système de stockage AFX]
+ a| 
+Vous pouvez utiliser des conditions pour imposer des écritures conditionnelles lors du chargement d'objets et des suppressions conditionnelles lors de la suppression d'objets. Les écritures et suppressions conditionnelles offrent un moyen d'éviter les écrasements ou les suppressions non intentionnelles d'objets.
+
+
+
+ a| 
+xref:../manage-data/manage-buckets.html[Gérer les compartiments du système de stockage AFX]
+ a| 
+Pour maintenir l'accès des utilisateurs aux ressources S3 si la clé d'accès d'origine expire, les administrateurs du cluster ONTAP peuvent générer une deuxième clé d'accès pour chaque utilisateur S3.
 
 |===
 

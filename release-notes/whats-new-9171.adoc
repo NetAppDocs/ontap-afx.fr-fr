@@ -17,6 +17,9 @@ summary: Découvrez les nouvelles fonctionnalités incluses avec ONTAP 9.17.1 qu
 Découvrez les nouvelles fonctionnalités incluses avec ONTAP 9.17.1 qui sont disponibles avec votre système de stockage AFX.
 
 
+NOTE: Plusieurs nouvelles fonctionnalités sont disponibles pour AFX avec ONTAP 9.17.1. Certaines de ces fonctionnalités sont spécifiques à AFX, tandis que beaucoup d'autres proviennent d'une base de produits commune partagée. En plus de consulter les fonctionnalités AFX décrites ci-dessous, vous devriez également vous référer à https://docs.netapp.com/us-en/ontap/release-notes/whats-new-9171.html["Quoi de neuf dans ONTAP 9.17.1"^].
+
+
 
 [[platforms]]
 == Plateformes
