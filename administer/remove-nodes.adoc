@@ -1,0 +1,205 @@
+---
+sidebar: sidebar 
+permalink: administer/remove-nodes.html 
+keywords: netapp afx, remove node, unjoin, cluster remove-node, evacuate volumes, zero-copy volume move 
+summary: 'Découvrez comment supprimer des nœuds de stockage d"un cluster NetApp AFX, notamment l"évacuation des volumes, la migration LIF et la dissociation du partenaire de la paire haute disponibilité.' 
+---
+= Supprimez des nœuds d'un cluster de système de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il peut être nécessaire de retirer des nœuds de votre cluster AFX pour des opérations de maintenance ou de remplacement de matériel. Vous ne pouvez retirer qu'un seul nœud à la fois, et après avoir retiré un nœud, vous devez également retirer son partenaire de paire haute disponibilité.
+
+.À propos de cette tâche
+* Pour les systèmes de stockage AFX, tout le stockage est contenu dans une seule zone de disponibilité de stockage (SAZ) accessible par chaque nœud du cluster. Par conséquent, lorsqu’un nœud est retiré, il n’est pas nécessaire de copier les données depuis le nœud sortant. À la place, les pointeurs vers les volumes du nœud sortant sont mis à jour parmi les nœuds restants. Cette opération est appelée déplacement de volume sans copie (ZCVM) et se produit instantanément car aucune donnée n’est réellement copiée ou déplacée.
++
+[NOTE]
+====
+Avant de supprimer le nœud, traitez manuellement les volumes qui ne peuvent pas être déplacés par ZCVM. Cela inclut les clones de volumes, les volumes hors ligne, les volumes chiffrés dont la clé de chiffrement a été modifiée ou renouvelée, et les volumes restaurés à l'aide de SnapMirror cloud. Les volumes de transit d’audit et les volumes racine sont déplacés par ZCVM lors du processus de retrait du nœud.
+
+** En savoir plus sur link:https://docs.netapp.com/us-en/ontap/nas-audit/basic-auditing-concept.html["volumes de staging d'audit"^].
+** En savoir plus sur link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/rekey-encrypted-volume-task.html["volumes chiffrés avec une nouvelle clé"^].
+
+
+====
+* La suppression réussie d'un nœud du cluster entraîne les conséquences suivantes :
++
+** Marque le nœud comme inéligible et hors du quorum CLAM.
+** Arrête proprement le nœud et transfère la propriété à un nœud survivant.
+** Nettoie l'état de haute disponibilité (HA) RAID sur le nœud et le supprime de la base de données du cluster.
+
+
+
+
+
+
+[[step-1-prepare-to-remove-nodes-from-an-afx-cluster]]
+== Étape 1 : Préparez-vous à supprimer des nœuds d’un cluster AFX
+
+Avant de supprimer des nœuds de votre cluster AFX, vous devez vérifier que le cluster est sain et qu'il n'y a pas de LIF de données sur le nœud à supprimer.
+
+.Étapes
+. Confirmez que le cluster est sain :
++
+[source, cli]
+----
+cluster show
+----
+. Vérifiez que le nœud que vous souhaitez supprimer est en ligne et fonctionnel :
++
+[source, cli]
+----
+system node show -node <node> -health -epsilon
+----
+. Afficher les LIF sur le nœud :
++
+[source, cli]
+----
+network interface show -curr-node <node>
+----
+. Migrez les LIF de données depuis le nœud :
++
+[source, cli]
+----
+network interface migrate -vserver <SVM> -lif <LIF> -dest-node <destination_node> -dest-port <destination_port>
+----
++
+Répétez cette commande pour toutes les LIF de données. Seules les LIF de cluster et les LIF de gestion de nœud doivent rester sur le nœud.
+
+. Vérifiez que toutes les LIF de données ont été supprimées et que seules les LIF de cluster et les LIF de gestion de nœud restent sur le nœud :
++
+[source, cli]
+----
+network interface show -curr-node <node>
+----
+
+
+.Quelle est la prochaine étape ?
+Une fois les étapes de préparation terminées, vous pouvez retirer le premier nœud de la paire haute disponibilité du cluster, puis retirer son partenaire haute disponibilité.
+
+
+
+[[step-2-unjoin-a-single-node-from-an-afx-cluster]]
+== Étape 2 : Dissocier un nœud unique d’un cluster AFX
+
+Ne retirez un nœud d'un cluster AFX qu'après avoir effectué les étapes nécessaires pour préparer le nœud à son retrait. Après avoir retiré un nœud du cluster, vous devez ensuite retirer sa paire haute disponibilité.
+
+.Avant de commencer
+Il est recommandé que vous link:manage-autosupport.html["émettre un message AutoSupport"] informiez le support technique de NetApp que vous retirez un nœud de votre cluster.
+
+.Étapes
+. Évacuer les volumes du nœud :
++
+[source, cli]
+----
+system node evacuate-volumes start -node <node_to_remove>
+----
+. Vérifiez que les volumes des nœuds ont été évacués :
++
+[source, cli]
+----
+system node evacuate-volumes show -node <node_to_remove>
+----
++
+Attendez que le *compteur en attente* soit égal à 0 avant de continuer. Ne déplacez pas epsilon ni l'éligibilité tant que les volumes ne sont pas entièrement évacués.
+
++
+Si nécessaire, vous pouvez utiliser la commande  `system node evacuate-volumes abort -node <node>` pour interrompre le processus d'évacuation.
+
+. Identifiez le nœud qui contient epsilon :
++
+[source, cli]
+----
+cluster show -epsilon true
+----
++
+.. Si le nœud que vous souhaitez supprimer contient epsilon, déplacez epsilon vers un autre nœud :
++
+[source, cli]
+----
+cluster modify -node <surviving_node> -epsilon true
+----
+
+
+. Identifiez le nœud principal actuel :
++
+[source, cli]
+----
+cluster ring show
+----
++
+.. Si le nœud que vous supprimez est le nœud principal actuel, rendez-le inéligible :
++
+[source, cli]
+----
+cluster modify -node <node_to_remove> -eligibility false
+----
+
+
+. Afficher le nœud d'origine des LIF de données restantes :
++
+[source, cli]
+----
+network interface show -home-node <node_to_remove>
+----
+. Modifiez le nœud d'origine des LIF de données restantes vers un autre nœud :
++
+[source, cli]
+----
+network interface modify -vserver <SVM> -lif <LIF> -home-node <surviving_node>
+----
++
+Laissez les LIF de cluster et les LIF de gestion de nœud sur le nœud sortant.
+
+. Désactivez la prise de contrôle du nœud à supprimer :
++
+[source, cli]
+----
+storage failover modify -node <node_to_remove> -enable-takeover-of false
+----
+. Vérifiez que la prise de contrôle est désactivée pour le nœud à supprimer :
++
+[source, cli]
+----
+storage failover show
+----
++
+La prise de contrôle est impossible sur la paire haute disponibilité lorsque le basculement est désactivé.
+
+. Sur un nœud fonctionnel et sain, définissez le niveau de privilège sur avancé :
++
+[source, cli]
+----
+privilege set -level advanced
+----
+. Retirer le nœud du cluster :
++
+[source, cli]
+----
+cluster remove-node -node <node_to_remove>
+----
++
+Confirmez les avertissements. La tâche doit se terminer par le message *Node remove succeeded*.
+
+
+
+.Quelle est la prochaine étape ?
+Répétez les étapes précédentes pour supprimer la paire haute disponibilité du cluster. Vous ne pouvez pas supprimer d'autres nœuds tant que la paire haute disponibilité du nœud non joint n'est pas supprimée.
+
+
+
+[[step-3-optionally-clean-the-removed-hardware]]
+== Étape 3 : Facultativement, nettoyez le matériel retiré
+
+Si vous réutilisez un nœud que vous avez retiré d'un cluster, vous devez effacer la configuration du nœud et initialiser tous les disques avant qu'il puisse rejoindre un cluster.
+
+.Étapes
+. Au cours du processus de démarrage, lorsque vous y êtes invité, appuyez sur Ctrl-C pour afficher le menu de démarrage.
+. Sélectionnez l'option du menu de démarrage *(4) Nettoyer la configuration et initialiser tous les disques*.
+
+
+.Quelle est la prochaine étape ?
+Vous pouvez utiliser la commande  `cluster add-node` pour réutiliser la paire haute disponibilité dans le même cluster.

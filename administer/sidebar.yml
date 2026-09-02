@@ -46,6 +46,8 @@ entries:
   entries:
   - title: Développer le cluster
     url: "/administer/expand-cluster.html"
+  - title: Supprimez des nœuds du cluster
+    url: "/administer/remove-nodes.html"
   - title: Mettre à niveau ONTAP
     url: "/administer/upgrade-ontap.html"
   - title: Mettre à jour le firmware

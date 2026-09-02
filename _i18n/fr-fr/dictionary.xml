@@ -2113,4 +2113,55 @@
   <block id="05ac85f50d8d37906293d2e2a6c88604" category="list-text"><block ref="05ac85f50d8d37906293d2e2a6c88604" category="inline-link-rx"></block></block>
   <block id="99a1ee6766885a2da62b660dd8ea16ac" category="paragraph"><block ref="99a1ee6766885a2da62b660dd8ea16ac" category="inline-xref-macro-rx"></block></block>
   <block id="d71e1a06e0aeac0cc6a7a6eb58601633" category="paragraph">Les volumes créés sur les SVM nouvellement créées sur les clusters ONTAP alloués aux protocoles NAS ont l’analyse du système de fichiers (FSA) activée par défaut. FSA est automatiquement activée dès la création d’un volume, offrant des capacités d’analyse immédiates sans configuration supplémentaire.</block>
+  <block id="7a5cd40812fc4b3d065db77f8ad471a2" category="summary">Découvrez comment supprimer des nœuds de stockage d'un cluster NetApp AFX, notamment l'évacuation des volumes, la migration LIF et la dissociation du partenaire de la paire haute disponibilité.</block>
+  <block id="4e5ba73143016dcff33719a396a6a145" category="doc">Supprimez des nœuds d'un cluster de système de stockage AFX</block>
+  <block id="6f0c0dcb367b5c75b40798fbe71ce6cf" category="paragraph">Il peut être nécessaire de retirer des nœuds de votre cluster AFX pour des opérations de maintenance ou de remplacement de matériel. Vous ne pouvez retirer qu'un seul nœud à la fois, et après avoir retiré un nœud, vous devez également retirer son partenaire de paire haute disponibilité.</block>
+  <block id="4dc248d72f6d53f41520e119f1f1df61" category="list-text">Pour les systèmes de stockage AFX, tout le stockage est contenu dans une seule zone de disponibilité de stockage (SAZ) accessible par chaque nœud du cluster. Par conséquent, lorsqu’un nœud est retiré, il n’est pas nécessaire de copier les données depuis le nœud sortant. À la place, les pointeurs vers les volumes du nœud sortant sont mis à jour parmi les nœuds restants. Cette opération est appelée déplacement de volume sans copie (ZCVM) et se produit instantanément car aucune donnée n’est réellement copiée ou déplacée.</block>
+  <block id="2dbbd7a8acfe4ab40ac6e02f5b4365bd" category="paragraph">Avant de supprimer le nœud, traitez manuellement les volumes qui ne peuvent pas être déplacés par ZCVM. Cela inclut les clones de volumes, les volumes hors ligne, les volumes chiffrés dont la clé de chiffrement a été modifiée ou renouvelée, et les volumes restaurés à l'aide de SnapMirror cloud. Les volumes de transit d’audit et les volumes racine sont déplacés par ZCVM lors du processus de retrait du nœud.</block>
+  <block id="7b556ab7df79413da0cc234f3e94ae5c" category="inline-link-macro">volumes de staging d'audit</block>
+  <block id="b94fbeba18cc08b1ba75cabcbc2e50a0" category="list-text">En savoir plus sur <block ref="9fec2c3b1c6739fae6e26aee450a7911" category="inline-link-macro-rx"></block>.</block>
+  <block id="791417c8f8a45d10a1481c1cdb8725eb" category="inline-link-macro">volumes chiffrés avec une nouvelle clé</block>
+  <block id="1ddf84f2c214ffe15e58979d29d13e7e" category="list-text">En savoir plus sur <block ref="c62dc8115ddd949100052ee500f4ed05" category="inline-link-macro-rx"></block>.</block>
+  <block id="03f868c6a771736d2ede498b24db10fd" category="list-text">La suppression réussie d'un nœud du cluster entraîne les conséquences suivantes :</block>
+  <block id="da83a680025062a416e893d926036b59" category="list-text">Marque le nœud comme inéligible et hors du quorum CLAM.</block>
+  <block id="1d6d051efd8278e7af988bc240035964" category="list-text">Arrête proprement le nœud et transfère la propriété à un nœud survivant.</block>
+  <block id="81969b995904bbc6ec383d70d109fe78" category="list-text">Nettoie l'état de haute disponibilité (HA) RAID sur le nœud et le supprime de la base de données du cluster.</block>
+  <block id="ee564f7d2a41885a7b7c447302897684" category="section-title">Étape 1 : Préparez-vous à supprimer des nœuds d’un cluster AFX</block>
+  <block id="20f6fea895a9042d4cb497b9b561472f" category="paragraph">Avant de supprimer des nœuds de votre cluster AFX, vous devez vérifier que le cluster est sain et qu'il n'y a pas de LIF de données sur le nœud à supprimer.</block>
+  <block id="50ab3243fc412f508feaf2651e35de5a" category="list-text">Confirmez que le cluster est sain :</block>
+  <block id="6ed6db99070eb594c7294b2758336a36" category="list-text">Vérifiez que le nœud que vous souhaitez supprimer est en ligne et fonctionnel :</block>
+  <block id="c8bd62f17e39fb32ef39057543588fff" category="list-text">Afficher les LIF sur le nœud :</block>
+  <block id="b296f30bfe1b8d15961aace982c88ede" category="list-text">Migrez les LIF de données depuis le nœud :</block>
+  <block id="b7fb269285f339c28cc4295e470228ce" category="paragraph">Répétez cette commande pour toutes les LIF de données. Seules les LIF de cluster et les LIF de gestion de nœud doivent rester sur le nœud.</block>
+  <block id="67ad2de6e0aebb768d64f688a26f3263" category="list-text">Vérifiez que toutes les LIF de données ont été supprimées et que seules les LIF de cluster et les LIF de gestion de nœud restent sur le nœud :</block>
+  <block id="3f297ef15cde0668e93b35f2752fd4fd" category="paragraph-title">Quelle est la prochaine étape ?</block>
+  <block id="af7028a97133d9d6579e0120e4d2ac54" category="paragraph">Une fois les étapes de préparation terminées, vous pouvez retirer le premier nœud de la paire haute disponibilité du cluster, puis retirer son partenaire haute disponibilité.</block>
+  <block id="129a0f9dbb25cd859dc8156de126758f" category="section-title">Étape 2 : Dissocier un nœud unique d’un cluster AFX</block>
+  <block id="9e84e50094430ea932ef692f2de2fd8d" category="paragraph">Ne retirez un nœud d'un cluster AFX qu'après avoir effectué les étapes nécessaires pour préparer le nœud à son retrait. Après avoir retiré un nœud du cluster, vous devez ensuite retirer sa paire haute disponibilité.</block>
+  <block id="ff13cd92e9c877582383685ad84e1408" category="inline-link-macro">émettre un message AutoSupport</block>
+  <block id="e1e010021551213000f9a5ad8268a504" category="paragraph">Il est recommandé que vous <block ref="389d719ba9fa696dc8807adb3c915714" category="inline-link-macro-rx"></block> informiez le support technique de NetApp que vous retirez un nœud de votre cluster.</block>
+  <block id="61ef46349dc8aeb8c96f3f89d14d2e3b" category="list-text">Évacuer les volumes du nœud :</block>
+  <block id="4352398a52fe792d0d9bc8cd2e093100" category="list-text">Vérifiez que les volumes des nœuds ont été évacués :</block>
+  <block id="4fa4b393f4bd68dcb2697caa0d486054" category="paragraph">Attendez que le *compteur en attente* soit égal à 0 avant de continuer. Ne déplacez pas epsilon ni l'éligibilité tant que les volumes ne sont pas entièrement évacués.</block>
+  <block id="073a5eccc26b37d386010ab2297fb4ad" category="paragraph">Si nécessaire, vous pouvez utiliser la commande <block ref="1800c917431345cdd794d19f800ce56a" prefix=" " category="inline-code"></block> pour interrompre le processus d'évacuation.</block>
+  <block id="2cca63e4c1d7ec175a21377faff9a6ec" category="list-text">Identifiez le nœud qui contient epsilon :</block>
+  <block id="e23022fe3595885bf954a01c22683bad" category="list-text">Si le nœud que vous souhaitez supprimer contient epsilon, déplacez epsilon vers un autre nœud :</block>
+  <block id="49e8d819c7a12b23ca983a3bc99e1bdf" category="list-text">Identifiez le nœud principal actuel :</block>
+  <block id="14029d6b9a69926c796b630bd649fe4a" category="list-text">Si le nœud que vous supprimez est le nœud principal actuel, rendez-le inéligible :</block>
+  <block id="7f6abdd99160e3d3527591b98c573c7f" category="list-text">Afficher le nœud d'origine des LIF de données restantes :</block>
+  <block id="b77fc9ce12284fe9cb0ed31c9a1f86d5" category="list-text">Modifiez le nœud d'origine des LIF de données restantes vers un autre nœud :</block>
+  <block id="c9b5aae4621661ad2ffccfee6c9b3874" category="paragraph">Laissez les LIF de cluster et les LIF de gestion de nœud sur le nœud sortant.</block>
+  <block id="f73e9b92493b90c37101390646ee7ff4" category="list-text">Désactivez la prise de contrôle du nœud à supprimer :</block>
+  <block id="2f6504307623c74dfa94926c73a36268" category="list-text">Vérifiez que la prise de contrôle est désactivée pour le nœud à supprimer :</block>
+  <block id="398e3c6027c9ad5a579ba201dbdf1422" category="paragraph">La prise de contrôle est impossible sur la paire haute disponibilité lorsque le basculement est désactivé.</block>
+  <block id="e66ad8765eff08cc92ad6062c3b5484e" category="list-text">Sur un nœud fonctionnel et sain, définissez le niveau de privilège sur avancé :</block>
+  <block id="8e9c4f7e32d6d0c0b5026f9b1bd4cb0e" category="list-text">Retirer le nœud du cluster :</block>
+  <block id="248d96fc2d0062d179e38ec920bbc9a6" category="paragraph">Confirmez les avertissements. La tâche doit se terminer par le message *Node remove succeeded*.</block>
+  <block id="fd7d664fcabce9a7163ddf544905c254" category="paragraph">Répétez les étapes précédentes pour supprimer la paire haute disponibilité du cluster. Vous ne pouvez pas supprimer d'autres nœuds tant que la paire haute disponibilité du nœud non joint n'est pas supprimée.</block>
+  <block id="ebe7c0cf5ca9d4767514a83c4598b75c" category="section-title">Étape 3 : Facultativement, nettoyez le matériel retiré</block>
+  <block id="3212383e8d23d729b6cb21418a172111" category="paragraph">Si vous réutilisez un nœud que vous avez retiré d'un cluster, vous devez effacer la configuration du nœud et initialiser tous les disques avant qu'il puisse rejoindre un cluster.</block>
+  <block id="9e870c65221f5c544b31efc1da95daeb" category="list-text">Au cours du processus de démarrage, lorsque vous y êtes invité, appuyez sur Ctrl-C pour afficher le menu de démarrage.</block>
+  <block id="5b43d3aa91abf75fd24c44f1341b2f06" category="list-text">Sélectionnez l'option du menu de démarrage *(4) Nettoyer la configuration et initialiser tous les disques*.</block>
+  <block id="e482842fa3fe9110a14b09a7990fc7e3" category="paragraph">Vous pouvez utiliser la commande <block ref="5fc60967dddffb3c388156e897d54aad" prefix=" " category="inline-code"></block> pour réutiliser la paire haute disponibilité dans le même cluster.</block>
+  <block id="92157b9dae17603751a4d60f0f94bf8c" category="sidebar">Supprimez des nœuds du cluster</block>
 </blocks>
