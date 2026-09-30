@@ -39,7 +39,7 @@ Bien que le comportement de FabricPool soit très similaire entre les différent
 | Portée du magasin d'objets | Configuré par agrégat en deux étapes : création de la configuration puis rattachement | Configuré au niveau du cluster avec une seule commande ; un compartiment défini par cluster 
 
 
-| Politique de hiérarchisation par défaut | La politique par défaut est `none`; vous devez définir explicitement une politique de volume pour commencer la hiérarchisation | La politique par défaut est `none`; vous devez définir explicitement une politique de volume pour commencer la hiérarchisation 
+| Politique de hiérarchisation par défaut | La politique par défaut est `none` sauf pour les agrégats activés pour FabricPool, où la valeur par défaut est `snapshot` | La politique par défaut est `none` 
 
 
 | Suivi de la température | granularité par volume | granularité par volume 
