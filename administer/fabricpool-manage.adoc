@@ -1,0 +1,41 @@
+---
+permalink: administer/fabricpool-manage.html 
+sidebar: sidebar 
+keywords: afx, oam, fabricpool, manage, monitor, space, tiering policy, zcvm, volume move, node join, node unjoin, flexaggr 
+summary: 'La gestion courante de FabricPool sur les systèmes AFX est similaire à celle des systèmes AFF et FAS. Vous devez surveiller l"utilisation de l"espace, gérer les volumes et ajuster les politiques de hiérarchisation. L"environnement AFX comporte quelques ajouts notables, notamment en ce qui concerne le comportement lorsque des nœuds rejoignent ou quittent le cluster AFX.' 
+---
+= Gérer FabricPool pour les systèmes de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La gestion courante de FabricPool sur les systèmes AFX est similaire à celle des systèmes AFF et FAS. Vous devez surveiller l'utilisation de l'espace, gérer les volumes et ajuster les politiques de hiérarchisation. L'environnement AFX comporte quelques ajouts notables, notamment en ce qui concerne le comportement lorsque des nœuds rejoignent ou quittent le cluster AFX.
+
+
+
+[[monitor-space-and-manage-volumes]]
+== Surveiller l'espace et gérer les volumes
+
+Les procédures utilisées avec AFX pour surveiller l'utilisation des niveaux de capacité et de performance, ainsi que pour la gestion courante des volumes, sont généralement les mêmes que celles utilisées avec ONTAP. Notez que dans AFX, les rapports d'espace tiennent compte de l'architecture désagrégée. Les informations relatives à l'espace du niveau de capacité sont disponibles via des rapports au niveau du cluster et de la zone de disponibilité, plutôt que via un agrégat visible par l'administrateur.
+
+
+
+[[node-join-and-node-unjoin]]
+== Ajout et suppression de nœuds
+
+Les opérations sur les nœuds sont compatibles avec FabricPool sur les systèmes AFX, ce qui constitue une différence significative avec ONTAP. Notez les comportements suivants :
+
+* *Ajout d'un nœud.* Lorsqu'un nœud rejoint le cluster AFX et qu'une configuration de stockage d'objets du cluster existe déjà, l'attachement au stockage d'objets est déclenché automatiquement. Si l'attachement échoue, l'opération d'ajout du nœud échoue également.
+* *Déconnexion d'un nœud.* Lorsqu'un nœud est déconnecté ou supprimé du cluster, les données sont marquées comme « obsolètes ». Les volumes associés sont déplacés à l'aide de ZCVM. Les métafichiers d'objets obsolètes sont conservés afin que les objets cloud restent accessibles et puissent être collectés par le garbage collector.
+
+
+
+
+[[related-information]]
+== Informations connexes
+
+* https://docs.netapp.com/us-en/ontap/fabricpool/determine-data-inactive-reporting-task.html["Gérer FabricPool"^]
+* link:../administer/expand-cluster.html["Développer un cluster de systèmes de stockage AFX"]
+

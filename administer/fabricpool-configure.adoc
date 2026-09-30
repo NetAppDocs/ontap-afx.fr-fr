@@ -1,0 +1,104 @@
+---
+permalink: administer/fabricpool-configure.html 
+sidebar: sidebar 
+keywords: afx, fabricpool, object store, cluster object-store, tiering policy, attach, capacity tier 
+summary: 'De manière générale, la configuration et l"activation de FabricPool sur un système de stockage AFX impliquent des processus à deux niveaux. Vous devez d"abord définir un niveau cloud au niveau du cluster pour vos données. Ensuite, vous pouvez activer la hiérarchisation sur des volumes spécifiques à l"aide de l"une des politiques de hiérarchisation disponibles.' 
+---
+= Configurer FabricPool pour les systèmes de stockage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+De manière générale, la configuration et l'activation de FabricPool sur un système de stockage AFX impliquent des processus à deux niveaux. Vous devez d'abord définir un niveau cloud au niveau du cluster pour vos données. Ensuite, vous pouvez activer la hiérarchisation sur des volumes spécifiques à l'aide de l'une des politiques de hiérarchisation disponibles.
+
+
+
+[[configure-fabricpool-at-the-ontap-cluster-level]]
+== Configurer FabricPool au niveau du cluster ONTAP
+
+Vous devez définir un compartiment d’objets unique accessible à l’ensemble du cluster ONTAP. Tous les volumes activés pour la hiérarchisation des données FabricPool utilisent ce même compartiment.
+
+.À propos de cette tâche
+Contrairement au processus en deux étapes d'ONTAP, qui comprend un rattachement par agrégat, AFX utilise un processus unique à l'échelle du cluster pour configurer le stockage d'objets et rattacher tous les nœuds au bucket. La connectivité est également confirmée et l'association au stockage d'objets est permanente.
+
+La configuration du niveau cloud est décrite à l'aide de System Manager, mais d'autres options sont disponibles. Par exemple, vous pouvez utiliser la commande `cluster object-store config create` avec l'interface de ligne de commandes (CLI). Consultez link:../administer/fabricpool-additional.html["Considérations supplémentaires relatives à l’utilisation de FabricPool sur les systèmes de stockage AFX"] pour plus d'informations.
+
+.Avant de commencer
+* Vérifiez les prérequis AFX de FabricPool. Par exemple, assurez-vous que le cluster est au niveau 9.19.1 ou ultérieur et qu'il n'a pas été mis à niveau depuis une version antérieure. Consultez link:../administer/fabricpool-prepare.html["Préparez-vous à implémenter FabricPool sur un système de stockage AFX"] pour plus de détails.
+* Provisionnez un compartiment de stockage d'objets. Créez un compartiment sur NetApp StorageGRID ou ONTAP S3 avec une capacité suffisante pour vos données. Vous pouvez également installer un certificat d'autorité de certification pour le stockage d'objets afin de sécuriser davantage la connexion.
+* Créez les interfaces logiques inter-clusters (LIF) et vérifiez la connectivité avec le stockage d'objets. Vous devez définir une paire de LIF inter-clusters pour accéder au stockage d'objets sur chaque nœud du cluster AFX. Vérifiez que tous les nœuds peuvent accéder au point de terminaison du stockage d'objets et que la résolution de noms est opérationnelle.
+
+
+.Étapes
+. Dans System Manager, sélectionnez l’élément de menu *Cloud Tiers* dans le volet de navigation de gauche.
++
+Si aucun niveau cloud n'est configuré, une page d'état vide s'affiche avec un bouton Ajouter.
+
+. Sélectionnez *Ajouter* pour lancer la création d'un niveau cloud ; une boîte de dialogue apparaît avec deux options.
+. Sélectionnez soit StorageGRID, soit ONTAP S3 comme fournisseur. Le formulaire *Ajouter un niveau cloud* approprié s'ouvre.
+. Fournissez les informations requises sur le stockage d'objets, notamment :
++
+.. Nom du magasin d'objets (identificateur de configuration)
+.. Nom du serveur (FQDN ou adresse IP du point de terminaison du magasin d'objets)
+.. Nom du conteneur (nom du compartiment)
+.. Clé d'accès et clé secrète (identifiants du magasin d'objets)
+.. Paramètres de validation du certificat (recommandé : activer avec un certificat d’autorité de certification approprié)
+
+
+. Sélectionnez les LIFs intercluster qui transporteront le trafic du niveau cloud.
++
+Si aucune interface appropriée n'existe, une option permettant de créer de nouvelles interfaces est proposée.
+
+. Sélectionnez *Enregistrer*.
++
+System Manager crée la configuration du magasin d'objets au niveau du cluster et l'attache automatiquement à tous les nœuds du cluster après avoir vérifié la connectivité réseau.
+
+. Vérifiez les détails du niveau cloud sur la fiche de la page « Cloud Tiers ».
+
+
+.Après avoir terminé
+Vérifiez que la carte « Capacité » du tableau de bord du cluster affiche l’utilisation du niveau cloud. Notez que le compartiment que vous avez attribué ne peut pas être renommé après avoir été identifié pour être utilisé par FabricPool. Vous pouvez activer la hiérarchisation sur les volumes de données individuels selon vos besoins.
+
+
+
+[[enable-tiering-with-volume-level-policies]]
+== Activez la hiérarchisation avec des politiques au niveau du volume
+
+Une fois FabricPool configuré au niveau du cluster, vous pouvez activer la hiérarchisation sur les volumes individuels en définissant la stratégie de hiérarchisation appropriée. En général, les stratégies fonctionnent de la même manière avec AFX qu'avec ONTAP.
+
+* *Hiérarchisation au niveau du volume.* La hiérarchisation est activée pour chaque volume. Vous pouvez définir une stratégie de hiérarchisation différente pour chaque volume. Les données du volume peuvent être déplacées vers le niveau cloud en fonction de cette stratégie.
+* *Politiques de hiérarchisation.* Il existe quatre politiques de hiérarchisation qui peuvent être définies pour un volume, notamment :
++
+** `snapshot-only`
+** `auto`
+** `all`
+** `none`
+
+
+* *Politique de hiérarchisation par défaut.* La politique par défaut est  `none`, ce qui signifie qu'aucune donnée ne peut être déplacée vers le niveau cloud. À titre de comparaison, les volumes ONTAP d'un agrégat nouvellement rattaché sont par défaut définis sur  `snapshot-only` sur les systèmes AFF et FAS.
+* *Déclencheur de stratégie.* La définition d'une stratégie autre que `none` déclenche une connexion au cloud et active la hiérarchisation des données.
+* *Délai de refroidissement.* Le délai de refroidissement détermine la durée pendant laquelle les données doivent rester inactives avant de pouvoir être hiérarchisées. Lorsque vous utilisez la CLI, ce paramètre est normalement défini à l’aide du paramètre  `-tiering-minimum-cooling-days`. Le délai de refroidissement par défaut est de 31 jours pour la stratégie auto et d’environ 2 jours pour snapshot-only. Vous pouvez l’ajuster pour chaque volume en fonction de la charge de travail.
+* *Suivi de la température.* Avec AFX, le suivi de la température est effectué par volume plutôt qu'au niveau de l'agrégat.
+
+
+Pour plus d'informations sur les politiques de hiérarchisation FabricPool, consultez https://docs.netapp.com/us-en/ontap/fabricpool/tiering-policies-concept.html["Gérez efficacement la hiérarchisation des données grâce aux règles ONTAP FabricPool"^].
+
+
+
+[[activate-volume-level-tiering-and-next-steps]]
+=== Activer la hiérarchisation au niveau du volume et prochaines étapes
+
+Pour activer la hiérarchisation sur un volume, dans System Manager, accédez à la page *Volumes* et sélectionnez *Modifier*, puis *Paramètres de hiérarchisation cloud* afin de configurer une stratégie de hiérarchisation et une période de refroidissement pour chaque volume, selon les besoins. La stratégie par défaut est aucune. La hiérarchisation doit donc être activée explicitement pour chaque volume. Vous pouvez utiliser les commandes de volume existant dans la CLI.
+
+Une fois la hiérarchisation enclenchée, vous devez surveiller la hiérarchisation et l'utilisation de la capacité. Vérifiez également l'état de la hiérarchisation du volume et surveillez l'utilisation de l'espace du niveau de performance et du niveau de capacité. Notez que Inactive Data Reporting (IDR/AutoIDR) est désactivé sur AFX ; prévoyez donc d'évaluer les données hiérarchisables/froides différemment de ce qui se fait sur les systèmes AFF ou FAS.
+
+
+
+[[related-information]]
+== Informations connexes
+
+* link:../administer/fabricpool-prepare.html["Préparez-vous à implémenter FabricPool sur un système de stockage AFX"]
+* link:../administer/fabricpool.html["Découvrez FabricPool pour les systèmes de stockage AFX"]
+
