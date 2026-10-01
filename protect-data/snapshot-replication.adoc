@@ -4,7 +4,7 @@ permalink: protect-data/snapshot-replication.html
 keywords: afx, afx system, manage replication, manage snapshot replication 
 summary: 'La réplication d"instantanés est un processus dans lequel les groupes de cohérence de votre système AFX sont copiés vers un emplacement géographiquement distant.  Après la réplication initiale, les modifications apportées aux groupes de cohérence sont copiées vers l’emplacement distant en fonction d’une politique de réplication.  Les groupes de cohérence répliqués peuvent être utilisés pour la reprise après sinistre ou la migration de données.' 
 ---
-= Gérer la réplication des snapshots sur un système de stockage AFX
+= Flux de travail de réplication Snapshot pour les systèmes de stockage AFX
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
