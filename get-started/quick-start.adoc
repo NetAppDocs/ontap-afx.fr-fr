@@ -4,7 +4,7 @@ permalink: get-started/quick-start.html
 keywords: afx, afx system, quick start 
 summary: Pour la mise en service initiale de votre système AFX, vous devez installer les composants matériels, configurer votre cluster et vous préparer à administrer le cluster et les SVM. 
 ---
-= Démarrage rapide pour la configuration d'un système de stockage AFX
+= Démarrage rapide pour les systèmes de stockage AFX
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -100,6 +100,6 @@ MetroCluster:: Le système de stockage AFX ne prend pas en charge NetApp MetroCl
 == Informations connexes
 
 * https://docs.netapp.com/us-en/ontap/svm-migrate/index.html["Mobilité des données ONTAP SVM"^]
-* link:../get-started/compare-unified-ontap.html["Comparez le système de stockage AFX aux systèmes AFF et FAS"]
+* link:../get-started/compare-unified-ontap.html["En quoi AFX diffère des systèmes de stockage AFF et FAS"]
 * link:../faq-ontap-afx.html["FAQ sur les systèmes de stockage AFX"]
 
